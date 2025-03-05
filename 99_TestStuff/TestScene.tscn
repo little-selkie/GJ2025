@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://dtyyop3wbc602"]
 
-[ext_resource type="Texture2D" uid="uid://6xkomm14l0i1" path="res://TestStuff/test_assets/Island_24x24.png" id="1_73sjj"]
-[ext_resource type="Texture2D" uid="uid://blw5i55jtott" path="res://TestStuff/test_assets/Dungeon_24x24.png" id="2_ki3ku"]
-[ext_resource type="Texture2D" uid="uid://bsccrg5hb8rkd" path="res://TestStuff/test_assets/decor.png" id="3_hou3t"]
+[ext_resource type="Texture2D" uid="uid://6xkomm14l0i1" path="res://99_TestStuff/test_assets/Island_24x24.png" id="1_73sjj"]
+[ext_resource type="Texture2D" uid="uid://blw5i55jtott" path="res://99_TestStuff/test_assets/Dungeon_24x24.png" id="2_ki3ku"]
+[ext_resource type="Texture2D" uid="uid://bsccrg5hb8rkd" path="res://99_TestStuff/test_assets/decor.png" id="3_hou3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vhmqy"]
 texture = ExtResource("1_73sjj")

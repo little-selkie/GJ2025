@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsccrg5hb8rkd"
-path="res://.godot/imported/decor.png-c6dfb6e624e08a9350d92f2298ea2cbe.ctex"
+uid="uid://blw5i55jtott"
+path="res://.godot/imported/Dungeon_24x24.png-40763e59ee57c9b1b9ef95d006dd60e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TestStuff/test_assets/decor.png"
-dest_files=["res://.godot/imported/decor.png-c6dfb6e624e08a9350d92f2298ea2cbe.ctex"]
+source_file="res://99_TestStuff/test_assets/Dungeon_24x24.png"
+dest_files=["res://.godot/imported/Dungeon_24x24.png-40763e59ee57c9b1b9ef95d006dd60e4.ctex"]
 
 [params]
 

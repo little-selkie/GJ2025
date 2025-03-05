@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GJ2025-FantasticFour"
+run/main_scene="res://0_Scenes/MainScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,7 +23,11 @@ version_control/autoload_on_startup=true
 [file_customization]
 
 folder_colors={
-"res://TestStuff/": "blue",
-"res://TestStuff/test_assets/": "blue",
+"res://0_Scenes/": "teal",
+"res://1_Scripts/": "teal",
+"res://2_Images/": "teal",
+"res://3_Audio/": "teal",
+"res://98_Placeholders/": "purple",
+"res://99_TestStuff/": "purple",
 "res://godot-git-plugin/": "red"
 }
