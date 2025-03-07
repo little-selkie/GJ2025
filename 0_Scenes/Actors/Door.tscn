@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://hv6fnp78mu8h"]
+[gd_scene load_steps=4 format=3 uid="uid://hv6fnp78mu8h"]
 
-[node name="Door" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="1_wrtsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
+size = Vector2(123, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkpky"]
+size = Vector2(214, 124)
+
+[node name="Door" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-3198, -300)
+texture = ExtResource("1_wrtsy")
+polygon = PackedVector2Array(3135.16, 249.576, 3268.76, 248.817, 3268.76, 342.19, 3132.12, 342.19)
+uv = PackedVector2Array(3135.16, 249.576, 3268.76, 248.817, 3268.76, 342.19, 3132.12, 342.19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -6.5)
+shape = SubResource("RectangleShape2D_0in1j")
+
+[node name="AreaOfInteraction" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfInteraction"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_rkpky")
+debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
