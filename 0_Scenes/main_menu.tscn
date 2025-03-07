@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq776x755g5ir"]
+[gd_scene load_steps=7 format=3 uid="uid://dq776x755g5ir"]
 
+[ext_resource type="Script" path="res://1_Scripts/main_menu.gd" id="1_j16tt"]
 [ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="1_wainh"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_0fllq"]
 [ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="2_15548"]
@@ -28,6 +29,7 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_j16tt")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -92,3 +94,6 @@ theme_override_fonts/font = ExtResource("2_0fllq")
 theme_override_font_sizes/font_size = 69
 text = "Insert_game_name
 "
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
