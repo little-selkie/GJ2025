@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5obyp7tmx8d5"]
+[gd_scene load_steps=6 format=3 uid="uid://5obyp7tmx8d5"]
 
 [ext_resource type="Texture2D" uid="uid://8nbgv4xgfo8c" path="res://98_Placeholders/Images/Char/Pawn_Purple.png" id="1_8gl2h"]
 [ext_resource type="Script" path="res://1_Scripts/ghost.gd" id="1_buk2y"]
@@ -8,6 +8,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6k13"]
 radius = 22.0
 height = 54.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fi14n"]
+radius = 84.7172
 
 [node name="Ghost" type="CharacterBody2D"]
 script = ExtResource("1_buk2y")
@@ -23,6 +26,7 @@ uv = PackedVector2Array(640.397, 1088.56, 638.046, 1026.64, 674.496, 1015.27, 71
 position = Vector2(8.15094e-06, -2)
 shape = SubResource("CapsuleShape2D_r51hn")
 disabled = true
+debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="PlayerCollider" type="Area2D" parent="."]
 collision_layer = 128
@@ -30,3 +34,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollider"]
 shape = SubResource("CapsuleShape2D_h6k13")
+debug_color = Color(0.972549, 0, 0.164706, 0.266667)
+
+[node name="Vision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
+shape = SubResource("CircleShape2D_fi14n")
+debug_color = Color(0.752007, 0.66244, 0.891397, 0.109804)
