@@ -28,7 +28,6 @@ func _physics_process(delta):
 		while (ghost <= len(current_ghosts) - 1):
 			ghost_locations[ghost] = global_position.distance_to(current_ghosts[ghost].global_position)
 			min_distance_to_ghost = ghost_locations.min()
-			print(min_distance_to_ghost)
 			ghost += 1
 		if min_distance_to_ghost > 10:
 			get_node("GhostFinder").volume_db = -20 + (10/min_distance_to_ghost * sound_booster)
