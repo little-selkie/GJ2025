@@ -40,6 +40,7 @@ debug_color = Color(0.97, 0, 0.485, 0.188235)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_p6ng8")
+occluder_light_mask = 2
 
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 16384
