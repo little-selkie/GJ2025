@@ -8,8 +8,8 @@
 [node name="House" parent="." instance=ExtResource("1_igfsh")]
 
 [node name="Player" parent="." instance=ExtResource("2_vea6q")]
-position = Vector2(116, 265)
+position = Vector2(404, 290)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-limit_left = 0
+limit_top = -100
 position_smoothing_enabled = true
