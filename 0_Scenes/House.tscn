@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="5_8grh1"]
 [ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
 [ext_resource type="Texture2D" uid="uid://cw3p3xhrnt0xw" path="res://98_Placeholders/Images/Tileset/scifi_tilesheet@2.png" id="5_ttg3m"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
+[ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
 size = Vector2(3136, 2630)
