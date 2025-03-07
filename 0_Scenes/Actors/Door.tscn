@@ -32,3 +32,6 @@ collision_mask = 16384
 position = Vector2(1, -5)
 shape = SubResource("RectangleShape2D_rkpky")
 debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
+
+[connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
+[connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
