@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=43 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://ctgpcqiy2u785" path="res://98_Placeholders/Images/Tileset/Dark_lvl0.png" id="1_7l1uv"]
 [ext_resource type="Texture2D" uid="uid://3dmdihcrbgns" path="res://98_Placeholders/Images/Tileset/Piso de Madeira Velho 64x64.png" id="3_a3und"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
 [ext_resource type="Texture2D" uid="uid://cw3p3xhrnt0xw" path="res://98_Placeholders/Images/Tileset/scifi_tilesheet@2.png" id="5_ttg3m"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
+[ext_resource type="PackedScene" uid="uid://dgkw0x078ivck" path="res://0_Scenes/animated_candle.tscn" id="9_vigrj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
 size = Vector2(3136, 2630)
@@ -1787,3 +1788,7 @@ scale = Vector2(0.361722, 0.327081)
 [node name="TestLight7" parent="Lights" instance=ExtResource("4_pmlgf")]
 position = Vector2(1014, 222)
 scale = Vector2(0.361722, 0.327081)
+
+[node name="StaticBody2D" parent="Lights" instance=ExtResource("9_vigrj")]
+position = Vector2(-857, 1614)
+scale = Vector2(3.44886, 3.65338)

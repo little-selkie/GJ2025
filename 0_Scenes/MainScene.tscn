@@ -30,14 +30,13 @@ position_smoothing_enabled = true
 [node name="UI" parent="." instance=ExtResource("3_hywq2")]
 
 [node name="Night" type="DirectionalLight2D" parent="."]
-visible = false
 color = Color(1, 0.960784, 0.686275, 0.901961)
 energy = 1.05
 blend_mode = 1
 
 [node name="MoonLight" type="DirectionalLight2D" parent="."]
 rotation = 0.200713
-energy = 0.05
+energy = 0.1
 blend_mode = 2
 range_layer_max = 1
 shadow_enabled = true
