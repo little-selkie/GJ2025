@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq776x755g5ir"]
+[gd_scene load_steps=6 format=3 uid="uid://dq776x755g5ir"]
 
 [ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="1_wainh"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_0fllq"]
-[ext_resource type="FontFile" uid="uid://bejsbe20gfv3o" path="res://69_Fonts/GhoulFriAOE.ttf" id="3_cld21"]
-[ext_resource type="FontFile" uid="uid://072sxkxd8g33" path="res://69_Fonts/NightAOE.ttf" id="4_ir5ie"]
+[ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="2_15548"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
 texture = ExtResource("1_wainh")
@@ -59,7 +58,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("2_0fllq")
+theme_override_fonts/font = ExtResource("2_15548")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
 text = "Start exorcism"
@@ -69,7 +68,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("3_cld21")
+theme_override_fonts/font = ExtResource("2_15548")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
 text = "End the Nightmare
@@ -89,7 +88,7 @@ offset_bottom = -157.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("4_ir5ie")
+theme_override_fonts/font = ExtResource("2_0fllq")
 theme_override_font_sizes/font_size = 69
 text = "Insert_game_name
 "
