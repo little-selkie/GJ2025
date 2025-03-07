@@ -92,6 +92,6 @@ rotation = 0.136189
 rotation = 1.32843
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 position = Vector2(25, -15)
 navigation_polygon = SubResource("NavigationPolygon_mg28n")
+navigation_layers = 16
