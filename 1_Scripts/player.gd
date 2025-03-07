@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @onready var axis = Vector2.ZERO
 
+var was_hit: bool = false
+
 func _physics_process(delta):
 	move(delta)
 
@@ -31,3 +33,20 @@ func apply_friction(amount):
 func apply_movement(accel):
 	velocity += accel
 	velocity = velocity.limit_length(player_speed)
+
+func _on_health_collision_area_entered(area: Area2D) -> void:
+	if !was_hit:
+		was_hit = true
+		if GlobalVars.player_health == 0:
+			print("u ded")
+		else:
+			GlobalVars.player_health -= 1
+			print(GlobalVars.player_health)
+			if GlobalVars.player_health == 0:
+				print("u ded")
+	else:
+		print("something buggy idk")
+
+
+func _on_health_collision_area_exited(area: Area2D) -> void:
+	was_hit = false
