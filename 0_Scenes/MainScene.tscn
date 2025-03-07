@@ -16,3 +16,7 @@ limit_top = -100
 position_smoothing_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("3_hywq2")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.960784, 0.686275, 0.839216)
+blend_mode = 1
