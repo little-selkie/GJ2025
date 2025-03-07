@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bgufya74b24no" path="res://98_Placeholders/Images/Tileset/Dark_lvl2.png" id="1_c1b6f"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_w6i4q"]
 [ext_resource type="Texture2D" uid="uid://ctgpcqiy2u785" path="res://98_Placeholders/Images/Tileset/Dark_lvl0.png" id="2_0lb3n"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/Door.tscn" id="3_b8nse"]
+[ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="3_b8nse"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="3_m4a7e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdsnf"]

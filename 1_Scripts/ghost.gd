@@ -12,13 +12,18 @@ extends CharacterBody2D
 
 var player_in_sight: bool = false
 var starting_position: Vector2
+var starting_velocity: Vector2
+var path_starting_position: Vector2
 
 var is_fading: bool = false
 var is_appearing: bool = false
 
 func _ready() -> void:
 	starting_position = self.global_position
+	starting_velocity = velocity
+	path_starting_position = pathfollow.global_position
 	print(starting_position)
+	print(velocity)
 
 func _physics_process(delta):
 	if is_fading == true:
@@ -64,10 +69,12 @@ func _on_timer_timeout() -> void:
 
 
 func _on_fading_timeout() -> void:
+	self.modulate.a = 1
+	pathfollow.global_position = path_starting_position
 	self.global_position = starting_position
+	velocity = starting_velocity
 	pathfollow.progress = 0
 	pathfollow.progress_ratio = 0
 	in_position = true
 	print("return")
 	is_fading = false
-	is_appearing = true
