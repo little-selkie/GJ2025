@@ -1,15 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://sovek77x2r5t"]
+[gd_scene load_steps=9 format=3 uid="uid://sovek77x2r5t"]
 
 [ext_resource type="PackedScene" uid="uid://bd065y7n0i7b1" path="res://0_Scenes/House.tscn" id="1_igfsh"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="2_vea6q"]
-[ext_resource type="PackedScene" uid="uid://bxj166jpfihj3" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
+[ext_resource type="PackedScene" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="4_2jy7w"]
 
 [sub_resource type="Curve2D" id="Curve2D_vufwy"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 465, 1722, 0, 0, 0, 0, 384, 1481, 0, 0, 0, 0, 381, 1303, 0, 0, 0, 0, 163, 1282, 0, 0, 0, 0, 128, 1485, 0, 0, 0, 0, 62, 1721, 0, 0, 0, 0, 265, 1699, 0, 0, 0, 0, 360, 1800, 0, 0, 0, 0, 447, 1806, 0, 0, 0, 0, 465, 1722)
+"points": PackedVector2Array(6.3496, 84.1322, -6.3496, -84.1322, 469, 1722, 30.4809, 11.5202, -30.4809, -11.5202, 296, 1521, 46.4475, 46.4475, -46.4475, -46.4475, 114, 1409, -28.7112, 29.4804, 28.7112, -29.4804, 163, 1282, -9.52441, -53.9716, 9.52441, 53.9716, 461, 1232, 17.9793, -27.2587, -17.9793, 27.2587, 125, 1522, -26.9695, -67.4238, 26.9695, 67.4238, 75, 1725, -16.2757, 22.4492, 16.2757, -22.4492, 267, 1664, -41.9526, 17.9797, 41.9526, -17.9797, 439, 1427, -17.8583, -21.4299, 17.8583, 21.4299, 370, 1746, -7.937, 55.559, 7.937, -55.559, 465, 1722)
 }
-point_count = 10
+point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_dhnpa"]
+_data = {
+"points": PackedVector2Array(11.5, -18, -11.5, 18, 898, 1357, 32.8434, -58.2705, -32.8434, 58.2705, 845, 1472, 29.665, -55.0921, -29.665, 55.0921, 836, 1674, 61.4489, 39.2001, -61.4489, -39.2001, 664, 1651, -53.2373, 32.0729, 53.2373, -32.0729, 667, 1237, -32.345, -50.191, 32.345, 50.191, 814, 1352, -23.0173, 25.3984, 23.0173, -25.3984, 1060, 1454, 13.1046, 28.8648, -13.1046, -28.8648, 1110, 1070, 36.3813, -38.8913, -36.3813, 38.8913, 980, 1082, 0.44381, -40.9245, -0.44381, 40.9245, 921, 1262, 0, 0, 0, 0, 898, 1357)
+}
+point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_yckyk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 78, 2372, 0, 0, 0, 0, 348, 2409, -37.755, 33.0356, 37.755, -33.0356, 646, 2357, -33.0356, 45.306, 33.0356, -45.306, 746, 2232, 31, 29.5, -31, -29.5, 812, 2008, 53, -39, -53, 39, 548, 2076, 41, -32, -41, 32, 441, 2260, 34.5, 14, -34.5, -14, 197, 2207, -2.5, 42, 2.5, -42, 114, 2116, -38.1838, 19.799, 38.1838, -19.799, 232, 2017, -48.7904, 11.3137, 48.7904, -11.3137, 533, 2015, -39.598, -23.3345, 39.598, 23.3345, 759, 1912, 40.7893, -48.2056, -40.7893, 48.2056, 683, 2151, 49.7669, -42.8373, -49.7669, 42.8373, 170, 2270, 0, 0, 0, 0, 78, 2372)
+}
+point_count = 15
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mg28n"]
 vertices = PackedVector2Array(895.961, 121.93, 1830.97, 116.063, 1825.02, 2455.98, 891.961, 1206.03, -1146.98, 2453.01, -149.953, 1202.97, -1143.01, 113.977, -155.938, 112.008)
@@ -47,16 +59,39 @@ shadow_filter_smooth = 8.0
 [node name="Ghosts" type="Node2D" parent="."]
 
 [node name="Ghost1 - Path2D" type="Path2D" parent="Ghosts"]
+position = Vector2(4, 10)
 curve = SubResource("Curve2D_vufwy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Ghosts/Ghost1 - Path2D"]
-position = Vector2(465, 1722)
-rotation = -1.89503
+position = Vector2(469, 1722)
+rotation = -1.64613
 
 [node name="Ghost1" parent="Ghosts/Ghost1 - Path2D/PathFollow2D" instance=ExtResource("4_2jy7w")]
-position = Vector2(-85.2789, -41.3219)
-rotation = 1.61065
+position = Vector2(3.91338, 1.2982)
+rotation = 1.45528
+
+[node name="Ghost2 - Path2D" type="Path2D" parent="Ghosts"]
+curve = SubResource("Curve2D_dhnpa")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Ghosts/Ghost2 - Path2D"]
+position = Vector2(898, 1357)
+rotation = 2.13932
+
+[node name="Ghost2" parent="Ghosts/Ghost2 - Path2D/PathFollow2D" instance=ExtResource("4_2jy7w")]
+position = Vector2(-45.7268, -17.1772)
+rotation = 1.74794
+
+[node name="Ghost3 - Path2D" type="Path2D" parent="Ghosts"]
+curve = SubResource("Curve2D_yckyk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Ghosts/Ghost3 - Path2D"]
+position = Vector2(78, 2372)
+rotation = 0.136189
+
+[node name="Ghost3" parent="Ghosts/Ghost3 - Path2D/PathFollow2D" instance=ExtResource("4_2jy7w")]
+rotation = 1.32843
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(25, -15)
 navigation_polygon = SubResource("NavigationPolygon_mg28n")
+navigation_layers = 16

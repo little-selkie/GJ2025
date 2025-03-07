@@ -18,7 +18,7 @@ polygon = PackedVector2Array(6, 24, 10, 24, 10, 20, 16, 16, 23, 16, 23, 16, 24, 
 radius = 74.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52kga"]
-radius = 243.403
+radius = 365.034
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
