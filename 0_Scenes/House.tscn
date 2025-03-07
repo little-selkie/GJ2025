@@ -1,12 +1,9 @@
-[gd_scene load_steps=41 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=38 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://ctgpcqiy2u785" path="res://98_Placeholders/Images/Tileset/Dark_lvl0.png" id="1_7l1uv"]
 [ext_resource type="Texture2D" uid="uid://3dmdihcrbgns" path="res://98_Placeholders/Images/Tileset/Piso de Madeira Velho 64x64.png" id="3_a3und"]
 [ext_resource type="PackedScene" uid="uid://dnyvf7q5p5bqx" path="res://0_Scenes/test_light.tscn" id="4_pmlgf"]
-[ext_resource type="Texture2D" uid="uid://c8t0l1woqx876" path="res://98_Placeholders/Images/Tileset/Parede_64x6401.png" id="4_sm34b"]
 [ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="5_8grh1"]
-[ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
-[ext_resource type="Texture2D" uid="uid://cw3p3xhrnt0xw" path="res://98_Placeholders/Images/Tileset/scifi_tilesheet@2.png" id="5_ttg3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
 size = Vector2(3136, 2630)
@@ -655,13 +652,11 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ie5t1"]
 resource_name = "temp interactables"
-texture = ExtResource("4_sm34b")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfvhu"]
 resource_name = "temp doors"
-texture = ExtResource("5_rxd28")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -1191,7 +1186,6 @@ texture_region_size = Vector2i(64, 64)
 53:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04l3v"]
-texture = ExtResource("5_ttg3m")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
