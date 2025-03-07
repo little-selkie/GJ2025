@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq776x755g5ir"]
+[gd_scene load_steps=10 format=3 uid="uid://dq776x755g5ir"]
 
 [ext_resource type="Script" path="res://1_Scripts/main_menu.gd" id="1_j16tt"]
 [ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="1_wainh"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_0fllq"]
 [ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="2_15548"]
+[ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_uihib"]
+[ext_resource type="AudioStream" uid="uid://b0fwk8ngxp21p" path="res://3_Audio/SFX/impactGlass_heavy_003.ogg" id="5_r76p7"]
+[ext_resource type="AudioStream" uid="uid://bswlf3hwxndud" path="res://3_Audio/162068__mrauralization__railroad-crossing-japan.wav" id="7_27xlu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
 texture = ExtResource("1_wainh")
@@ -65,6 +68,12 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
 text = "Start exorcism"
 
+[node name="Click" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
+stream = ExtResource("4_uihib")
+
+[node name="Hover" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
+stream = ExtResource("5_r76p7")
+
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -75,6 +84,12 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
 text = "End the Nightmare
 "
+
+[node name="Click2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
+stream = ExtResource("4_uihib")
+
+[node name="Hover2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
+stream = ExtResource("5_r76p7")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -95,5 +110,11 @@ theme_override_font_sizes/font_size = 69
 text = "Insert_game_name
 "
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_27xlu")
+autoplay = true
+
+[connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Button2" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
