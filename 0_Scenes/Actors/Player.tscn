@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwil4i34acj3q"]
+[gd_scene load_steps=9 format=3 uid="uid://bwil4i34acj3q"]
 
 [ext_resource type="Script" path="res://1_Scripts/player.gd" id="1_xdi00"]
 [ext_resource type="Texture2D" uid="uid://8nbgv4xgfo8c" path="res://98_Placeholders/Images/Char/Pawn_Purple.png" id="2_1x0ep"]
+[ext_resource type="AudioStream" uid="uid://w5wv4vbbhrrf" path="res://98_Placeholders/Audio/bell-sound-193696.mp3" id="3_pp5ny"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afc57"]
 radius = 29.0
@@ -15,6 +16,9 @@ polygon = PackedVector2Array(6, 24, 10, 24, 10, 20, 16, 16, 23, 16, 23, 16, 24, 
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_65jk1"]
 radius = 74.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52kga"]
+radius = 243.403
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
@@ -50,5 +54,21 @@ collision_mask = 0
 shape = SubResource("CircleShape2D_65jk1")
 debug_color = Color(0.309804, 0.603922, 0.482353, 0.121569)
 
+[node name="GhostFinder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pp5ny")
+volume_db = -10.0
+pitch_scale = 0.9
+autoplay = true
+parameters/looping = true
+
+[node name="GhostFindingArea" type="Area2D" parent="."]
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostFindingArea"]
+shape = SubResource("CircleShape2D_52kga")
+debug_color = Color(1, 1, 1, 0)
+
 [connection signal="area_entered" from="HealthCollision" to="." method="_on_health_collision_area_entered"]
 [connection signal="area_exited" from="HealthCollision" to="." method="_on_health_collision_area_exited"]
+[connection signal="area_entered" from="GhostFindingArea" to="." method="_on_ghost_finding_area_area_entered"]
+[connection signal="area_exited" from="GhostFindingArea" to="." method="_on_ghost_finding_area_area_exited"]
