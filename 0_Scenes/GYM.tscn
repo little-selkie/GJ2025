@@ -115,11 +115,8 @@ position = Vector2(279, 184)
 rotation = -0.659207
 rotates = false
 
-[node name="Ghost" parent="GhostPaths/Path1/PathFollow2D" node_paths=PackedStringArray("target_to_hunt") instance=ExtResource("3_m4a7e")]
+[node name="Ghost" parent="GhostPaths/Path1/PathFollow2D" instance=ExtResource("3_m4a7e")]
 rotation = 0.631192
-is_patrolling = false
-is_hunting = true
-target_to_hunt = NodePath("../../../../Player")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_lw6xu")
