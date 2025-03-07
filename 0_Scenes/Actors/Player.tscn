@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwil4i34acj3q"]
+[gd_scene load_steps=5 format=3 uid="uid://bwil4i34acj3q"]
 
 [ext_resource type="Script" path="res://1_Scripts/player.gd" id="1_xdi00"]
 [ext_resource type="Texture2D" uid="uid://8nbgv4xgfo8c" path="res://98_Placeholders/Images/Char/Pawn_Purple.png" id="2_1x0ep"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afc57"]
 radius = 29.0
 height = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rs2sw"]
+radius = 23.0868
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xdi00")
@@ -18,3 +21,15 @@ uv = PackedVector2Array(68.4289, 85.4979, 78.6058, 64.0379, 116.88, 64.9229, 132
 
 [node name="CharCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_afc57")
+debug_color = Color(0, 0.595, 0.7, 0.0117647)
+
+[node name="HealthCollision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthCollision"]
+shape = SubResource("CircleShape2D_rs2sw")
+debug_color = Color(0.97, 0, 0.485, 0.188235)
+
+[connection signal="area_entered" from="HealthCollision" to="." method="_on_health_collision_area_entered"]
+[connection signal="area_exited" from="HealthCollision" to="." method="_on_health_collision_area_exited"]
