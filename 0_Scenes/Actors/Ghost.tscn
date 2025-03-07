@@ -47,3 +47,4 @@ shape = SubResource("CircleShape2D_fi14n")
 debug_color = Color(0.752007, 0.66244, 0.891397, 0.109804)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 16

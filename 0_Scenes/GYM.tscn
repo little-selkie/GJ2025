@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://sbxcebg2mnjy"]
+[gd_scene load_steps=12 format=4 uid="uid://sbxcebg2mnjy"]
 
 [ext_resource type="Texture2D" uid="uid://bgufya74b24no" path="res://98_Placeholders/Images/Tileset/Dark_lvl2.png" id="1_c1b6f"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_w6i4q"]
@@ -77,6 +77,11 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lw6xu"]
+vertices = PackedVector2Array(1000.24, 75.8516, 952.727, 716.719, 117.063, 692.25, 53.0781, 63.1484)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(42, 53, 1011, 66, 962, 727, 108, 702)])
+
 [node name="Gym" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -110,5 +115,12 @@ position = Vector2(279, 184)
 rotation = -0.659207
 rotates = false
 
-[node name="Ghost" parent="GhostPaths/Path1/PathFollow2D" instance=ExtResource("3_m4a7e")]
+[node name="Ghost" parent="GhostPaths/Path1/PathFollow2D" node_paths=PackedStringArray("target_to_hunt") instance=ExtResource("3_m4a7e")]
 rotation = 0.631192
+is_patrolling = false
+is_hunting = true
+target_to_hunt = NodePath("../../../../Player")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_lw6xu")
+navigation_layers = 16
