@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://sbxcebg2mnjy"]
+[gd_scene load_steps=4 format=3 uid="uid://sbxcebg2mnjy"]
 
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_w6i4q"]
+[ext_resource type="Texture2D" uid="uid://bsccrg5hb8rkd" path="res://99_TestStuff/test_assets/decor.png" id="2_12dcl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbmlc"]
+radius = 49.0
+height = 118.0
 
 [node name="Gym" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_w6i4q")]
 position = Vector2(410, 248)
+
+[node name="Obstacles" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Obstacles"]
+position = Vector2(428, 69)
+scale = Vector2(4.44, 4.44)
+texture = ExtResource("2_12dcl")
+polygon = PackedVector2Array(24.3949, 47.2298, 23.6507, 28.6252, 30.5344, 23.6019, 46.7205, 25.8345, 48.2089, 46.1135, 39.8368, 50.2066)
+uv = PackedVector2Array(24.3949, 47.2298, 23.6507, 28.6252, 30.5344, 23.6019, 46.7205, 25.8345, 48.2089, 46.1135, 39.8368, 50.2066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles"]
+position = Vector2(587, 233)
+shape = SubResource("CapsuleShape2D_vbmlc")
