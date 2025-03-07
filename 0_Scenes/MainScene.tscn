@@ -30,4 +30,4 @@ range_layer_max = 1
 shadow_enabled = true
 shadow_color = Color(0.712129, 0.712129, 0.712129, 0.0862745)
 shadow_filter = 1
-shadow_filter_smooth = 0.4
+shadow_filter_smooth = 8.0
