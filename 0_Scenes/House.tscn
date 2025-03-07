@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=54 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://ctgpcqiy2u785" path="res://98_Placeholders/Images/Tileset/Dark_lvl0.png" id="1_7l1uv"]
 [ext_resource type="Texture2D" uid="uid://3dmdihcrbgns" path="res://98_Placeholders/Images/Tileset/Piso de Madeira Velho 64x64.png" id="3_a3und"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bmxm3ij6apdn" path="res://98_Placeholders/Images/Tileset/furniture/shelf.png" id="8_lf0tx"]
 [ext_resource type="Texture2D" uid="uid://bl6vvuw7mxydm" path="res://98_Placeholders/Images/Tileset/furniture/toilet.png" id="9_nx5wl"]
 [ext_resource type="Texture2D" uid="uid://7sb1ocwh5ddm" path="res://98_Placeholders/Images/Tileset/furniture/clothes-press1.png" id="12_50xfr"]
+[ext_resource type="Texture2D" uid="uid://be5n504nlpkyu" path="res://98_Placeholders/Images/Tileset/furniture/cupboard1.png" id="13_dk4qd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
 size = Vector2(3136, 2630)
@@ -1730,6 +1731,9 @@ polygon = PackedVector2Array(-1125, 95, -1125, 122, -1118, 122, -1118, 125, -112
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6dd17"]
 polygon = PackedVector2Array(1749, 92, 1749, 123, 1753, 129, 1753, 165, 1749, 171, 1749, 186, 1865, 186, 1865, 170, 1859, 166, 1859, 129, 1865, 123, 1865, 92)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3ipde"]
+polygon = PackedVector2Array(1576, 99, 1576, 135, 1581, 141, 1580, 163, 1576, 167, 1576, 186, 1633, 186, 1634, 169, 1628, 163, 1627, 142, 1634, 136, 1633, 100)
+
 [node name="House" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -1816,7 +1820,7 @@ position = Vector2(-222, 160)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight7" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(1014, 222)
+position = Vector2(1361, 452)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight8" parent="Lights" instance=ExtResource("4_pmlgf")]
@@ -1868,3 +1872,16 @@ polygon = PackedVector2Array(1749, 92, 1749, 122, 1753, 129, 1753, 166, 1749, 17
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/drawer2"]
 occluder = SubResource("OccluderPolygon2D_6dd17")
+
+[node name="smalldrawer" type="StaticBody2D" parent="furniture"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/smalldrawer"]
+position = Vector2(1605, 143)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("13_dk4qd")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/smalldrawer"]
+occluder = SubResource("OccluderPolygon2D_3ipde")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="furniture/smalldrawer"]
+polygon = PackedVector2Array(1576, 99, 1576, 135, 1581, 141, 1580, 163, 1576, 167, 1576, 186, 1633, 186, 1633, 169, 1629, 163, 1628, 142, 1633, 136, 1633, 99)
