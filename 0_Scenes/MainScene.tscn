@@ -9,3 +9,6 @@
 
 [node name="Player" parent="." instance=ExtResource("2_vea6q")]
 position = Vector2(116, 265)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true

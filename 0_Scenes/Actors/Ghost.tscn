@@ -39,7 +39,11 @@ shape = SubResource("CapsuleShape2D_h6k13")
 debug_color = Color(0.972549, 0, 0.164706, 0.266667)
 
 [node name="Vision" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 shape = SubResource("CircleShape2D_fi14n")
 debug_color = Color(0.752007, 0.66244, 0.891397, 0.109804)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
