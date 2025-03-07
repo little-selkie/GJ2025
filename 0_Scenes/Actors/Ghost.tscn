@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://5obyp7tmx8d5"]
+
+[ext_resource type="Texture2D" uid="uid://8nbgv4xgfo8c" path="res://98_Placeholders/Images/Char/Pawn_Purple.png" id="1_8gl2h"]
+[ext_resource type="Script" path="res://1_Scripts/ghost.gd" id="1_buk2y"]
+
+[sub_resource type="Curve2D" id="Curve2D_rpke8"]
+_data = {
+"points": PackedVector2Array(13.435, 80.6102, -13.435, -80.6102, 45, 0, -7.77818, -140.714, 7.77818, 140.714, 386, -1, 90.5097, -60.8112, -90.5097, 60.8112, 242, 260, 25.4558, 81.3173, -25.4558, -81.3173, 67, 158, 0, 0, 0, 0, 45, 0)
+}
+point_count = 5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r51hn"]
+
+[node name="Ghost" type="Node2D"]
+script = ExtResource("1_buk2y")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-45, -1)
+curve = SubResource("Curve2D_rpke8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(45, 0)
+rotation = -1.73594
+rotates = false
+
+[node name="GhostBody" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
+position = Vector2(0.986393, 0.164402)
+rotation = 1.73594
+
+[node name="Polygon2D" type="Polygon2D" parent="Path2D/PathFollow2D/GhostBody"]
+self_modulate = Color(0.22, 0.623, 1, 0.658824)
+position = Vector2(-674, -1056)
+texture = ExtResource("1_8gl2h")
+polygon = PackedVector2Array(640.397, 1088.56, 638.046, 1026.64, 674.496, 1015.27, 712.513, 1022.32, 710.162, 1067.79, 701.147, 1103.85, 661.17, 1098.36)
+uv = PackedVector2Array(640.397, 1088.56, 638.046, 1026.64, 674.496, 1015.27, 712.513, 1022.32, 710.162, 1067.79, 701.147, 1103.85, 661.17, 1098.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/GhostBody"]
+shape = SubResource("CapsuleShape2D_r51hn")
