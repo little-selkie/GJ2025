@@ -69,7 +69,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_fading_timeout() -> void:
-	self.modulate.a = 1
+	self.modulate.a = 0
 	pathfollow.global_position = path_starting_position
 	self.global_position = starting_position
 	velocity = starting_velocity
@@ -78,3 +78,4 @@ func _on_fading_timeout() -> void:
 	in_position = true
 	print("return")
 	is_fading = false
+	is_appearing = true

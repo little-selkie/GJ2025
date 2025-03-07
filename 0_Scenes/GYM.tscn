@@ -88,7 +88,7 @@ tile_set = SubResource("TileSet_8uiv3")
 position = Vector2(622, 296)
 
 [node name="Player" parent="." instance=ExtResource("1_w6i4q")]
-position = Vector2(410, 248)
+position = Vector2(598, 462)
 
 [node name="GhostPaths" type="Node2D" parent="."]
 

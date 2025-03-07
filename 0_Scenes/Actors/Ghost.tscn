@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://5obyp7tmx8d5"]
+[gd_scene load_steps=7 format=3 uid="uid://5obyp7tmx8d5"]
 
 [ext_resource type="Texture2D" uid="uid://8nbgv4xgfo8c" path="res://98_Placeholders/Images/Char/Pawn_Purple.png" id="1_8gl2h"]
 [ext_resource type="Script" path="res://1_Scripts/ghost.gd" id="1_buk2y"]
@@ -11,6 +11,9 @@ height = 54.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fi14n"]
 radius = 84.7172
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u20mc"]
+polygon = PackedVector2Array(10, 16, 18, 7, 29, 3, 20, -10, 23, -17, 26, -24, 23, -29, 18, -28, 14, -23, 4, -31, -6, -31, -15, -26, -19, -29, -25, -27, -25, -20, -21, -18, -21, -10, -29, -3, -20, 8, -16, 15, -9, 17, -6, 23, -3, 23, 1, 19, 6, 21)
 
 [node name="Ghost" type="CharacterBody2D"]
 collision_layer = 2
@@ -56,6 +59,10 @@ one_shot = true
 [node name="fading" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_u20mc")
+occluder_light_mask = 4
 
 [connection signal="area_entered" from="Vision" to="." method="_on_vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_vision_area_exited"]

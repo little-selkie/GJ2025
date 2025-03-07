@@ -7,9 +7,23 @@ extends CharacterBody2D
 @onready var axis = Vector2.ZERO
 
 var was_hit: bool = false
+var current_ghosts: Array
+var min_distance_to_ghost: float = 0
+var checked_position: Vector2 = Vector2.ZERO
+
+func _ready() -> void:
+	get_node("GhostFinder").volume_db = -80
+	get_node("GhostFinder").pitch_scale = 0.9
 
 func _physics_process(delta):
+	print(min_distance_to_ghost)
 	move(delta)
+	if len(current_ghosts) == 0:
+		get_node("GhostFinder").volume_db = -80
+		get_node("GhostFinder").pitch_scale = 0.9
+	if len(current_ghosts) != 0:
+		for ghost in current_ghosts:
+			print(current_ghosts[ghost])
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
@@ -50,3 +64,19 @@ func _on_health_collision_area_entered(area: Area2D) -> void:
 
 func _on_health_collision_area_exited(area: Area2D) -> void:
 	was_hit = false
+
+
+func _on_ghost_finding_area_area_entered(area: Area2D) -> void:
+	if len(current_ghosts) == 0:
+		get_node("GhostFinder").volume_db = -10
+		get_node("GhostFinder").pitch_scale = 0.9
+		min_distance_to_ghost = position.distance_to(area.position)
+	current_ghosts.append(area)
+
+
+func _on_ghost_finding_area_area_exited(area: Area2D) -> void:
+	if len(current_ghosts) >= 1:
+		current_ghosts.erase(area)
+	if len(current_ghosts) == 0:
+		get_node("GhostFinder").volume_db = -80
+		get_node("GhostFinder").pitch_scale = 0.9
