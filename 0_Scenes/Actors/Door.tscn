@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://hv6fnp78mu8h"]
+[gd_scene load_steps=6 format=3 uid="uid://hv6fnp78mu8h"]
 
 [ext_resource type="Script" path="res://1_Scripts/door_logic.gd" id="1_ov1nv"]
 [ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="1_wrtsy"]
@@ -8,6 +8,9 @@ size = Vector2(123, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkpky"]
 size = Vector2(214, 124)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_11k2k"]
+polygon = PackedVector2Array(-61, -45, 62, -45, 62, 32, -61, 32)
 
 [node name="Door" type="StaticBody2D"]
 collision_layer = 4
@@ -32,6 +35,9 @@ collision_mask = 16384
 position = Vector2(1, -5)
 shape = SubResource("RectangleShape2D_rkpky")
 debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_11k2k")
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
 [connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
