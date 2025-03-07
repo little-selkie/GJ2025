@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bd065y7n0i7b1" path="res://0_Scenes/House.tscn" id="1_igfsh"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="2_vea6q"]
-[ext_resource type="PackedScene" uid="uid://bxj166jpfihj3" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
+[ext_resource type="PackedScene" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="4_2jy7w"]
 
 [sub_resource type="Curve2D" id="Curve2D_vufwy"]

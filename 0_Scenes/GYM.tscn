@@ -89,8 +89,22 @@ position = Vector2(622, 296)
 
 [node name="Player" parent="." instance=ExtResource("1_w6i4q")]
 position = Vector2(598, 462)
+sound_booster = 15
+sound_pitcher = 1
 
 [node name="GhostPaths" type="Node2D" parent="."]
+
+[node name="Path2" type="Path2D" parent="GhostPaths"]
+position = Vector2(621, 475)
+curve = SubResource("Curve2D_a7up2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="GhostPaths/Path2"]
+position = Vector2(279, 184)
+rotation = -0.659207
+rotates = false
+
+[node name="Ghost" parent="GhostPaths/Path2/PathFollow2D" instance=ExtResource("3_m4a7e")]
+rotation = 0.631192
 
 [node name="Path1" type="Path2D" parent="GhostPaths"]
 position = Vector2(0, 25)
