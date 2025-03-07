@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwil4i34acj3q"]
+[gd_scene load_steps=6 format=3 uid="uid://bwil4i34acj3q"]
 
 [ext_resource type="Script" path="res://1_Scripts/player.gd" id="1_xdi00"]
 [ext_resource type="Texture2D" uid="uid://8nbgv4xgfo8c" path="res://98_Placeholders/Images/Char/Pawn_Purple.png" id="2_1x0ep"]
@@ -9,6 +9,9 @@ height = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rs2sw"]
 radius = 23.0868
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p6ng8"]
+polygon = PackedVector2Array(6, 24, 10, 24, 10, 20, 16, 16, 23, 16, 23, 16, 24, 10, 23, 7, 29, -1, 22, -4, 12, -26, 0, -29, -14, -25, -24, -5, -29, -3, -21, 7, -22, 11, -20, 17, -13, 17, -10, 24, -7, 24, -4, 17, 4, 17)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
@@ -31,6 +34,9 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthCollision"]
 shape = SubResource("CircleShape2D_rs2sw")
 debug_color = Color(0.97, 0, 0.485, 0.188235)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_p6ng8")
 
 [connection signal="area_entered" from="HealthCollision" to="." method="_on_health_collision_area_entered"]
 [connection signal="area_exited" from="HealthCollision" to="." method="_on_health_collision_area_exited"]

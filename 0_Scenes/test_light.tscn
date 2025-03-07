@@ -19,5 +19,8 @@ region_rect = Rect2(1500.57, 496.822, 222.154, 366.359)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.805739, 0.761903, 0.134481, 1)
-energy = 2.05
+energy = 1.77
+shadow_enabled = true
+shadow_color = Color(0.156145, 0.151612, 0.0152728, 0.054902)
 texture = ExtResource("2_hfobf")
+texture_scale = 3.69
