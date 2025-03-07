@@ -21,7 +21,7 @@ GlobalVars="*res://1_Scripts/global_vars.gd"
 
 [display]
 
-window/size/viewport_width=1024
+window/size/viewport_width=1088
 window/size/viewport_height=768
 
 [editor]

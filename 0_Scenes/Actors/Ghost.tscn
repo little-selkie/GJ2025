@@ -18,3 +18,4 @@ uv = PackedVector2Array(640.397, 1088.56, 638.046, 1026.64, 674.496, 1015.27, 71
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.15094e-06, -2)
 shape = SubResource("CapsuleShape2D_r51hn")
+disabled = true
