@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://sovek77x2r5t"]
+[gd_scene load_steps=7 format=3 uid="uid://sovek77x2r5t"]
 
 [ext_resource type="PackedScene" uid="uid://bd065y7n0i7b1" path="res://0_Scenes/House.tscn" id="1_igfsh"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="2_vea6q"]
-[ext_resource type="PackedScene" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
+[ext_resource type="PackedScene" uid="uid://bxj166jpfihj3" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
+[ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="4_2jy7w"]
+
+[sub_resource type="Curve2D" id="Curve2D_vufwy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 465, 1722, 0, 0, 0, 0, 384, 1481, 0, 0, 0, 0, 381, 1303, 0, 0, 0, 0, 163, 1282, 0, 0, 0, 0, 128, 1485, 0, 0, 0, 0, 62, 1721, 0, 0, 0, 0, 265, 1699, 0, 0, 0, 0, 360, 1800, 0, 0, 0, 0, 447, 1806, 0, 0, 0, 0, 465, 1722)
+}
+point_count = 10
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mg28n"]
+vertices = PackedVector2Array(895.961, 121.93, 1830.97, 116.063, 1825.02, 2455.98, 891.961, 1206.03, -1146.98, 2453.01, -149.953, 1202.97, -1143.01, 113.977, -155.938, 112.008)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1153, 104, -146, 102, -140, 1193, 882, 1196, 886, 112, 1841, 106, 1835, 2466, -1157, 2463)])
 
 [node name="MainScene" type="Node2D"]
 
@@ -18,6 +30,7 @@ position_smoothing_enabled = true
 [node name="UI" parent="." instance=ExtResource("3_hywq2")]
 
 [node name="Night" type="DirectionalLight2D" parent="."]
+visible = false
 color = Color(1, 0.960784, 0.686275, 0.901961)
 energy = 1.05
 blend_mode = 1
@@ -31,3 +44,20 @@ shadow_enabled = true
 shadow_color = Color(0.712129, 0.712129, 0.712129, 0.0862745)
 shadow_filter = 1
 shadow_filter_smooth = 8.0
+
+[node name="Ghosts" type="Node2D" parent="."]
+
+[node name="Ghost1 - Path2D" type="Path2D" parent="Ghosts"]
+curve = SubResource("Curve2D_vufwy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Ghosts/Ghost1 - Path2D"]
+position = Vector2(465, 1722)
+rotation = -1.89503
+
+[node name="Ghost1" parent="Ghosts/Ghost1 - Path2D/PathFollow2D" instance=ExtResource("4_2jy7w")]
+position = Vector2(-85.2789, -41.3219)
+rotation = 1.61065
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(25, -15)
+navigation_polygon = SubResource("NavigationPolygon_mg28n")
