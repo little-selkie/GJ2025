@@ -11,4 +11,5 @@
 position = Vector2(116, 265)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
 position_smoothing_enabled = true
