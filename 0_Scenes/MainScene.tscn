@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bd065y7n0i7b1" path="res://0_Scenes/House.tscn" id="1_igfsh"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="2_vea6q"]
-[ext_resource type="PackedScene" uid="uid://bxj166jpfihj3" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
+[ext_resource type="PackedScene" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -16,3 +16,18 @@ limit_top = -100
 position_smoothing_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("3_hywq2")]
+
+[node name="Night" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.960784, 0.686275, 0.901961)
+energy = 1.05
+blend_mode = 1
+
+[node name="MoonLight" type="DirectionalLight2D" parent="."]
+rotation = 0.200713
+energy = 0.05
+blend_mode = 2
+range_layer_max = 1
+shadow_enabled = true
+shadow_color = Color(0.712129, 0.712129, 0.712129, 0.0862745)
+shadow_filter = 1
+shadow_filter_smooth = 0.4
