@@ -1721,10 +1721,6 @@ tile_set = SubResource("TileSet_dbc76")
 tile_map_data = PackedByteArray("AAALAAQAAgAGAAYAAAALAAUAAgAGAAcAAAAMAAQAAgAHAAYAAAAMAAUAAgAHAAcAAAAAAAkAAgAGAAYAAAAAAAoAAgAGAAcAAAABAAkAAgAHAAYAAAABAAoAAgAHAAcAAAALAA8AAgAGAAYAAAALABAAAgAGAAcAAAAMAA8AAgAHAAYAAAAMABAAAgAHAAcAAAAHAAcAAQAQAA0AAAAHAAgAAQAQAA4AAAAIAAcAAQARAA0AAAAIAAgAAQARAA4AAAACAA8AAQATAA0AAAACABAAAQATAA4AAAADAA8AAQAUAA0AAAADABAAAQAUAA4AAAACAAIAAQAfABAAAAACAAMAAQAfABEAAAADAAIAAQAgABAAAAADAAMAAQAgABEAAAADAAUAAQAfABAAAAADAAYAAQAfABEAAAAEAAUAAQAgABAAAAAEAAYAAQAgABEAAAAFAAcAAQAfABAAAAAFAAgAAQAfABEAAAAGAAcAAQAgABAAAAAGAAgAAQAgABEAAAAHAAUAAQAfABAAAAAHAAYAAQAfABEAAAAIAAUAAQAgABAAAAAIAAYAAQAgABEAAAAHAA4AAQAfABAAAAAHAA8AAQAgABAAAAAIAA4AAQAfABAAAAAIAA8AAQAfABEAAAAGAA8AAQAfABAAAAAGABAAAQAfABEAAAAHABAAAQAgABEAAAAJAA4AAQAgABAAAAAJAA8AAQAgABEAAAA=")
 tile_set = SubResource("TileSet_1rkfe")
 
-[node name="TestLight" parent="." instance=ExtResource("4_pmlgf")]
-position = Vector2(-165, 1113)
-scale = Vector2(0.361722, 0.327081)
-
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("8_3ja1r")]
@@ -1761,3 +1757,33 @@ position = Vector2(1037, 954)
 [node name="Door10" parent="Doors" instance=ExtResource("8_3ja1r")]
 position = Vector2(1612, 561)
 rotation = 3.14159
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="TestLight" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(-165, 1113)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight2" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(509, 1045)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight3" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(1749, 959)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight4" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(1435, 2014)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight5" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(-110, 1731)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight6" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(-603, 189)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight7" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(1014, 222)
+scale = Vector2(0.361722, 0.327081)
