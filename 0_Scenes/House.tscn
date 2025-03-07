@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=52 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://ctgpcqiy2u785" path="res://98_Placeholders/Images/Tileset/Dark_lvl0.png" id="1_7l1uv"]
 [ext_resource type="Texture2D" uid="uid://3dmdihcrbgns" path="res://98_Placeholders/Images/Tileset/Piso de Madeira Velho 64x64.png" id="3_a3und"]
@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="5_8grh1"]
 [ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
 [ext_resource type="Texture2D" uid="uid://cw3p3xhrnt0xw" path="res://98_Placeholders/Images/Tileset/scifi_tilesheet@2.png" id="5_ttg3m"]
+[ext_resource type="Texture2D" uid="uid://dawkrjrchlqop" path="res://98_Placeholders/Images/Tileset/furniture/goldentoilet.png" id="7_qjyn1"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
+[ext_resource type="Texture2D" uid="uid://bmxm3ij6apdn" path="res://98_Placeholders/Images/Tileset/furniture/shelf.png" id="8_lf0tx"]
+[ext_resource type="Texture2D" uid="uid://bl6vvuw7mxydm" path="res://98_Placeholders/Images/Tileset/furniture/toilet.png" id="9_nx5wl"]
+[ext_resource type="Texture2D" uid="uid://7sb1ocwh5ddm" path="res://98_Placeholders/Images/Tileset/furniture/clothes-press1.png" id="12_50xfr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
 size = Vector2(3136, 2630)
@@ -1702,6 +1706,30 @@ tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_6u40q")
 sources/2 = SubResource("TileSetAtlasSource_04l3v")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ceq5a"]
+texture = ExtResource("7_qjyn1")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjbff"]
+texture = ExtResource("8_lf0tx")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbhnj"]
+texture = ExtResource("9_nx5wl")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSet" id="TileSet_p1aod"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ceq5a")
+sources/1 = SubResource("TileSetAtlasSource_mjbff")
+sources/2 = SubResource("TileSetAtlasSource_pbhnj")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ou4jc"]
+polygon = PackedVector2Array(-1125, 95, -1125, 122, -1118, 122, -1118, 125, -1125, 131, -1125, 140, -1113, 151, -1113, 155, -1125, 167, -1083, 167, -1083, 165, -1093, 155, -1093, 151, -1081, 140, -1082, 131, -1089, 124, -1089, 122, -1081, 122, -1081, 95)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6dd17"]
+polygon = PackedVector2Array(1749, 92, 1749, 123, 1753, 129, 1753, 165, 1749, 171, 1749, 186, 1865, 186, 1865, 170, 1859, 166, 1859, 129, 1865, 123, 1865, 92)
+
 [node name="House" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -1720,6 +1748,9 @@ tile_set = SubResource("TileSet_dbc76")
 [node name="TileMapLayer2 - foliage" type="TileMapLayer" parent="Area2D"]
 tile_map_data = PackedByteArray("AAALAAQAAgAGAAYAAAALAAUAAgAGAAcAAAAMAAQAAgAHAAYAAAAMAAUAAgAHAAcAAAAAAAkAAgAGAAYAAAAAAAoAAgAGAAcAAAABAAkAAgAHAAYAAAABAAoAAgAHAAcAAAALAA8AAgAGAAYAAAALABAAAgAGAAcAAAAMAA8AAgAHAAYAAAAMABAAAgAHAAcAAAAHAAcAAQAQAA0AAAAHAAgAAQAQAA4AAAAIAAcAAQARAA0AAAAIAAgAAQARAA4AAAACAA8AAQATAA0AAAACABAAAQATAA4AAAADAA8AAQAUAA0AAAADABAAAQAUAA4AAAACAAIAAQAfABAAAAACAAMAAQAfABEAAAADAAIAAQAgABAAAAADAAMAAQAgABEAAAADAAUAAQAfABAAAAADAAYAAQAfABEAAAAEAAUAAQAgABAAAAAEAAYAAQAgABEAAAAFAAcAAQAfABAAAAAFAAgAAQAfABEAAAAGAAcAAQAgABAAAAAGAAgAAQAgABEAAAAHAAUAAQAfABAAAAAHAAYAAQAfABEAAAAIAAUAAQAgABAAAAAIAAYAAQAgABEAAAAHAA4AAQAfABAAAAAHAA8AAQAgABAAAAAIAA4AAQAfABAAAAAIAA8AAQAfABEAAAAGAA8AAQAfABAAAAAGABAAAQAfABEAAAAHABAAAQAgABEAAAAJAA4AAQAgABAAAAAJAA8AAQAgABEAAAA=")
 tile_set = SubResource("TileSet_1rkfe")
+
+[node name="TileMapLayer - furniture" type="TileMapLayer" parent="Area2D"]
+tile_set = SubResource("TileSet_p1aod")
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -1791,3 +1822,49 @@ scale = Vector2(0.361722, 0.327081)
 [node name="TestLight8" parent="Lights" instance=ExtResource("4_pmlgf")]
 position = Vector2(829, 2353)
 scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight9" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(-852, 502)
+scale = Vector2(0.2, 0.181)
+
+[node name="furniture" type="Node2D" parent="."]
+
+[node name="toilet" type="StaticBody2D" parent="furniture"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/toilet"]
+position = Vector2(-1103, 131)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_nx5wl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="furniture/toilet"]
+polygon = PackedVector2Array(-1124, 94, -1124, 122, -1117, 122, -1118, 124, -1125, 131, -1125, 140, -1113, 151, -1113, 154, -1125, 166, -1083, 167, -1083, 165, -1094, 154, -1094, 151, -1081, 140, -1081, 131, -1089, 124, -1090, 121, -1082, 122, -1082, 95)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/toilet"]
+occluder = SubResource("OccluderPolygon2D_ou4jc")
+
+[node name="drawer1" type="StaticBody2D" parent="furniture"]
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/drawer1"]
+position = Vector2(1807, 139)
+scale = Vector2(2, 2)
+texture = ExtResource("12_50xfr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="furniture/drawer1"]
+polygon = PackedVector2Array(1749, 92, 1749, 122, 1753, 129, 1753, 166, 1749, 171, 1749, 186, 1865, 186, 1865, 170, 1860, 166, 1860, 129, 1865, 122, 1865, 92)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/drawer1"]
+occluder = SubResource("OccluderPolygon2D_6dd17")
+
+[node name="drawer2" type="StaticBody2D" parent="furniture"]
+position = Vector2(-115, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/drawer2"]
+position = Vector2(1807, 139)
+scale = Vector2(2, 2)
+texture = ExtResource("12_50xfr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="furniture/drawer2"]
+polygon = PackedVector2Array(1749, 92, 1749, 122, 1753, 129, 1753, 166, 1749, 171, 1749, 186, 1865, 186, 1865, 170, 1860, 166, 1860, 129, 1865, 122, 1865, 92)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/drawer2"]
+occluder = SubResource("OccluderPolygon2D_6dd17")
