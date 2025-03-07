@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxj166jpfihj3"]
+[gd_scene load_steps=14 format=3 uid="uid://bxj166jpfihj3"]
 
 [ext_resource type="Texture2D" uid="uid://bppcf0yfpoehp" path="res://2_Images/UI/progress_white_border.png" id="1_jgpxd"]
 [ext_resource type="Texture2D" uid="uid://dh2ua0y1pta1i" path="res://2_Images/UI/progress_red_border.png" id="2_np1br"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bui60tlk8ng20" path="res://2_Images/UI/HUD/audioOff.png" id="7_vmjru"]
 [ext_resource type="Texture2D" uid="uid://d1p0arloquxx" path="res://2_Images/UI/HUD/audioOn.png" id="8_y8jqg"]
 [ext_resource type="Texture2D" uid="uid://dhncsxhbskunv" path="res://2_Images/UI/IEG_key_lightblue.png" id="9_onlmy"]
+[ext_resource type="Texture2D" uid="uid://ccmpli3vv7745" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector1.png" id="10_pvdfa"]
+[ext_resource type="Texture2D" uid="uid://chd6qjbl03ks5" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector2.png" id="11_bo03c"]
+[ext_resource type="Texture2D" uid="uid://c3nkck8vnwrlt" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector3.png" id="12_7ox30"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fmdan"]
 font_size = 20
@@ -52,7 +55,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_un3u6")
 texture_progress = ExtResource("4_jk5q8")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Note" type="TextureRect" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -63,7 +66,7 @@ offset_bottom = 170.0
 grow_horizontal = 0
 texture = ExtResource("5_g1kow")
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="Note"]
 layout_mode = 0
 offset_right = 95.0
 offset_bottom = 136.0
@@ -75,13 +78,13 @@ label_settings = SubResource("LabelSettings_fmdan")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="EMF" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="EMF"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 1
 offset_left = -21.0
@@ -91,35 +94,65 @@ offset_bottom = 203.0
 texture = ExtResource("6_nrhpm")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="EMF"]
 layout_mode = 0
 offset_left = 113.0
 offset_right = 213.0
 offset_bottom = 100.0
 texture = ExtResource("7_vmjru")
 
-[node name="TextureRect3" type="TextureRect" parent="Control"]
+[node name="TextureRect3" type="TextureRect" parent="EMF"]
 layout_mode = 0
 offset_left = 113.0
 offset_right = 213.0
 offset_bottom = 100.0
 texture = ExtResource("8_y8jqg")
 
-[node name="Control2" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Control2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 18.828
-anchor_bottom = 18.828
-offset_left = 33.0
-offset_top = -109.12
-offset_right = 179.0
-offset_bottom = -10.1201
+[node name="Amulets" type="HBoxContainer" parent="."]
+clip_contents = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -278.0
+offset_top = -216.0
+offset_right = 54.0
+offset_bottom = -92.0
+grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.799995, 1.64)
+theme_override_constants/separation = -20
+
+[node name="Amulet1" type="TextureRect" parent="Amulets"]
+layout_mode = 2
+texture = ExtResource("10_pvdfa")
+expand_mode = 2
+
+[node name="Amulet2" type="TextureRect" parent="Amulets"]
+layout_mode = 2
+texture = ExtResource("11_bo03c")
+expand_mode = 2
+
+[node name="Amulet3" type="TextureRect" parent="Amulets"]
+layout_mode = 2
+texture = ExtResource("12_7ox30")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -144.0
+offset_right = 288.0
+offset_bottom = -24.0
+grow_vertical = 0
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 120.0
 texture = ExtResource("9_onlmy")
-expand_mode = 1
+expand_mode = 2
