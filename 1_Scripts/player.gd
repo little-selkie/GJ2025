@@ -22,8 +22,12 @@ func _physics_process(delta):
 		get_node("GhostFinder").volume_db = -80
 		get_node("GhostFinder").pitch_scale = 0.9
 	if len(current_ghosts) != 0:
-		for ghost in current_ghosts:
-			print(current_ghosts[ghost])
+		var ghost: int = 0
+		while (ghost < len(current_ghosts) - 2):
+			ghost += 1
+			checked_position = current_ghosts[ghost].position
+			if position.distance_to(checked_position) < min_distance_to_ghost:
+				min_distance_to_ghost = current_ghosts[ghost].position
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
