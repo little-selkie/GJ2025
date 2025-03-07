@@ -10,6 +10,8 @@ radius = 22.0
 height = 54.0
 
 [node name="Ghost" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_buk2y")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
