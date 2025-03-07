@@ -20,4 +20,4 @@ func open_door() -> void:
 	get_node("CollisionShape2D").disabled = true
 	get_node("AreaOfInteraction").monitoring = false
 	get_node("LightOccluder2D").visible = false
-	self.modulate.a = 0
+	$AnimationPlayer.play("door_open")
