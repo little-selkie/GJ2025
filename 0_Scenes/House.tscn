@@ -1761,7 +1761,7 @@ rotation = 3.14159
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="TestLight" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(-165, 1113)
+position = Vector2(-1022, 793)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight2" parent="Lights" instance=ExtResource("4_pmlgf")]
@@ -1781,9 +1781,13 @@ position = Vector2(-110, 1731)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight6" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(-603, 189)
+position = Vector2(-222, 160)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight7" parent="Lights" instance=ExtResource("4_pmlgf")]
 position = Vector2(1014, 222)
+scale = Vector2(0.361722, 0.327081)
+
+[node name="TestLight8" parent="Lights" instance=ExtResource("4_pmlgf")]
+position = Vector2(829, 2353)
 scale = Vector2(0.361722, 0.327081)
