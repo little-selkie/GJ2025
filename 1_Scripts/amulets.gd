@@ -29,7 +29,7 @@ func open_door() -> void:
 	if GlobalVars.amulet != 3: 
 		GlobalVars.amulet += 1
 		print(GlobalVars.amulet)
-		if GlobalVars.amulet == 3:
+		if GlobalVars.amulet == 3 and GlobalVars.note >= 1:
 			GlobalVars.is_exorcism_available = true
 		else: 
 			print("u full")
