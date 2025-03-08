@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://pkcbo6jlo6rm"]
+
+[ext_resource type="Script" path="res://1_Scripts/door_4_locked.gd" id="1_n36yv"]
+[ext_resource type="Texture2D" uid="uid://do5quwb17yfrg" path="res://2_Images/Tiles/door.png" id="2_tsxms"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="3_cfcgh"]
+[ext_resource type="AudioStream" uid="uid://dnvvdxjyj1vj4" path="res://3_Audio/SFX/door-opening.mp3" id="4_kd1rp"]
+[ext_resource type="Texture2D" uid="uid://dqlrquvx1efug" path="res://2_Images/UI/HUD/locked.png" id="5_3c8yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
+size = Vector2(128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkpky"]
+size = Vector2(214, 124)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_11k2k"]
+polygon = PackedVector2Array(-64, -32, 64, -32, 64, 32, -64, 32)
+
+[sub_resource type="Animation" id="Animation_oftm6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftSide:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-64, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightSide:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-64, -32)]
+}
+
+[sub_resource type="Animation" id="Animation_fdtgg"]
+resource_name = "door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftSide:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-64, -32), Vector2(-71, -32), Vector2(-126, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightSide:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-64, -32), Vector2(-57, -32), Vector2(-2, -32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbf4r"]
+_data = {
+"RESET": SubResource("Animation_oftm6"),
+"door_open": SubResource("Animation_fdtgg")
+}
+
+[node name="Door4_locked" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_n36yv")
+
+[node name="LeftSide" type="Polygon2D" parent="."]
+position = Vector2(-64, -32)
+texture = ExtResource("2_tsxms")
+polygon = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
+uv = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
+
+[node name="RightSide" type="Polygon2D" parent="."]
+position = Vector2(-64, -32)
+texture = ExtResource("2_tsxms")
+polygon = PackedVector2Array(127.989, 64.1007, 128.015, 0.0096941, 63.9985, -0.0014987, 64.0073, 64.0055)
+uv = PackedVector2Array(127.989, 64.1007, 128.015, 0.0096941, 63.9985, -0.0014987, 64.0073, 64.0055)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0in1j")
+
+[node name="AreaOfInteraction" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfInteraction"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_rkpky")
+debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_11k2k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wbf4r")
+}
+
+[node name="Interact" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="InteractText" type="Label" parent="Interact"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -40.0
+offset_right = 204.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("3_cfcgh")
+theme_override_font_sizes/font_size = 33
+text = "[E] TO INTERACT"
+
+[node name="DoorOpening" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kd1rp")
+
+[node name="Lock4" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Lock4"]
+modulate = Color(1, 0, 0, 0.564706)
+z_index = 30
+offset_left = 632.0
+offset_top = 368.0
+offset_right = 720.0
+offset_bottom = 448.0
+texture = ExtResource("5_3c8yb")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
+[connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
