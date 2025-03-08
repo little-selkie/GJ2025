@@ -121,6 +121,7 @@ func _on_health_collision_area_entered(area: Area2D) -> void:
 			print(GlobalVars.player_health)
 			if GlobalVars.player_health == 0:
 				print("u ded")
+				get_tree().change_scene_to_file("res://0_Scenes/dead_screen.tscn")
 	else:
 		print("something buggy idk")
 
