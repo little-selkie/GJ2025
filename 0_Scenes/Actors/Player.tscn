@@ -119,6 +119,8 @@ libraries = {
 autoplay = "LightFlicker"
 
 [node name="CharCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 12)
+scale = Vector2(0.764779, 0.53367)
 shape = SubResource("CapsuleShape2D_afc57")
 debug_color = Color(0, 0.595, 0.7, 0.0117647)
 
