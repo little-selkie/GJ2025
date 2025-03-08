@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxj166jpfihj3"]
+[gd_scene load_steps=16 format=3 uid="uid://bxj166jpfihj3"]
 
+[ext_resource type="Script" path="res://1_Scripts/HealthBar.gd" id="1_dlrs6"]
 [ext_resource type="Texture2D" uid="uid://bppcf0yfpoehp" path="res://2_Images/UI/progress_white_border.png" id="1_jgpxd"]
 [ext_resource type="Texture2D" uid="uid://dh2ua0y1pta1i" path="res://2_Images/UI/progress_red_border.png" id="2_np1br"]
 [ext_resource type="Texture2D" uid="uid://mwvxtnelw61w" path="res://2_Images/UI/image-from-rawpixel-id-9778626-fade.png" id="3_761sx"]
@@ -13,11 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://chd6qjbl03ks5" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector2.png" id="11_bo03c"]
 [ext_resource type="Texture2D" uid="uid://c3nkck8vnwrlt" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector3.png" id="12_7ox30"]
 
+[sub_resource type="GDScript" id="GDScript_o3x5r"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_fmdan"]
 font_size = 20
 font_color = Color(0.20871, 0.20871, 0.20871, 1)
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_dlrs6")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(75, 150)
@@ -29,12 +33,13 @@ offset_top = -58.0
 offset_right = 96.0
 offset_bottom = 92.0
 grow_vertical = 2
-max_value = 3.0
+max_value = 10.0
 value = 1.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("1_jgpxd")
 texture_progress = ExtResource("2_np1br")
+script = SubResource("GDScript_o3x5r")
 
 [node name="CandleBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(75, 150)
