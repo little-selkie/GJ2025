@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://sbxcebg2mnjy"]
+[gd_scene load_steps=14 format=4 uid="uid://sbxcebg2mnjy"]
 
 [ext_resource type="Texture2D" uid="uid://bgufya74b24no" path="res://98_Placeholders/Images/Tileset/Dark_lvl2.png" id="1_c1b6f"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_w6i4q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="3_ar040"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="3_b8nse"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="3_m4a7e"]
+[ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="7_pnno7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdsnf"]
 texture = ExtResource("1_c1b6f")
@@ -159,3 +160,7 @@ rotation = 0.631192
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_lw6xu")
 navigation_layers = 16
+
+[node name="SakuraTree" type="Sprite2D" parent="."]
+position = Vector2(932, 169)
+texture = ExtResource("7_pnno7")
