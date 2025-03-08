@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var friction = 10000
 
 @export var sound_booster = 15
-@export var sound_pitcher = 1
+@export var sound_pitcher = 10
 
 @onready var axis = Vector2.ZERO
 
@@ -19,7 +19,7 @@ var is_moving: bool = false
 
 func _ready() -> void:
 	get_node("GhostFinder").volume_db = -80
-	get_node("GhostFinder").pitch_scale = 0.9
+	get_node("GhostFinder").pitch_scale = 1
 
 func _physics_process(delta):
 	if Input.is_action_pressed("move_down") or Input.is_action_pressed("move_up") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
@@ -29,17 +29,32 @@ func _physics_process(delta):
 		is_moving = false
 	move(delta)
 	if len(current_ghosts) == 0:
-		get_node("GhostFinder").volume_db = -80
-		get_node("GhostFinder").pitch_scale = 0.9
+		get_node("GhostFinder").volume_db = 10
+		get_node("GhostFinder").pitch_scale = 1
 	if len(current_ghosts) != 0:
 		var ghost: int = 0
 		while (ghost <= len(current_ghosts) - 1):
 			ghost_locations[ghost] = global_position.distance_to(current_ghosts[ghost].global_position)
 			min_distance_to_ghost = ghost_locations.min()
+			if 10/(ghost_locations[ghost] + 0.001) < 0.8:
+				current_ghosts[ghost].get_parent().modulate.a = 10/(ghost_locations[ghost] + 0.001)
+			else:
+				current_ghosts[ghost].get_parent().modulate.a = 1
+			print(ghost_locations[ghost])
 			ghost += 1
-		if min_distance_to_ghost > 10:
-			get_node("GhostFinder").volume_db = -20 + (10/min_distance_to_ghost * sound_booster)
-			get_node("GhostFinder").pitch_scale = 0.9 + (1/min_distance_to_ghost * sound_pitcher)
+		if min_distance_to_ghost < 400 and min_distance_to_ghost > 200:
+			#get_node("GhostFinder").volume_db = 10 + (10/min_distance_to_ghost * sound_booster * 2)
+			#get_node("GhostFinder").pitch_scale = 1.5 + (1/min_distance_to_ghost * sound_pitcher * 1)
+			get_node("GhostFinder").volume_db = 10
+			get_node("GhostFinder").pitch_scale = 1.5
+		if min_distance_to_ghost < 200 and min_distance_to_ghost > 100:
+			get_node("GhostFinder").volume_db = 13
+			get_node("GhostFinder").pitch_scale = 2.3
+		if min_distance_to_ghost < 100 and min_distance_to_ghost > 10:
+			#get_node("GhostFinder").volume_db = 15 + (10/min_distance_to_ghost * sound_booster * 1)
+			#get_node("GhostFinder").pitch_scale = 3 + (1/min_distance_to_ghost * sound_pitcher * 1)
+			get_node("GhostFinder").volume_db = 15
+			get_node("GhostFinder").pitch_scale = 3
 	
 	if ghost_touching:
 		if !was_hit:
@@ -107,20 +122,21 @@ func _on_health_collision_area_exited(area: Area2D) -> void:
 
 func _on_ghost_finding_area_area_entered(area: Area2D) -> void:
 	if len(current_ghosts) == 0:
-		get_node("GhostFinder").volume_db = -10
-		get_node("GhostFinder").pitch_scale = 0.9
+		get_node("GhostFinder").volume_db = -80
+		get_node("GhostFinder").pitch_scale = 1
 		min_distance_to_ghost = global_position.distance_to(area.global_position)
 	current_ghosts.append(area)
 	ghost_locations.append(position.distance_to(area.global_position))
 
 
 func _on_ghost_finding_area_area_exited(area: Area2D) -> void:
+	area.get_parent().modulate.a = 0
 	if len(current_ghosts) >= 1:
 		current_ghosts.erase(area)
 		ghost_locations.slice(-1)
 	if len(current_ghosts) == 0:
 		get_node("GhostFinder").volume_db = -80
-		get_node("GhostFinder").pitch_scale = 0.9
+		get_node("GhostFinder").pitch_scale = 1
 
 
 func _on_hit_timer_timeout() -> void:

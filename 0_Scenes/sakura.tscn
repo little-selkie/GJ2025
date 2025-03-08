@@ -1,9 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpqcide5dqkh1"]
+[gd_scene load_steps=7 format=3 uid="uid://dpqcide5dqkh1"]
 
 [ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="1_hma3y"]
+[ext_resource type="Texture2D" uid="uid://b8ykcqim2prb" path="res://2_Images/Props/sakura-petals-png-34554.png" id="2_b6sxg"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yvv72"]
 polygon = PackedVector2Array(-1, 125, -7, 117, 5, 114, -6, 111, -25, 103, -24, 94, -9, 87, 1, 75, 12, 68, 23, 68, 33, 58, 48, 52, 49, 33, 46, 16, 44, 5, 58, -5, 77, -3, 81, 21, 90, 40, 83, 56, 83, 75, 98, 84, 103, 95, 112, 104, 110, 110, 90, 119, 65, 116, 43, 105, 27, 98, 17, 102, 24, 112, 21, 120, 11, 125)
+
+[sub_resource type="Gradient" id="Gradient_ewfio"]
+offsets = PackedFloat32Array(0, 0.482759, 1)
+colors = PackedColorArray(0.768627, 0.415686, 0.462745, 0.156863, 0.976471, 0.509804, 0.596078, 1, 0.827451, 0.486275, 0.498039, 0.176471)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kw77t"]
+gradient = SubResource("Gradient_ewfio")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mb2bq"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1000, 1000, 1000)
+emission_shape = 1
+emission_sphere_radius = 82.91
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+gravity = Vector3(-80, 30, 0)
+scale_min = 0.0
+scale_max = 0.02
+color_ramp = SubResource("GradientTexture1D_kw77t")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
 
 [node name="Sakura" type="StaticBody2D"]
 
@@ -15,3 +37,13 @@ polygon = PackedVector2Array(18, 102, 25, 112, 22, 118, 16, 124, 0, 125, -5, 120
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_yvv72")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -54)
+scale = Vector2(0.001, 0.001)
+amount_ratio = 0.5021
+process_material = SubResource("ParticleProcessMaterial_mb2bq")
+texture = ExtResource("2_b6sxg")
+lifetime = 3.0
+speed_scale = 0.8
+randomness = 0.25

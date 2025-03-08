@@ -16,9 +16,10 @@ var starting_velocity: Vector2
 var path_starting_position: Vector2
 
 var is_fading: bool = false
-var is_appearing: bool = false
+#var is_appearing: bool = false
 
 func _ready() -> void:
+	self.modulate.a = 0
 	starting_position = self.global_position
 	starting_velocity = velocity
 	path_starting_position = pathfollow.global_position
@@ -31,11 +32,11 @@ func _physics_process(delta):
 			self.modulate.a -= 0.005
 		else:
 			is_fading = false
-	if is_appearing == true:
-		if self.modulate.a < 1:
-			self.modulate.a += 0.01
-		else:
-			is_appearing = false
+	#if is_appearing == true:
+		#if self.modulate.a < 1:
+			#self.modulate.a += 0.01
+		#else:
+			#is_appearing = false
 	if is_patrolling == true and in_position == true:
 		pathfollow.progress += ghost_speed * delta
 	if is_hunting == true:
@@ -45,7 +46,7 @@ func _physics_process(delta):
 	
 
 func _on_vision_area_entered(area: Area2D) -> void:
-	self.modulate.a = 1
+	#self.modulate.a = 1
 	is_fading = false
 	$Timer.stop()
 	$fading.stop()
@@ -81,4 +82,5 @@ func _on_fading_timeout() -> void:
 	in_position = true
 	print("return")
 	is_fading = false
-	is_appearing = true
+	self.modulate.a = 0
+	#is_appearing = true
