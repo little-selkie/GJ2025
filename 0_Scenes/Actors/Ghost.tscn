@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://5obyp7tmx8d5"]
+[gd_scene load_steps=13 format=3 uid="uid://5obyp7tmx8d5"]
 
 [ext_resource type="Script" path="res://1_Scripts/ghost.gd" id="1_buk2y"]
 [ext_resource type="Texture2D" uid="uid://i37lj6y78u34" path="res://2_Images/Actors/ghost.png" id="2_8vvv0"]
 [ext_resource type="AudioStream" uid="uid://c1rj7bw7pcjs7" path="res://3_Audio/SFX/ghost_hunting_sound.mp3" id="3_uk3cu"]
 [ext_resource type="AudioStream" uid="uid://c8ualmfe017sx" path="res://3_Audio/SFX/ghost_despawn.wav" id="4_xw6tp"]
+[ext_resource type="AudioStream" uid="uid://56mk5752amsf" path="res://3_Audio/SFX/short-choir-6116.mp3" id="5_xskb2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r51hn"]
 
@@ -17,6 +18,91 @@ radius = 84.7172
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u20mc"]
 polygon = PackedVector2Array(16, 11, 18, 8, 17, 2, 13, -13, 15, -21, 4, -34, -5, -34, -14, -24, -13, -15, -15, -7, -17, -1, -17, 17, -14, 24, -8, 27, -5, 23, -3, 27, 0, 27, 3, 22, 7, 27, 10, 22, 15, 28)
 
+[sub_resource type="Animation" id="Animation_ft6pq"]
+resource_name = "ghost_free"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ghost:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -3), Vector2(-2, -50)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightOccluder2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -47)]
+}
+
+[sub_resource type="Animation" id="Animation_pynrw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ghost:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightOccluder2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7k330"]
+_data = {
+"RESET": SubResource("Animation_pynrw"),
+"ghost_free": SubResource("Animation_ft6pq")
+}
+
 [node name="Ghost" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
@@ -27,14 +113,12 @@ position = Vector2(-2, -3)
 texture = ExtResource("2_8vvv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(8.15094e-06, -2)
 shape = SubResource("CapsuleShape2D_r51hn")
 disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="PlayerCollider" type="Area2D" parent="."]
-visible = false
 collision_layer = 128
 collision_mask = 2
 
@@ -43,7 +127,6 @@ shape = SubResource("CapsuleShape2D_h6k13")
 debug_color = Color(0.972549, 0, 0.164706, 0.266667)
 
 [node name="Vision" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -73,7 +156,21 @@ parameters/looping = true
 [node name="GhostDespawning" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xw6tp")
 
+[node name="SoulFreed" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="SoulFreedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xskb2")
+volume_db = -10.0
+
+[node name="FreedAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7k330")
+}
+
 [connection signal="area_entered" from="Vision" to="." method="_on_vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_vision_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="fading" to="." method="_on_fading_timeout"]
+[connection signal="timeout" from="SoulFreed" to="." method="_on_soul_freed_timeout"]
