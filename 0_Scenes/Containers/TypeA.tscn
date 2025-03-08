@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgnw8oujwkuaf"]
+
+[ext_resource type="Script" path="res://1_Scripts/container_logic.gd" id="1_nxck4"]
+[ext_resource type="Texture2D" uid="uid://daylgetex6cq6" path="res://2_Images/Props/furniture.png" id="2_gw281"]
+[ext_resource type="AudioStream" uid="uid://pkhdp6enxyt0" path="res://3_Audio/SFX/interact.mp3" id="3_nhwdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d3mj"]
+size = Vector2(122, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7la3"]
+size = Vector2(130, 64.5)
+
+[sub_resource type="Animation" id="Animation_uhcmy"]
+resource_name = "searching"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-3, -1), Vector2(2, -1), Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_nd1cr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_skxl8"]
+_data = {
+"RESET": SubResource("Animation_nd1cr"),
+"searching": SubResource("Animation_uhcmy")
+}
+
+[node name="TypeA" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_nxck4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_6d3mj")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_gw281")
+region_enabled = true
+region_rect = Rect2(64.9474, 0, 126.583, 62.7683)
+
+[node name="AreaInteraction" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteraction"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_n7la3")
+
+[node name="Interaction" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nhwdl")
+volume_db = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_skxl8")
+}
+
+[connection signal="area_entered" from="AreaInteraction" to="." method="_on_area_interaction_area_entered"]
+[connection signal="area_exited" from="AreaInteraction" to="." method="_on_area_interaction_area_exited"]
