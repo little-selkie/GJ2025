@@ -169,6 +169,7 @@ texture = ExtResource("9_onlmy")
 expand_mode = 2
 
 [node name="Interact" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchor_left = 0.559
 anchor_top = 0.5
