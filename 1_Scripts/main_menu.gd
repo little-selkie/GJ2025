@@ -1,6 +1,5 @@
 extends Control
 
-@onready var transition = $Transition
 
 
 
@@ -8,14 +7,19 @@ extends Control
 
 func _on_button_pressed() -> void:
 	$VBoxContainer/Button/Click.play()
-	transition.play("fade_out")
-
-func _on_transition_animation_finished(_anim_name):
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://0_Scenes/MainScene.tscn")
 
+
+
 func _on_exit_pressed() -> void:
-	get_tree().quit()
 	$VBoxContainer/Button2/Click2.play()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://0_Scenes/main_menu.tscn")
+	
+
 
 
 func _on_button_mouse_entered() -> void:
