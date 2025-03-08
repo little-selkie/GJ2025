@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=80 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="2_s5qhx"]
 [ext_resource type="PackedScene" uid="uid://dnyvf7q5p5bqx" path="res://0_Scenes/TestLight.tscn" id="4_pmlgf"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ifay3a8po2f" path="res://0_Scenes/Furniture/table_long.tscn" id="25_jfkwc"]
 [ext_resource type="PackedScene" uid="uid://bjdsr1t3ewcew" path="res://0_Scenes/Furniture/seat_3.tscn" id="26_6jk3l"]
 [ext_resource type="PackedScene" uid="uid://b57f63ck54tis" path="res://0_Scenes/Furniture/drawersmall.tscn" id="27_1tbpe"]
+[ext_resource type="PackedScene" uid="uid://de6t87wautxll" path="res://0_Scenes/Furniture/seat_2.tscn" id="28_koao6"]
 [ext_resource type="PackedScene" uid="uid://bmw7x31awf5lp" path="res://0_Scenes/Containers/TypeC.tscn" id="35_lk251"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
@@ -1845,7 +1846,7 @@ tile_map_data = PackedByteArray("AAAAAAkAAgAGAAYAAAAAAAoAAgAGAAcAAAABAAkAAgAHAAY
 tile_set = SubResource("TileSet_1rkfe")
 
 [node name="TileMapLayer - furniture" type="TileMapLayer" parent="Area2D"]
-tile_map_data = PackedByteArray("AAAVAAkAAwADAAAAAAAWAAkAAwAEAAAAAAAXAAkAAwAAAAAAAAAaAAoAAwAAAAMAAAAcAAwAAwAEAAIAAFAbAAwAAwAEAAMAAFAaAAwAAwAEAAIAAFAZAAwAAwAEAAMAAFAOAAQAAwADAAAAAGAOAAMAAwAEAAAAAGAOAAIAAwADAAAAAGAOAAEAAwAEAAAAAGAJABwAAwABAAAAAAAKABwAAwACAAAAAAALABwAAwADAAAAAAAMABwAAwAEAAAAAAANABwAAwAAAAAAAAABABUAAwAAAAEAAAAGABUAAwAAAAEAAAAFABUAAwAAAAEAAADu/xMAAwADAAAAAADv/xMAAwAEAAAAAADz/xsAAwABAAAAAAD0/xsAAwACAAAAAAARAAgAAwAAAAMAAAAWAAMAAwAAAAMAAAAOABYAAwAAAAMAAAALABMAAwAAAAMAAAAGABsAAwAAAAMAAADw/wcAAwADAAEAAADx/wcAAwAEAAEAAAAMAAYAAwADAAMAAAALAAsAAwABAAEAAAAMAAsAAwACAAEAAAAEACMAAwAAAAMAAAALACEAAwAAAAMAAAD7/wwAAwADAAAAAAD8/wwAAwAEAAAAAAD9/wwAAwAAAAAAAADx/xEAAwABAAAAAADy/xEAAwACAAAAAAD8/wEAAwABAAAAAAD9/wEAAwACAAAAAAD3/wYAAwAAAAMAAAD8/wkAAwAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAOAAQAAwADAAAAAGAOAAMAAwAEAAAAAGAOAAIAAwADAAAAAGAOAAEAAwAEAAAAAGAJABwAAwABAAAAAAAKABwAAwACAAAAAAALABwAAwADAAAAAAAMABwAAwAEAAAAAAANABwAAwAAAAAAAAARAAgAAwAAAAMAAAAWAAMAAwAAAAMAAADw/wcAAwADAAEAAADx/wcAAwAEAAEAAAAMAAYAAwADAAMAAAALAAsAAwABAAEAAAAMAAsAAwACAAEAAAAEACMAAwAAAAMAAAALACEAAwAAAAMAAAD7/wwAAwADAAAAAAD8/wwAAwAEAAAAAAD9/wwAAwAAAAAAAADx/xEAAwABAAAAAADy/xEAAwACAAAAAAD8/wEAAwABAAAAAAD9/wEAAwACAAAAAAD3/wYAAwAAAAMAAAD8/wkAAwAAAAMAAAA=")
 tile_set = SubResource("TileSet_p1aod")
 
 [node name="Doors" type="Node2D" parent="."]
@@ -1893,20 +1894,12 @@ rotation = -1.5708
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="TestLight" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(-1022, 793)
-scale = Vector2(0.361722, 0.327081)
-
 [node name="TestLight2" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(507, 52.0001)
+position = Vector2(1432, 744)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight3" parent="Lights" instance=ExtResource("4_pmlgf")]
 position = Vector2(1749, 959)
-scale = Vector2(0.361722, 0.327081)
-
-[node name="TestLight4" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(1327, 2028)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight5" parent="Lights" instance=ExtResource("4_pmlgf")]
@@ -1917,16 +1910,12 @@ scale = Vector2(0.361722, 0.327081)
 position = Vector2(-232, 223)
 scale = Vector2(0.361722, 0.327081)
 
-[node name="TestLight7" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(640, 80.0001)
-scale = Vector2(0.361722, 0.327081)
-
 [node name="TestLight8" parent="Lights" instance=ExtResource("4_pmlgf")]
 position = Vector2(829, 2353)
 scale = Vector2(0.361722, 0.327081)
 
 [node name="TestLight9" parent="Lights" instance=ExtResource("4_pmlgf")]
-position = Vector2(-956, 1820)
+position = Vector2(-1015, 1838)
 scale = Vector2(0.2, 0.181)
 
 [node name="PaperLightCube" parent="Lights" instance=ExtResource("12_e3wha")]
@@ -1934,6 +1923,12 @@ position = Vector2(426, 1081)
 
 [node name="PaperLightSphere" parent="Lights" instance=ExtResource("13_m3aac")]
 position = Vector2(1765, 143)
+
+[node name="PaperLightSphere2" parent="Lights" instance=ExtResource("13_m3aac")]
+position = Vector2(1654, 1932)
+
+[node name="PaperLightSphere3" parent="Lights" instance=ExtResource("13_m3aac")]
+position = Vector2(-751, 704)
 
 [node name="furniture" type="Node2D" parent="."]
 
@@ -1956,14 +1951,16 @@ z_index = 1
 position = Vector2(692, 374)
 
 [node name="Blueshrine" parent="furniture" instance=ExtResource("11_odrsl")]
-position = Vector2(-1031, 1616)
+z_index = 1
+position = Vector2(-624, 1564)
 
 [node name="greenshrine" parent="furniture" instance=ExtResource("12_kpqo3")]
 z_index = 1
 position = Vector2(1266, 1159)
 
 [node name="yellowshrine" parent="furniture" instance=ExtResource("13_4npkv")]
-position = Vector2(93, 1330)
+z_index = 1
+position = Vector2(43, 1438)
 
 [node name="TableBig" parent="furniture" instance=ExtResource("17_7n2c7")]
 z_index = 1
@@ -1994,6 +1991,13 @@ position = Vector2(1741, 2418)
 [node name="Stool" parent="furniture" instance=ExtResource("23_yyw1m")]
 position = Vector2(1265, 1205)
 
+[node name="Stool2" parent="furniture" instance=ExtResource("23_yyw1m")]
+position = Vector2(46, 1484)
+
+[node name="Stool3" parent="furniture" instance=ExtResource("23_yyw1m")]
+position = Vector2(-605, 1616)
+rotation = -0.0979975
+
 [node name="Seat1" parent="furniture" instance=ExtResource("24_7khx1")]
 position = Vector2(1301, 984)
 
@@ -2008,6 +2012,14 @@ rotation = -1.57151
 
 [node name="Seat8" parent="furniture" instance=ExtResource("19_v1hsv")]
 position = Vector2(-898, 2174)
+
+[node name="Seat14" parent="furniture" instance=ExtResource("19_v1hsv")]
+position = Vector2(-1041, 1540)
+rotation = -0.205671
+
+[node name="Seat15" parent="furniture" instance=ExtResource("19_v1hsv")]
+position = Vector2(-992, 1566)
+rotation = 0.390965
 
 [node name="Seat3" parent="furniture" instance=ExtResource("26_6jk3l")]
 position = Vector2(-797, 2220)
@@ -2025,6 +2037,10 @@ rotation = 0.320414
 position = Vector2(-65, 2272)
 rotation = 1.22608
 
+[node name="DrawersSmall2" parent="furniture" instance=ExtResource("27_1tbpe")]
+position = Vector2(-962, 1284)
+rotation = 1.22608
+
 [node name="Bench2" parent="furniture" instance=ExtResource("20_rehry")]
 position = Vector2(-379, 1894)
 rotation = -0.86269
@@ -2034,8 +2050,28 @@ position = Vector2(1146, 1264)
 rotation = 1.34561
 
 [node name="Bench4" parent="furniture" instance=ExtResource("20_rehry")]
-position = Vector2(1146, 1264)
-rotation = 1.34561
+position = Vector2(433, 1363)
+rotation = -0.112928
+
+[node name="Seat11" parent="furniture" instance=ExtResource("19_v1hsv")]
+position = Vector2(510, 1647)
+rotation = 1.40574
+
+[node name="Seat12" parent="furniture" instance=ExtResource("19_v1hsv")]
+position = Vector2(509, 1703)
+rotation = 1.6125
+
+[node name="Seat13" parent="furniture" instance=ExtResource("19_v1hsv")]
+position = Vector2(156, 1702)
+rotation = 0.725055
+
+[node name="Seat2" parent="furniture" instance=ExtResource("28_koao6")]
+position = Vector2(753, 1639)
+rotation = -0.336237
+
+[node name="Seat16" parent="furniture" instance=ExtResource("28_koao6")]
+position = Vector2(1036, 1443)
+rotation = 0.0991627
 
 [node name="Keys+amulet" type="Node2D" parent="."]
 
@@ -2044,7 +2080,8 @@ position = Vector2(1859, 1692)
 rotation = 1.5708
 
 [node name="Key2" parent="Keys+amulet" instance=ExtResource("19_xi3lx")]
-position = Vector2(1803, 675)
+position = Vector2(1842, 668)
+rotation = 1.5708
 
 [node name="Key3" parent="Keys+amulet" instance=ExtResource("20_q7dt0")]
 position = Vector2(-658, 107)
@@ -2059,16 +2096,24 @@ position = Vector2(1263, 1164)
 
 [node name="Amulets2" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
 z_index = -1
-position = Vector2(-1040, 1608)
+position = Vector2(-624, 1570)
 
 [node name="Amulets3" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
 z_index = -1
-position = Vector2(85, 1323)
+position = Vector2(36, 1438)
 
 [node name="Containers" type="Node2D" parent="."]
 
 [node name="TypeA" parent="Containers" instance=ExtResource("22_jhexa")]
 position = Vector2(-641, 113)
+
+[node name="TypeA5" parent="Containers" instance=ExtResource("22_jhexa")]
+position = Vector2(-1065, 1251)
+rotation = 0.106034
+
+[node name="TypeA6" parent="Containers" instance=ExtResource("22_jhexa")]
+position = Vector2(1420, 611)
+rotation = 0.106034
 
 [node name="TypeA2" parent="Containers" instance=ExtResource("23_8vsrc")]
 position = Vector2(1855, 1706)
@@ -2077,6 +2122,10 @@ rotation = 1.5708
 [node name="TypeA3" parent="Containers" instance=ExtResource("23_8vsrc")]
 position = Vector2(1848, 1833)
 rotation = 1.6978
+
+[node name="TypeA7" parent="Containers" instance=ExtResource("23_8vsrc")]
+position = Vector2(1838, 694)
+rotation = 1.67939
 
 [node name="TypeA4" parent="Containers" instance=ExtResource("35_lk251")]
 position = Vector2(-69, 2346)
