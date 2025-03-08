@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://hv6fnp78mu8h"]
+[gd_scene load_steps=11 format=3 uid="uid://cwnft0nv68qet"]
 
-[ext_resource type="Script" path="res://1_Scripts/door_logic.gd" id="1_ov1nv"]
-[ext_resource type="Texture2D" uid="uid://do5quwb17yfrg" path="res://2_Images/Tiles/door.png" id="2_vuvu3"]
-[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_1cel7"]
+[ext_resource type="Script" path="res://1_Scripts/door_logic.gd" id="1_3fg2r"]
+[ext_resource type="Texture2D" uid="uid://do5quwb17yfrg" path="res://2_Images/Tiles/door.png" id="2_lp5ix"]
+[ext_resource type="Texture2D" uid="uid://cd72m5byd5hdb" path="res://2_Images/UI/panelInset_beige.png" id="3_4h6p8"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_0nl7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(128, 64)
@@ -76,17 +77,17 @@ _data = {
 [node name="Door" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_ov1nv")
+script = ExtResource("1_3fg2r")
 
 [node name="LeftSide" type="Polygon2D" parent="."]
 position = Vector2(-64, -32)
-texture = ExtResource("2_vuvu3")
+texture = ExtResource("2_lp5ix")
 polygon = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
 uv = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
 
 [node name="RightSide" type="Polygon2D" parent="."]
 position = Vector2(-64, -32)
-texture = ExtResource("2_vuvu3")
+texture = ExtResource("2_lp5ix")
 polygon = PackedVector2Array(127.989, 64.1007, 128.015, 0.0096941, 63.9985, -0.0014987, 64.0073, 64.0055)
 uv = PackedVector2Array(127.989, 64.1007, 128.015, 0.0096941, 63.9985, -0.0014987, 64.0073, 64.0055)
 
@@ -111,6 +112,15 @@ libraries = {
 }
 
 [node name="Interact" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="background" type="TextureRect" parent="Interact"]
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 224.0
+offset_bottom = 16.0
+texture = ExtResource("3_4h6p8")
+expand_mode = 1
 
 [node name="InteractText" type="Label" parent="Interact"]
 anchors_preset = 8
@@ -118,14 +128,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 48.0
+offset_left = 12.0
 offset_top = -40.0
-offset_right = 204.0
+offset_right = 168.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
-theme_override_fonts/font = ExtResource("4_1cel7")
+theme_override_fonts/font = ExtResource("4_0nl7j")
 theme_override_font_sizes/font_size = 33
 text = "[E] TO INTERACT"
 

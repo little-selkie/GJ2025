@@ -10,11 +10,13 @@ func _process(delta: float) -> void:
 func _on_area_of_interaction_area_entered(area: Area2D) -> void:
 	print("you can open")
 	is_player_near = true
+	get_node("Interact").visible = true
 
 
 func _on_area_of_interaction_area_exited(area: Area2D) -> void:
 	print("you can't open")
 	is_player_near = false
+	get_node("Interact").visible = false
 	
 func open_door() -> void:
 	get_node("CollisionShape2D").disabled = true
