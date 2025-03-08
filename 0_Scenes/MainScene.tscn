@@ -75,7 +75,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1153, 104, -146, 102, 
 [node name="House" parent="." instance=ExtResource("1_igfsh")]
 
 [node name="Player" parent="." instance=ExtResource("2_vea6q")]
-position = Vector2(404, 290)
+position = Vector2(356, 458)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_top = -100
