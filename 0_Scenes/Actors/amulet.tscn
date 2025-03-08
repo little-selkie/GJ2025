@@ -79,6 +79,7 @@ shape = SubResource("RectangleShape2D_rkpky")
 debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 position = Vector2(9, 9)
 occluder = SubResource("OccluderPolygon2D_11k2k")
 
