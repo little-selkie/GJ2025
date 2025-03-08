@@ -29,7 +29,7 @@ func _physics_process(delta):
 		is_moving = false
 	move(delta)
 	if len(current_ghosts) == 0:
-		get_node("GhostFinder").volume_db = 10
+		get_node("GhostFinder").volume_db = -80
 		get_node("GhostFinder").pitch_scale = 1
 	if len(current_ghosts) != 0:
 		var ghost: int = 0
@@ -40,7 +40,6 @@ func _physics_process(delta):
 				current_ghosts[ghost].get_parent().modulate.a = 10/(ghost_locations[ghost] + 0.001)
 			else:
 				current_ghosts[ghost].get_parent().modulate.a = 1
-			print(ghost_locations[ghost])
 			ghost += 1
 		if min_distance_to_ghost < 400 and min_distance_to_ghost > 200:
 			#get_node("GhostFinder").volume_db = 10 + (10/min_distance_to_ghost * sound_booster * 2)
