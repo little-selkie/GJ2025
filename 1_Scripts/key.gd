@@ -2,10 +2,14 @@ extends StaticBody2D
 
 var is_player_near: bool = false
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("interact"):
 		if is_player_near:
 			open_door()
+
+		$Key.update_key()
+
 
 func _on_area_of_interaction_area_entered(area: Area2D) -> void:
 	print("you can pick up")
@@ -22,4 +26,12 @@ func open_door() -> void:
 	get_node("CollisionShape2D").disabled = true
 	get_node("AreaOfInteraction").monitoring = false
 	get_node("LightOccluder2D").visible = false
+	if GlobalVars.key != 3: 
+		GlobalVars.key += 1
+		print(GlobalVars.key)
+		if GlobalVars.key == 3:
+			print("u full")
+		else: 
+			print("u full")
+			
 	$AnimationPlayer.play("door_open")
