@@ -1074,8 +1074,9 @@ rotation = 1.5708
 position = Vector2(-658, 107)
 
 [node name="Note" parent="Keys+amulet" instance=ExtResource("21_kxfon")]
-z_index = -1
-position = Vector2(665, 358)
+position = Vector2(622, 428)
+rotation = -0.451148
+scale = Vector2(2, 2)
 
 [node name="Amulets" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
 z_index = -1
