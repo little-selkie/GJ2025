@@ -13,7 +13,7 @@ height = 54.0
 radius = 84.7172
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u20mc"]
-polygon = PackedVector2Array(10, 16, 18, 7, 29, 3, 20, -10, 23, -17, 26, -24, 23, -29, 18, -28, 14, -23, 4, -31, -6, -31, -15, -26, -19, -29, -25, -27, -25, -20, -21, -18, -21, -10, -29, -3, -20, 8, -16, 15, -9, 17, -6, 23, -3, 23, 1, 19, 6, 21)
+polygon = PackedVector2Array(16, 11, 18, 8, 17, 2, 13, -13, 15, -21, 4, -34, -5, -34, -14, -24, -13, -15, -15, -7, -17, -1, -17, 17, -14, 24, -8, 27, -5, 23, -3, 27, 0, 27, 3, 22, 7, 27, 10, 22, 15, 28)
 
 [node name="Ghost" type="CharacterBody2D"]
 collision_layer = 2
@@ -25,12 +25,14 @@ position = Vector2(-2, -3)
 texture = ExtResource("2_8vvv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(8.15094e-06, -2)
 shape = SubResource("CapsuleShape2D_r51hn")
 disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="PlayerCollider" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 2
 
@@ -39,6 +41,7 @@ shape = SubResource("CapsuleShape2D_h6k13")
 debug_color = Color(0.972549, 0, 0.164706, 0.266667)
 
 [node name="Vision" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 

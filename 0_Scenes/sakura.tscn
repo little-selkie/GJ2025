@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpqcide5dqkh1"]
+
+[ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="1_hma3y"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yvv72"]
+polygon = PackedVector2Array(-1, 125, -7, 117, 5, 114, -6, 111, -25, 103, -24, 94, -9, 87, 1, 75, 12, 68, 23, 68, 33, 58, 48, 52, 49, 33, 46, 16, 44, 5, 58, -5, 77, -3, 81, 21, 90, 40, 83, 56, 83, 75, 98, 84, 103, 95, 112, 104, 110, 110, 90, 119, 65, 116, 43, 105, 27, 98, 17, 102, 24, 112, 21, 120, 11, 125)
+
+[node name="Sakura" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hma3y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(18, 102, 25, 112, 22, 118, 16, 124, 0, 125, -5, 120, 3, 114, -2, 112, -17, 109, -26, 98, -21, 90, -7, 86, 2, 74, 11, 68, 21, 68, 33, 58, 48, 52, 45, 7, 57, -4, 76, -2, 89, 38, 89, 50, 83, 58, 82, 74, 94, 82, 104, 96, 112, 104, 110, 111, 94, 118, 75, 119, 53, 111, 36, 102, 28, 98)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_yvv72")
