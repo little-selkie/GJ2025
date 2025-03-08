@@ -1798,7 +1798,7 @@ scale = Vector2(0.2, 0.181)
 [node name="furniture" type="Node2D" parent="."]
 
 [node name="toilet" type="StaticBody2D" parent="furniture"]
-collision_layer = 9
+collision_layer = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="furniture/toilet"]
 position = Vector2(-1103, 131)
@@ -1812,7 +1812,7 @@ polygon = PackedVector2Array(-1124, 94, -1124, 122, -1117, 122, -1118, 124, -112
 occluder = SubResource("OccluderPolygon2D_ou4jc")
 
 [node name="drawer1" type="StaticBody2D" parent="furniture"]
-collision_layer = 8
+collision_layer = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="furniture/drawer1"]
 position = Vector2(1807, 139)
@@ -1827,7 +1827,7 @@ occluder = SubResource("OccluderPolygon2D_6dd17")
 
 [node name="drawer2" type="StaticBody2D" parent="furniture"]
 position = Vector2(-115, 0)
-collision_layer = 8
+collision_layer = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="furniture/drawer2"]
 position = Vector2(1807, 139)
@@ -1841,7 +1841,7 @@ polygon = PackedVector2Array(1749, 92, 1749, 122, 1753, 129, 1753, 166, 1749, 17
 occluder = SubResource("OccluderPolygon2D_6dd17")
 
 [node name="smalldrawer" type="StaticBody2D" parent="furniture"]
-collision_layer = 8
+collision_layer = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="furniture/smalldrawer"]
 position = Vector2(1605, 143)
@@ -1856,7 +1856,7 @@ polygon = PackedVector2Array(1576, 99, 1576, 135, 1581, 141, 1580, 163, 1576, 16
 
 [node name="Sakura" type="StaticBody2D" parent="."]
 position = Vector2(744, 285)
-collision_layer = 8
+collision_layer = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Sakura"]
 texture = ExtResource("15_xorxr")
