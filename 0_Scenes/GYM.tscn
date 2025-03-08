@@ -183,4 +183,8 @@ position = Vector2(64, 328)
 position = Vector2(64, 480)
 
 [node name="Key4" parent="." instance=ExtResource("12_lt1w8")]
+<<<<<<< HEAD
 position = Vector2(88, 656)
+=======
+position = Vector2(88, 656)
+>>>>>>> a337e91cb69e1b4342fd3000204356b2d194272e
