@@ -1,18 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxj166jpfihj3"]
+[gd_scene load_steps=9 format=3 uid="uid://bxj166jpfihj3"]
 
 [ext_resource type="Script" path="res://1_Scripts/HealthBar.gd" id="1_dlrs6"]
 [ext_resource type="Texture2D" uid="uid://bppcf0yfpoehp" path="res://2_Images/UI/progress_white_border.png" id="1_jgpxd"]
 [ext_resource type="Texture2D" uid="uid://dh2ua0y1pta1i" path="res://2_Images/UI/progress_red_border.png" id="2_np1br"]
 [ext_resource type="Texture2D" uid="uid://mwvxtnelw61w" path="res://2_Images/UI/image-from-rawpixel-id-9778626-fade.png" id="3_761sx"]
 [ext_resource type="Texture2D" uid="uid://cwrkdbkwdj1sf" path="res://2_Images/UI/image-from-rawpixel-id-9778626-png.png" id="4_qlwnq"]
-[ext_resource type="Texture2D" uid="uid://cd72m5byd5hdb" path="res://2_Images/UI/panelInset_beige.png" id="5_g1kow"]
-[ext_resource type="Texture2D" uid="uid://ex4tabhtsvp7" path="res://2_Images/UI/EMF090_T2.webp" id="6_nrhpm"]
+[ext_resource type="Texture2D" uid="uid://jnp5qb7wosvl" path="res://2_Images/UI/NewUI/ghost_bell.png" id="6_ps70g"]
 [ext_resource type="Texture2D" uid="uid://bui60tlk8ng20" path="res://2_Images/UI/HUD/audioOff.png" id="7_vmjru"]
 [ext_resource type="Texture2D" uid="uid://d1p0arloquxx" path="res://2_Images/UI/HUD/audioOn.png" id="8_y8jqg"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_fmdan"]
-font_size = 20
-font_color = Color(0.20871, 0.20871, 0.20871, 1)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_dlrs6")
@@ -53,31 +48,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("3_761sx")
 texture_progress = ExtResource("4_qlwnq")
 
-[node name="Note" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -124.0
-offset_top = 32.0
-offset_right = -31.0
-offset_bottom = 170.0
-grow_horizontal = 0
-texture = ExtResource("5_g1kow")
-
-[node name="Label" type="Label" parent="Note"]
-layout_mode = 0
-offset_left = -4.0
-offset_right = 95.0
-offset_bottom = 136.0
-text = "悪
-魔
-祓
-い"
-label_settings = SubResource("LabelSettings_fmdan")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="EMF" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -88,14 +58,15 @@ offset_bottom = 40.0
 self_modulate = Color(1, 1, 1, 0.686275)
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 1
-offset_left = -21.0
-offset_top = 15.0
-offset_right = 168.0
-offset_bottom = 203.0
-texture = ExtResource("6_nrhpm")
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 145.0
+offset_bottom = 152.0
+texture = ExtResource("6_ps70g")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="EMF"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.176471)
 layout_mode = 0
 offset_left = 113.0
@@ -104,9 +75,12 @@ offset_bottom = 100.0
 texture = ExtResource("7_vmjru")
 
 [node name="TextureRect3" type="TextureRect" parent="EMF"]
+visible = false
+modulate = Color(1, 1, 1, 0.266667)
 self_modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 0
-offset_left = 113.0
-offset_right = 213.0
-offset_bottom = 100.0
+offset_left = 112.0
+offset_top = -8.0
+offset_right = 212.0
+offset_bottom = 92.0
 texture = ExtResource("8_y8jqg")

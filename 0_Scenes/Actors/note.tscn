@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_vao1b"]
 [ext_resource type="Texture2D" uid="uid://cd72m5byd5hdb" path="res://2_Images/UI/panelInset_beige.png" id="3_2n7gt"]
 [ext_resource type="Script" path="res://1_Scripts/note_int.gd" id="4_21wu0"]
+[ext_resource type="Texture2D" uid="uid://d1nt5k8nuv8t2" path="res://2_Images/UI/NewUI/note.png" id="5_mgbo6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(11, 15.5)
@@ -49,10 +50,6 @@ _data = {
 "RESET": SubResource("Animation_oftm6"),
 "door_open": SubResource("Animation_fdtgg")
 }
-
-[sub_resource type="LabelSettings" id="LabelSettings_s0whi"]
-font_size = 20
-font_color = Color(0.20871, 0.20871, 0.20871, 1)
 
 [node name="Note" type="StaticBody2D"]
 collision_layer = 4
@@ -111,32 +108,19 @@ theme_override_font_sizes/font_size = 33
 text = "[E] TO INTERACT"
 
 [node name="Note" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("4_21wu0")
 
 [node name="Note" type="TextureRect" parent="Note"]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -124.0
+offset_left = -166.0
 offset_top = 32.0
 offset_right = -31.0
-offset_bottom = 170.0
+offset_bottom = 166.0
 grow_horizontal = 0
-texture = ExtResource("3_2n7gt")
-
-[node name="Label" type="Label" parent="Note/Note"]
-layout_mode = 0
-offset_left = -4.0
-offset_right = 95.0
-offset_bottom = 136.0
-text = "悪
-魔
-祓
-い"
-label_settings = SubResource("LabelSettings_s0whi")
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("5_mgbo6")
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
 [connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
