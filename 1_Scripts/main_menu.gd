@@ -17,7 +17,7 @@ func _on_exit_pressed() -> void:
 	$VBoxContainer/Button2/Click2.play()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	get_tree().change_scene_to_file("res://0_Scenes/main_menu.tscn")
+	get_tree().quit()
 	
 
 
