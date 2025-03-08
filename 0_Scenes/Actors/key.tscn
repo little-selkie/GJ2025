@@ -1,44 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwnft0nv68qet"]
+[gd_scene load_steps=10 format=3 uid="uid://cwnft0nv68qet"]
 
-[ext_resource type="Script" path="res://1_Scripts/door_logic.gd" id="1_3fg2r"]
-[ext_resource type="Texture2D" uid="uid://do5quwb17yfrg" path="res://2_Images/Tiles/door.png" id="2_lp5ix"]
-[ext_resource type="Texture2D" uid="uid://cd72m5byd5hdb" path="res://2_Images/UI/panelInset_beige.png" id="3_4h6p8"]
+[ext_resource type="Script" path="res://1_Scripts/key.gd" id="1_kp6hq"]
+[ext_resource type="Texture2D" uid="uid://dvvpp3k552ip0" path="res://2_Images/UI/progress_red_small.png" id="2_i7i06"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_0nl7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
-size = Vector2(128, 64)
+size = Vector2(68, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkpky"]
-size = Vector2(214, 124)
+size = Vector2(71, 30)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_11k2k"]
-polygon = PackedVector2Array(-64, -32, 64, -32, 64, 32, -64, 32)
+polygon = PackedVector2Array(-9, -9, 60, -9, 59, 20, -10, 20)
 
 [sub_resource type="Animation" id="Animation_oftm6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LeftSide:position")
+tracks/0/path = NodePath("KeyPoly:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-64, -32)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RightSide:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-64, -32)]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_fdtgg"]
@@ -46,26 +33,14 @@ resource_name = "door_open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LeftSide:position")
+tracks/0/path = NodePath("KeyPoly:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-64, -32), Vector2(-71, -32), Vector2(-126, -32)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RightSide:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-64, -32), Vector2(-57, -32), Vector2(-2, -32)]
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wbf4r"]
@@ -74,24 +49,19 @@ _data = {
 "door_open": SubResource("Animation_fdtgg")
 }
 
-[node name="Door" type="StaticBody2D"]
+[node name="Key" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_3fg2r")
+script = ExtResource("1_kp6hq")
 
-[node name="LeftSide" type="Polygon2D" parent="."]
-position = Vector2(-64, -32)
-texture = ExtResource("2_lp5ix")
-polygon = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
+[node name="KeyPoly" type="Polygon2D" parent="."]
+position = Vector2(-8, -7)
+texture = ExtResource("2_i7i06")
+polygon = PackedVector2Array(0, 33, 31, 33, 64, 33, 63.982, 0.0110836, -0.00484371, 0.00997257)
 uv = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
 
-[node name="RightSide" type="Polygon2D" parent="."]
-position = Vector2(-64, -32)
-texture = ExtResource("2_lp5ix")
-polygon = PackedVector2Array(127.989, 64.1007, 128.015, 0.0096941, 63.9985, -0.0014987, 64.0073, 64.0055)
-uv = PackedVector2Array(127.989, 64.1007, 128.015, 0.0096941, 63.9985, -0.0014987, 64.0073, 64.0055)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 5.5)
 shape = SubResource("RectangleShape2D_0in1j")
 
 [node name="AreaOfInteraction" type="Area2D" parent="."]
@@ -99,7 +69,7 @@ collision_layer = 0
 collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfInteraction"]
-position = Vector2(1, -5)
+position = Vector2(25.5, 5)
 shape = SubResource("RectangleShape2D_rkpky")
 debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
 
@@ -113,14 +83,6 @@ libraries = {
 
 [node name="Interact" type="CanvasLayer" parent="."]
 visible = false
-
-[node name="background" type="TextureRect" parent="Interact"]
-offset_left = 40.0
-offset_top = -24.0
-offset_right = 224.0
-offset_bottom = 16.0
-texture = ExtResource("3_4h6p8")
-expand_mode = 1
 
 [node name="InteractText" type="Label" parent="Interact"]
 anchors_preset = 8
