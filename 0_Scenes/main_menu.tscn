@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="2_15548"]
 [ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_uihib"]
 [ext_resource type="AudioStream" uid="uid://b0fwk8ngxp21p" path="res://3_Audio/SFX/impactGlass_heavy_003.ogg" id="5_r76p7"]
-[ext_resource type="AudioStream" uid="uid://bswlf3hwxndud" path="res://3_Audio/162068__mrauralization__railroad-crossing-japan.wav" id="7_27xlu"]
+[ext_resource type="AudioStream" uid="uid://c8uqfdqgoyt7o" path="res://3_Audio/creepypeaks.ogg" id="7_x3216"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
 texture = ExtResource("1_wainh")
@@ -111,8 +111,9 @@ text = "Insert_game_name
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_27xlu")
+stream = ExtResource("7_x3216")
 autoplay = true
+mix_target = 1
 
 [connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

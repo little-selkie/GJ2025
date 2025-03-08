@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bxj166jpfihj3"]
 
 [ext_resource type="Script" path="res://1_Scripts/HealthBar.gd" id="1_dlrs6"]
-[ext_resource type="Texture2D" uid="uid://bppcf0yfpoehp" path="res://2_Images/UI/progress_white_border.png" id="1_jgpxd"]
-[ext_resource type="Texture2D" uid="uid://dh2ua0y1pta1i" path="res://2_Images/UI/progress_red_border.png" id="2_np1br"]
-[ext_resource type="Texture2D" uid="uid://mwvxtnelw61w" path="res://2_Images/UI/image-from-rawpixel-id-9778626-fade.png" id="3_761sx"]
-[ext_resource type="Texture2D" uid="uid://cwrkdbkwdj1sf" path="res://2_Images/UI/image-from-rawpixel-id-9778626-png.png" id="4_qlwnq"]
+[ext_resource type="Texture2D" uid="uid://dom2bx2e10e3f" path="res://2_Images/UI/NewUI/ProgressBar/healthbar_faded.png" id="2_7ejxm"]
+[ext_resource type="Texture2D" uid="uid://c22s5vbv8bilu" path="res://2_Images/UI/NewUI/ProgressBar/healthbar_full.png" id="3_d7j5v"]
+[ext_resource type="Texture2D" uid="uid://5uyi4nnlple7" path="res://2_Images/UI/NewUI/ProgressBar/candle_empty.png" id="4_8sipa"]
+[ext_resource type="Texture2D" uid="uid://dgoxx1uwueiy4" path="res://2_Images/UI/NewUI/ProgressBar/candle_full.png" id="5_vyg8s"]
 [ext_resource type="Texture2D" uid="uid://jnp5qb7wosvl" path="res://2_Images/UI/NewUI/ghost_bell.png" id="6_ps70g"]
 [ext_resource type="Texture2D" uid="uid://bui60tlk8ng20" path="res://2_Images/UI/HUD/audioOff.png" id="7_vmjru"]
 [ext_resource type="Texture2D" uid="uid://d1p0arloquxx" path="res://2_Images/UI/HUD/audioOn.png" id="8_y8jqg"]
@@ -17,17 +17,18 @@ custom_minimum_size = Vector2(75, 150)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 21.0
-offset_top = -58.0
-offset_right = 96.0
-offset_bottom = 92.0
+offset_left = 8.0
+offset_top = -48.0
+offset_right = 83.0
+offset_bottom = 199.0
 grow_vertical = 2
+scale = Vector2(0.69, 0.845)
 max_value = 10.0
-value = 1.0
+value = 5.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("1_jgpxd")
-texture_progress = ExtResource("2_np1br")
+texture_under = ExtResource("2_7ejxm")
+texture_progress = ExtResource("3_d7j5v")
 
 [node name="CandleBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(75, 150)
@@ -36,17 +37,19 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -75.0
-offset_bottom = 75.0
+offset_left = -1024.0
+offset_top = 72.0
+offset_right = -949.0
+offset_bottom = 248.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.365, 0.495)
 step = 5.0
-value = 50.0
+value = 100.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("3_761sx")
-texture_progress = ExtResource("4_qlwnq")
+texture_under = ExtResource("4_8sipa")
+texture_progress = ExtResource("5_vyg8s")
 
 [node name="EMF" type="Control" parent="."]
 layout_mode = 3
