@@ -36,6 +36,11 @@ func _physics_process(delta):
 		while (ghost <= len(current_ghosts) - 1):
 			ghost_locations[ghost] = global_position.distance_to(current_ghosts[ghost].global_position)
 			min_distance_to_ghost = ghost_locations.min()
+			if 10/(ghost_locations[ghost] + 0.001) < 0.8:
+				current_ghosts[ghost].get_parent().modulate.a = 10/(ghost_locations[ghost] + 0.001)
+			else:
+				current_ghosts[ghost].get_parent().modulate.a = 1
+			print(ghost_locations[ghost])
 			ghost += 1
 		if min_distance_to_ghost > 10:
 			get_node("GhostFinder").volume_db = -20 + (10/min_distance_to_ghost * sound_booster)
@@ -115,6 +120,7 @@ func _on_ghost_finding_area_area_entered(area: Area2D) -> void:
 
 
 func _on_ghost_finding_area_area_exited(area: Area2D) -> void:
+	area.get_parent().modulate.a = 0
 	if len(current_ghosts) >= 1:
 		current_ghosts.erase(area)
 		ghost_locations.slice(-1)
