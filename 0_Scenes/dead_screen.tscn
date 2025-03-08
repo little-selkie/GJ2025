@@ -1,0 +1,220 @@
+[gd_scene load_steps=14 format=3 uid="uid://4itg4sxxvhjd"]
+
+[ext_resource type="Script" path="res://1_Scripts/main_menu.gd" id="1_5btcr"]
+[ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="2_m1y8h"]
+[ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="3_ybjyx"]
+[ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_stgc1"]
+[ext_resource type="AudioStream" uid="uid://b0fwk8ngxp21p" path="res://3_Audio/SFX/impactGlass_heavy_003.ogg" id="5_axqpw"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="6_dsrg1"]
+[ext_resource type="AudioStream" uid="uid://bswlf3hwxndud" path="res://3_Audio/162068__mrauralization__railroad-crossing-japan.wav" id="7_jf3yj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
+texture = ExtResource("2_m1y8h")
+modulate_color = Color(0.20871, 0.20871, 0.20871, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kt17g"]
+bg_color = Color(0.523943, 0, 0.0808784, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_size = 9
+
+[sub_resource type="Animation" id="Animation_4el3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_detqk"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_l3nie"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n7dld"]
+_data = {
+"RESET": SubResource("Animation_4el3a"),
+"fade_in": SubResource("Animation_detqk"),
+"fade_out": SubResource("Animation_l3nie")
+}
+
+[node name="DeadScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5btcr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u4by1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -91.0
+offset_right = 257.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("3_ybjyx")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
+text = "Start exorcism"
+
+[node name="Click" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
+stream = ExtResource("4_stgc1")
+
+[node name="Hover" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
+stream = ExtResource("5_axqpw")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("3_ybjyx")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
+text = "End the Nightmare
+"
+
+[node name="Click2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
+stream = ExtResource("4_stgc1")
+
+[node name="Hover2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
+stream = ExtResource("5_axqpw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -231.0
+offset_right = 117.5
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("6_dsrg1")
+theme_override_font_sizes/font_size = 69
+text = "Insert_game_name
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jf3yj")
+autoplay = true
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n7dld")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
+offset_right = 1088.0
+offset_bottom = 766.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Button2" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
