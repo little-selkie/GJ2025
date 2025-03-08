@@ -22,6 +22,13 @@ func _ready() -> void:
 	get_node("GhostFinder").pitch_scale = 1
 
 func _physics_process(delta):
+	if GlobalVars.candle_level >= 1:
+		GlobalVars.candle_level -= 0.1
+		get_node("MainChar/HandLantern/PointLight2DPlayer").color.a = GlobalVars.candle_level/100
+	if GlobalVars.candle_level < 5:
+		$LightOccluder2D.visible = false
+	else:
+		$LightOccluder2D.visible = true
 	if Input.is_action_pressed("move_down") or Input.is_action_pressed("move_up") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		steps_sound()
 	else:
