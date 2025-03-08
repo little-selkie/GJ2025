@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cxp0q766j5g58"]
 
-[ext_resource type="Script" path="res://1_Scripts/main_menu.gd" id="1_81x2f"]
+[ext_resource type="Script" path="res://1_Scripts/pussy_screen.gd" id="1_lpmtn"]
 [ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="2_noxl4"]
 [ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="3_j4bbt"]
 [ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_64vau"]
@@ -26,7 +26,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("TransitionPS/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +38,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/path = NodePath("TransitionPS/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -53,7 +53,7 @@ resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("TransitionPS/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,7 +65,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/path = NodePath("TransitionPS/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -80,7 +80,7 @@ resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("TransitionPS/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -92,7 +92,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/path = NodePath("TransitionPS/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -120,7 +120,7 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_81x2f")
+script = ExtResource("1_lpmtn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -138,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -257.0
-offset_top = -91.0
-offset_right = 257.0
-offset_bottom = 146.0
+offset_left = -274.0
+offset_top = 45.0
+offset_right = 275.0
+offset_bottom = 287.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -151,10 +151,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("3_j4bbt")
+theme_override_fonts/font = ExtResource("6_vuwes")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "Start exorcism"
+text = "be brawe and try again"
 
 [node name="Click" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
 stream = ExtResource("4_64vau")
@@ -167,11 +167,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("3_j4bbt")
+theme_override_fonts/font = ExtResource("6_vuwes")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "End the Nightmare
-"
+text = "Give up and run away"
 
 [node name="Click2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
 stream = ExtResource("4_64vau")
@@ -186,28 +185,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -231.0
-offset_right = 117.5
-offset_bottom = -157.0
+offset_left = -295.0
+offset_top = -284.0
+offset_right = 295.0
+offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("6_vuwes")
-theme_override_font_sizes/font_size = 69
-text = "Insert_game_name
+theme_override_fonts/font = ExtResource("3_j4bbt")
+theme_override_font_sizes/font_size = 74
+text = "You coward! How dare you?
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_qki5w")
 autoplay = true
 
-[node name="Transition" type="AnimationPlayer" parent="."]
+[node name="TransitionPS" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_n7dld")
 }
 
-[node name="ColorRect" type="ColorRect" parent="Transition"]
+[node name="ColorRect" type="ColorRect" parent="TransitionPS"]
 visible = false
 offset_right = 1088.0
 offset_bottom = 766.0
@@ -217,4 +216,4 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Button2" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
-[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="TransitionPS" to="." method="_on_transition_animation_finished"]

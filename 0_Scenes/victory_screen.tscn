@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cdydv2sp86moe"]
 
-[ext_resource type="Script" path="res://1_Scripts/main_menu.gd" id="1_xhef8"]
+[ext_resource type="Script" path="res://1_Scripts/victory_screen.gd" id="1_uyaty"]
 [ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="2_hkshm"]
 [ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="3_s6ulp"]
 [ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_x55m1"]
@@ -26,7 +26,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("TransitionPS/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +38,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/path = NodePath("TransitionPS/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -53,7 +53,7 @@ resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("TransitionPS/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,7 +65,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/path = NodePath("TransitionPS/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -80,7 +80,7 @@ resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/path = NodePath("TransitionPS/ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -92,7 +92,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/path = NodePath("TransitionPS/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -120,7 +120,7 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xhef8")
+script = ExtResource("1_uyaty")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -138,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -257.0
-offset_top = -91.0
-offset_right = 257.0
-offset_bottom = 146.0
+offset_left = -244.0
+offset_top = 98.0
+offset_right = 246.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -151,10 +151,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("3_s6ulp")
-theme_override_font_sizes/font_size = 55
+theme_override_fonts/font = ExtResource("6_oh708")
+theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "Start exorcism"
+text = "try again?"
 
 [node name="Click" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
 stream = ExtResource("4_x55m1")
@@ -167,11 +167,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("3_s6ulp")
-theme_override_font_sizes/font_size = 55
+theme_override_fonts/font = ExtResource("6_oh708")
+theme_override_font_sizes/font_size = 85
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "End the Nightmare
-"
+text = "Rest for a while"
 
 [node name="Click2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
 stream = ExtResource("4_x55m1")
@@ -186,17 +185,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -231.0
-offset_right = 117.5
-offset_bottom = -157.0
+offset_left = -493.0
+offset_top = -380.0
+offset_right = 512.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("6_oh708")
-theme_override_font_sizes/font_size = 69
-text = "Insert_game_name
-"
+theme_override_fonts/font = ExtResource("3_s6ulp")
+theme_override_font_sizes/font_size = 52
+text = "								You Survived!
+
+The haunted house is silent, the spirits are at peace. Your bravery and wit have triumphed over the darkness. But remember, evil never truly sleeps..."
+autowrap_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_yvu85")
@@ -208,7 +209,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
-visible = false
 offset_right = 1088.0
 offset_bottom = 766.0
 color = Color(0, 0, 0, 1)
