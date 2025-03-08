@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwnft0nv68qet"]
+[gd_scene load_steps=13 format=3 uid="uid://innsvprkd5v"]
 
-[ext_resource type="Script" path="res://1_Scripts/key.gd" id="1_kp6hq"]
-[ext_resource type="Texture2D" uid="uid://dvvpp3k552ip0" path="res://2_Images/UI/progress_red_small.png" id="2_i7i06"]
-[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_0nl7j"]
-[ext_resource type="Script" path="res://1_Scripts/key_int.gd" id="4_vpnwg"]
-[ext_resource type="Texture2D" uid="uid://dhncsxhbskunv" path="res://2_Images/UI/IEG_key_lightblue.png" id="5_wfo14"]
-[ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="6_oppyj"]
+[ext_resource type="Script" path="res://1_Scripts/amulets.gd" id="1_segl0"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="3_hew5u"]
+[ext_resource type="Script" path="res://1_Scripts/amulets_int.gd" id="4_4rtw2"]
+[ext_resource type="Texture2D" uid="uid://ccmpli3vv7745" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector1.png" id="4_om8gm"]
+[ext_resource type="Texture2D" uid="uid://chd6qjbl03ks5" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector2.png" id="5_1opqt"]
+[ext_resource type="Texture2D" uid="uid://c3nkck8vnwrlt" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector3.png" id="6_6q0ew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(17, 29)
@@ -52,19 +52,21 @@ _data = {
 "door_open": SubResource("Animation_fdtgg")
 }
 
-[node name="Key" type="StaticBody2D"]
+[node name="Amulets" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_kp6hq")
+script = ExtResource("1_segl0")
 
 [node name="KeyPoly" type="Polygon2D" parent="."]
-position = Vector2(-8, -7)
-texture = ExtResource("2_i7i06")
-polygon = PackedVector2Array(0, 33, 31, 33, 64, 33, 63.982, 0.0110836, -0.00484371, 0.00997257)
+position = Vector2(1.00009, -1)
+scale = Vector2(1.01843, 1)
+texture = ExtResource("4_om8gm")
+texture_scale = Vector2(50, 50)
+polygon = PackedVector2Array(0, 33, 28.475, 33, 31, 34, 56.9502, 33, 56.9502, 18, 56.9502, 0, -0.00484371, 0.00997257)
 uv = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 5.5)
+position = Vector2(8.5, 14)
 shape = SubResource("RectangleShape2D_0in1j")
 
 [node name="AreaOfInteraction" type="Area2D" parent="."]
@@ -72,11 +74,12 @@ collision_layer = 0
 collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfInteraction"]
-position = Vector2(25.5, 5)
+position = Vector2(8.75, 15)
 shape = SubResource("RectangleShape2D_rkpky")
 debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(9, 9)
 occluder = SubResource("OccluderPolygon2D_11k2k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -100,37 +103,49 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
-theme_override_fonts/font = ExtResource("4_0nl7j")
+theme_override_fonts/font = ExtResource("3_hew5u")
 theme_override_font_sizes/font_size = 33
 text = "[E] TO INTERACT"
 
-[node name="Key" type="CanvasLayer" parent="."]
-script = ExtResource("4_vpnwg")
+[node name="Amulets" type="CanvasLayer" parent="."]
+script = ExtResource("4_4rtw2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Key"]
-anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.947
-anchor_right = 0.02
-anchor_bottom = 0.947
-offset_left = 0.24
-offset_top = -134.296
-offset_right = 86.24
-offset_bottom = -0.296021
+[node name="Amulets_box" type="HBoxContainer" parent="Amulets"]
+clip_contents = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -278.0
+offset_top = -216.0
+offset_right = 54.0
+offset_bottom = -92.0
+grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.799995, 1.64)
+theme_override_constants/separation = -20
 
-[node name="KeyImg" type="TextureRect" parent="Key/VBoxContainer"]
+[node name="Amulet1" type="TextureRect" parent="Amulets/Amulets_box"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.686275)
 layout_mode = 2
-texture = ExtResource("5_wfo14")
-expand_mode = 5
+texture = ExtResource("4_om8gm")
+expand_mode = 2
 
-[node name="Label" type="Label" parent="Key/VBoxContainer"]
+[node name="Amulet2" type="TextureRect" parent="Amulets/Amulets_box"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.686275)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oppyj")
-theme_override_font_sizes/font_size = 55
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("5_1opqt")
+expand_mode = 2
+
+[node name="Amulet3" type="TextureRect" parent="Amulets/Amulets_box"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.686275)
+layout_mode = 2
+texture = ExtResource("6_6q0ew")
+expand_mode = 2
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
 [connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
