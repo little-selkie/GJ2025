@@ -68,8 +68,11 @@ func _on_vision_area_entered(area: Area2D) -> void:
 	is_patrolling = false
 	in_position = false
 	target_to_hunt = area.get_parent()
+	if GlobalVars.is_exorcism_available:
+		get_node("Banish").visible = true
 
 func _on_vision_area_exited(area: Area2D) -> void:
+	get_node("Banish").visible = false
 	$Timer.start()
 
 func _on_timer_timeout() -> void:
