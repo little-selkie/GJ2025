@@ -14,6 +14,7 @@ var player_in_sight: bool = false
 var starting_position: Vector2
 var starting_velocity: Vector2
 var path_starting_position: Vector2
+var already_free: bool = false
 
 var is_fading: bool = false
 #var is_appearing: bool = false
@@ -27,6 +28,13 @@ func _ready() -> void:
 	print(velocity)
 
 func _physics_process(delta):
+	if GlobalVars.is_exorcism_available and !already_free:
+		self.modulate = 1
+		if Input.is_action_pressed("interact") and player_in_sight and !already_free:
+			$SoulFreedSound.play()
+			$SoulFreed.start()
+			GlobalVars.ghosts_freed += 1
+			already_free = true
 	if is_fading == true:
 		if self.modulate.a >= 0:
 			self.modulate.a -= 0.005
@@ -37,9 +45,9 @@ func _physics_process(delta):
 			#self.modulate.a += 0.01
 		#else:
 			#is_appearing = false
-	if is_patrolling == true and in_position == true:
+	if is_patrolling == true and in_position == true and !already_free:
 		pathfollow.progress += ghost_speed * delta
-	if is_hunting == true:
+	if is_hunting == true and !already_free:
 		navigation_agent_2d.target_position = target_to_hunt.global_position
 		velocity = global_position.direction_to(navigation_agent_2d.get_next_path_position()) * ghost_speed * delta * 100
 		move_and_slide()
