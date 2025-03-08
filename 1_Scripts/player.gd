@@ -54,6 +54,9 @@ func _physics_process(delta):
 			#get_node("GhostFinder").pitch_scale = 3 + (1/min_distance_to_ghost * sound_pitcher * 1)
 			get_node("GhostFinder").volume_db = 15
 			get_node("GhostFinder").pitch_scale = 3
+		if GlobalVars.is_exorcism_available:
+			get_node("GhostFinder").volume_db = -80
+			get_node("GhostFinder").pitch_scale = 1
 	
 	if ghost_touching:
 		if !was_hit:
