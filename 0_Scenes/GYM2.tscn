@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dufy7ohvyx85c"]
+[gd_scene load_steps=7 format=4 uid="uid://dufy7ohvyx85c"]
 
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_6c8ys"]
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="1_014s6"]
 [ext_resource type="PackedScene" uid="uid://n1wqmicsckcv" path="res://0_Scenes/Actors/CandlePickup.tscn" id="2_jbe6q"]
+[ext_resource type="PackedScene" uid="uid://c5s4l486lb06y" path="res://0_Scenes/Furniture/main_shrine.tscn" id="4_glpre"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4nxa"]
 texture = ExtResource("1_014s6")
@@ -53,6 +54,9 @@ tile_set = SubResource("TileSet_184ku")
 
 [node name="CandlePickup" parent="." instance=ExtResource("2_jbe6q")]
 position = Vector2(631, 407)
+
+[node name="Shrine_main" parent="." instance=ExtResource("4_glpre")]
+position = Vector2(514, 417)
 
 [node name="Player" parent="." instance=ExtResource("1_6c8ys")]
 position = Vector2(456, 262)
