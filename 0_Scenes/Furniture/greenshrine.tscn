@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpm6bsgw4livf"]
+
+[ext_resource type="Texture2D" uid="uid://cu4qlylj7xg1t" path="res://2_Images/Props/shrine.png" id="1_gpt5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7jvx"]
+size = Vector2(54, 60)
+
+[node name="greenshrine" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_gpt5a")
+region_enabled = true
+region_rect = Rect2(195.303, 64.2766, 59.2098, 63.7234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_c7jvx")

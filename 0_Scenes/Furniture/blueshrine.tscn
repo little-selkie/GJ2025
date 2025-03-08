@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbrct0qa80h3i"]
+
+[ext_resource type="Texture2D" uid="uid://cu4qlylj7xg1t" path="res://2_Images/Props/shrine.png" id="1_on0ol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xcqp"]
+size = Vector2(57, 61)
+
+[node name="ShrineBlue" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_on0ol")
+region_enabled = true
+region_rect = Rect2(192.853, 0.251217, 63.79, 63.6101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_1xcqp")
