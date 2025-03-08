@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://sbxcebg2mnjy"]
+[gd_scene load_steps=19 format=4 uid="uid://sbxcebg2mnjy"]
 
 [ext_resource type="Texture2D" uid="uid://bgufya74b24no" path="res://98_Placeholders/Images/Tileset/Dark_lvl2.png" id="1_c1b6f"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_w6i4q"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="7_pnno7"]
 [ext_resource type="PackedScene" uid="uid://cwnft0nv68qet" path="res://0_Scenes/Actors/key.tscn" id="8_b5ru7"]
 [ext_resource type="PackedScene" uid="uid://cj6o4kudqhr8e" path="res://0_Scenes/Actors/note.tscn" id="9_lqvn0"]
+[ext_resource type="PackedScene" uid="uid://bj7pab6hdbvg5" path="res://0_Scenes/Actors/key_2.tscn" id="10_7nirs"]
+[ext_resource type="PackedScene" uid="uid://8mxt1n6ec2hf" path="res://0_Scenes/Actors/key_3.tscn" id="11_jraso"]
+[ext_resource type="PackedScene" uid="uid://dddfbt407mtk6" path="res://0_Scenes/Actors/key_4.tscn" id="12_lt1w8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdsnf"]
 texture = ExtResource("1_c1b6f")
@@ -168,7 +171,16 @@ position = Vector2(932, 169)
 texture = ExtResource("7_pnno7")
 
 [node name="Key" parent="." instance=ExtResource("8_b5ru7")]
-position = Vector2(376, 520)
+position = Vector2(64, 208)
 
 [node name="Note" parent="." instance=ExtResource("9_lqvn0")]
 position = Vector2(512, 648)
+
+[node name="Key2" parent="." instance=ExtResource("10_7nirs")]
+position = Vector2(64, 328)
+
+[node name="Key3" parent="." instance=ExtResource("11_jraso")]
+position = Vector2(64, 480)
+
+[node name="Key4" parent="." instance=ExtResource("12_lt1w8")]
+position = Vector2(88, 656)
