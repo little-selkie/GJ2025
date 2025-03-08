@@ -1,7 +1,7 @@
 [gd_scene load_steps=54 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="2_s5qhx"]
-[ext_resource type="PackedScene" uid="uid://dnyvf7q5p5bqx" path="res://0_Scenes/test_light.tscn" id="4_pmlgf"]
+[ext_resource type="PackedScene" uid="uid://dnyvf7q5p5bqx" path="res://0_Scenes/Candle.tscn" id="4_pmlgf"]
 [ext_resource type="Texture2D" uid="uid://c8t0l1woqx876" path="res://98_Placeholders/Images/Tileset/Parede_64x6401.png" id="4_sm34b"]
 [ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="5_8grh1"]
 [ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
