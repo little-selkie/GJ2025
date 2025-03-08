@@ -103,7 +103,7 @@ texture = ExtResource("3_ghcyr")
 
 [node name="PointLight2DPlayer" type="PointLight2D" parent="MainChar/HandLantern"]
 position = Vector2(-11, 16)
-color = Color(0.805739, 0.761903, 0.134481, 1)
+color = Color(0.803922, 0.760784, 0.133333, 1)
 energy = 1.5
 shadow_enabled = true
 shadow_color = Color(0.156145, 0.151612, 0.0152728, 0.054902)
