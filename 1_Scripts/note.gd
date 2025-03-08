@@ -30,7 +30,8 @@ func open_door() -> void:
 	get_node("Note").visible = true
 	get_node("OnScreenNote").visible = true
 	is_note_readed = true
-	if GlobalVars.note != 1: 
+	if GlobalVars.note != 1 and GlobalVars.amulet == 3: 
+		GlobalVars.is_exorcism_available = true
 		GlobalVars.note += 1
 		print(GlobalVars.note)
 		if GlobalVars.note == 1:
