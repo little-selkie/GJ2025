@@ -1,11 +1,18 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var Player = get_tree().get_first_node_in_group("player")
+@onready var label = $InteractText1
 
+const base_text = "[E] to "
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var active_areas = []
+
+var can_interact = true
+func register_area(area: InteractionArea):
+	active_areas.push_back(area)
+	
+func unregister_area(area: InteractionArea):
+	var index = active_areas.find(area)
+	if index != -1:
+		active_areas.remove_at(index)

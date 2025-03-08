@@ -21,7 +21,7 @@ radius = 74.0
 radius = 365.034
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 6
+collision_mask = 22
 script = ExtResource("1_xdi00")
 
 [node name="CharImage" type="Polygon2D" parent="."]
