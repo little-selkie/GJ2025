@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_3_locked.tscn" id="9_j3f1d"]
 [ext_resource type="Texture2D" uid="uid://bl6vvuw7mxydm" path="res://98_Placeholders/Images/Tileset/furniture/toilet.png" id="9_nx5wl"]
 [ext_resource type="PackedScene" uid="uid://dpqcide5dqkh1" path="res://0_Scenes/sakura.tscn" id="10_1gart"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/locked_door.tscn" id="10_2tdto"]
 [ext_resource type="PackedScene" uid="uid://s3b28n71k7b4" path="res://0_Scenes/Furniture/main_shrine.tscn" id="10_7toa2"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_4_locked.tscn" id="10_rupnr"]
 [ext_resource type="PackedScene" uid="uid://bbrct0qa80h3i" path="res://0_Scenes/Furniture/blueshrine.tscn" id="11_odrsl"]
 [ext_resource type="PackedScene" uid="uid://bpm6bsgw4livf" path="res://0_Scenes/Furniture/greenshrine.tscn" id="12_kpqo3"]
 [ext_resource type="PackedScene" uid="uid://dnm1kke4peo8" path="res://0_Scenes/Furniture/yellowshrine.tscn" id="13_4npkv"]
@@ -1867,15 +1867,15 @@ position = Vector2(1037, 951)
 position = Vector2(1612, 568)
 rotation = 3.14159
 
-[node name="Door1_locked" parent="Doors" instance=ExtResource("8_bt88f")]
-position = Vector2(555, 1498)
-rotation = -1.5708
+[node name="Door2_locked" parent="Doors" instance=ExtResource("8_bt88f")]
+position = Vector2(-312, 1463)
 
-[node name="Door2_locked" parent="Doors" instance=ExtResource("9_j3f1d")]
-position = Vector2(-310, 1464)
-
-[node name="Door3_locked" parent="Doors" instance=ExtResource("10_rupnr")]
+[node name="Door3_locked" parent="Doors" instance=ExtResource("9_j3f1d")]
 position = Vector2(1611, 1529)
+
+[node name="Door1_locked" parent="Doors" instance=ExtResource("10_2tdto")]
+position = Vector2(556, 1496)
+rotation = -1.5708
 
 [node name="Lights" type="Node2D" parent="."]
 
