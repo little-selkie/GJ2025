@@ -26,9 +26,7 @@ func _on_area_of_interaction_area_exited(area: Area2D) -> void:
 	get_node("Interact").visible = false
 	
 func open_door() -> void:
-	get_node("CollisionShape2D").disabled = true
 	get_node("AreaOfInteraction").monitoring = false
-	get_node("LightOccluder2D").visible = false
 	get_node("Note").visible = true
 	get_node("OnScreenNote").visible = true
 	is_note_readed = true

@@ -5,6 +5,8 @@ extends Node2D
 var already_started: bool = false
 var paused = false
 
+func _ready() -> void:
+	GlobalVars.candle_level = 100
 
 func _process(delta: float) -> void:
 	if GlobalVars.is_exorcism_available and !already_started:
@@ -24,3 +26,7 @@ func pauseMenu():
 		
 	paused = !paused
 	
+
+
+func _on_area_to_leave_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://0_Scenes/pussy_screen.tscn")

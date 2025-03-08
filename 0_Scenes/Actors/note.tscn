@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cj6o4kudqhr8e"]
+[gd_scene load_steps=11 format=3 uid="uid://cj6o4kudqhr8e"]
 
 [ext_resource type="Script" path="res://1_Scripts/note.gd" id="1_q4khy"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_vao1b"]
@@ -11,9 +11,6 @@ size = Vector2(11, 15.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkpky"]
 size = Vector2(10.25, 15)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_11k2k"]
-polygon = PackedVector2Array(-9, -9, 1, -9, 1, 6, -9, 6)
 
 [sub_resource type="Animation" id="Animation_oftm6"]
 length = 0.001
@@ -41,6 +38,7 @@ texture = ExtResource("5_mgbo6")
 visible = false
 position = Vector2(5.5, 7.25)
 shape = SubResource("RectangleShape2D_0in1j")
+disabled = true
 
 [node name="AreaOfInteraction" type="Area2D" parent="."]
 collision_layer = 0
@@ -50,10 +48,6 @@ collision_mask = 16384
 position = Vector2(4.875, 7.5)
 shape = SubResource("RectangleShape2D_rkpky")
 debug_color = Color(0, 0.647059, 0.176471, 0.0705882)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(9, 9)
-occluder = SubResource("OccluderPolygon2D_11k2k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
