@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=65 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="2_s5qhx"]
 [ext_resource type="PackedScene" uid="uid://dnyvf7q5p5bqx" path="res://0_Scenes/TestLight.tscn" id="4_pmlgf"]
@@ -8,12 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://cw3p3xhrnt0xw" path="res://98_Placeholders/Images/Tileset/scifi_tilesheet@2.png" id="5_ttg3m"]
 [ext_resource type="Texture2D" uid="uid://daylgetex6cq6" path="res://2_Images/Props/furniture.png" id="6_b6gp8"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_2_locked.tscn" id="8_bt88f"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_3_locked.tscn" id="9_j3f1d"]
 [ext_resource type="Texture2D" uid="uid://bl6vvuw7mxydm" path="res://98_Placeholders/Images/Tileset/furniture/toilet.png" id="9_nx5wl"]
 [ext_resource type="PackedScene" uid="uid://dpqcide5dqkh1" path="res://0_Scenes/sakura.tscn" id="10_1gart"]
 [ext_resource type="PackedScene" uid="uid://s3b28n71k7b4" path="res://0_Scenes/Furniture/main_shrine.tscn" id="10_7toa2"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_4_locked.tscn" id="10_rupnr"]
 [ext_resource type="PackedScene" uid="uid://bbrct0qa80h3i" path="res://0_Scenes/Furniture/blueshrine.tscn" id="11_odrsl"]
 [ext_resource type="PackedScene" uid="uid://bpm6bsgw4livf" path="res://0_Scenes/Furniture/greenshrine.tscn" id="12_kpqo3"]
 [ext_resource type="PackedScene" uid="uid://dnm1kke4peo8" path="res://0_Scenes/Furniture/yellowshrine.tscn" id="13_4npkv"]
+[ext_resource type="PackedScene" uid="uid://cwnft0nv68qet" path="res://0_Scenes/Actors/key.tscn" id="18_nf0uj"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/key_2.tscn" id="19_xi3lx"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/key_3.tscn" id="20_q7dt0"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Actors/note.tscn" id="21_kxfon"]
+[ext_resource type="PackedScene" uid="uid://innsvprkd5v" path="res://0_Scenes/Actors/amulet.tscn" id="22_lprmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rkqj"]
 size = Vector2(3136, 2630)
@@ -1834,10 +1842,6 @@ position = Vector2(328, 1146)
 [node name="Door2" parent="Doors" instance=ExtResource("8_3ja1r")]
 position = Vector2(266, 1911)
 
-[node name="Door3" parent="Doors" instance=ExtResource("8_3ja1r")]
-position = Vector2(554, 1497)
-rotation = 1.5708
-
 [node name="Door4" parent="Doors" instance=ExtResource("8_3ja1r")]
 position = Vector2(939, 2134)
 rotation = 1.5708
@@ -1862,6 +1866,16 @@ position = Vector2(1037, 951)
 [node name="Door10" parent="Doors" instance=ExtResource("8_3ja1r")]
 position = Vector2(1612, 568)
 rotation = 3.14159
+
+[node name="Door1_locked" parent="Doors" instance=ExtResource("8_bt88f")]
+position = Vector2(555, 1498)
+rotation = -1.5708
+
+[node name="Door2_locked" parent="Doors" instance=ExtResource("9_j3f1d")]
+position = Vector2(-310, 1464)
+
+[node name="Door3_locked" parent="Doors" instance=ExtResource("10_rupnr")]
+position = Vector2(1611, 1529)
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -1931,3 +1945,26 @@ position = Vector2(93, 1330)
 
 [node name="Sakura" parent="." instance=ExtResource("10_1gart")]
 position = Vector2(728, 283)
+
+[node name="Keys+amulet" type="Node2D" parent="."]
+
+[node name="Key1" parent="Keys+amulet" instance=ExtResource("18_nf0uj")]
+position = Vector2(1814, 1721)
+
+[node name="Key2" parent="Keys+amulet" instance=ExtResource("19_xi3lx")]
+position = Vector2(1803, 675)
+
+[node name="Key3" parent="Keys+amulet" instance=ExtResource("20_q7dt0")]
+position = Vector2(-635, 175)
+
+[node name="Note" parent="Keys+amulet" instance=ExtResource("21_kxfon")]
+position = Vector2(1359, 2000)
+
+[node name="Amulets" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
+position = Vector2(1757, 1157)
+
+[node name="Amulets2" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
+position = Vector2(-1039, 1615)
+
+[node name="Amulets3" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
+position = Vector2(86, 1328)
