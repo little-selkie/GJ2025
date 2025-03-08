@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwnft0nv68qet"]
+[gd_scene load_steps=12 format=3 uid="uid://bj7pab6hdbvg5"]
 
-[ext_resource type="Script" path="res://1_Scripts/key.gd" id="1_kp6hq"]
-[ext_resource type="Texture2D" uid="uid://dvvpp3k552ip0" path="res://2_Images/UI/progress_red_small.png" id="2_i7i06"]
-[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_0nl7j"]
-[ext_resource type="Script" path="res://1_Scripts/key_int.gd" id="4_vpnwg"]
-[ext_resource type="Texture2D" uid="uid://dhncsxhbskunv" path="res://2_Images/UI/IEG_key_lightblue.png" id="5_wfo14"]
+[ext_resource type="Script" path="res://1_Scripts/key_2.gd" id="1_e25tm"]
+[ext_resource type="Texture2D" uid="uid://dvvpp3k552ip0" path="res://2_Images/UI/progress_red_small.png" id="2_1tha4"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="3_tjo1x"]
+[ext_resource type="Script" path="res://1_Scripts/key_2_int.gd" id="4_2suyw"]
+[ext_resource type="Texture2D" uid="uid://dhncsxhbskunv" path="res://2_Images/UI/IEG_key_lightblue.png" id="5_hnndo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(17, 29)
@@ -51,14 +51,14 @@ _data = {
 "door_open": SubResource("Animation_fdtgg")
 }
 
-[node name="Key" type="StaticBody2D"]
+[node name="Key2" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_kp6hq")
+script = ExtResource("1_e25tm")
 
 [node name="KeyPoly" type="Polygon2D" parent="."]
 position = Vector2(-8, -7)
-texture = ExtResource("2_i7i06")
+texture = ExtResource("2_1tha4")
 polygon = PackedVector2Array(0, 33, 31, 33, 64, 33, 63.982, 0.0110836, -0.00484371, 0.00997257)
 uv = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
 
@@ -99,12 +99,12 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
-theme_override_fonts/font = ExtResource("4_0nl7j")
+theme_override_fonts/font = ExtResource("3_tjo1x")
 theme_override_font_sizes/font_size = 33
 text = "[E] TO INTERACT"
 
 [node name="Key" type="CanvasLayer" parent="."]
-script = ExtResource("4_vpnwg")
+script = ExtResource("4_2suyw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Key"]
 anchors_preset = -1
@@ -112,16 +112,16 @@ anchor_left = 0.02
 anchor_top = 0.947
 anchor_right = 0.02
 anchor_bottom = 0.947
-offset_left = 0.24
-offset_top = -134.296
-offset_right = 86.24
-offset_bottom = -0.296021
+offset_left = -9.76
+offset_top = -80.296
+offset_right = 76.24
+offset_bottom = 53.704
 grow_vertical = 0
 
-[node name="KeyImg" type="TextureRect" parent="Key/VBoxContainer"]
+[node name="Key2Img" type="TextureRect" parent="Key/VBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_wfo14")
+texture = ExtResource("5_hnndo")
 expand_mode = 5
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]

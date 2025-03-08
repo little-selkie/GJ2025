@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="3_ar040"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="3_b8nse"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="3_m4a7e"]
-[ext_resource type="PackedScene" uid="uid://c720xldr0t338" path="res://0_Scenes/Containers/TypeB.tscn" id="6_5a51t"]
 [ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="7_pnno7"]
 [ext_resource type="PackedScene" uid="uid://cwnft0nv68qet" path="res://0_Scenes/Actors/key.tscn" id="8_b5ru7"]
-[ext_resource type="PackedScene" uid="uid://dgnw8oujwkuaf" path="res://0_Scenes/Containers/TypeA.tscn" id="9_g1ast"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/note.tscn" id="9_lqvn0"]
-[ext_resource type="PackedScene" uid="uid://bmw7x31awf5lp" path="res://0_Scenes/Containers/TypeC.tscn" id="12_jm00y"]
+[ext_resource type="PackedScene" uid="uid://cj6o4kudqhr8e" path="res://0_Scenes/Actors/note.tscn" id="9_lqvn0"]
+[ext_resource type="PackedScene" uid="uid://bj7pab6hdbvg5" path="res://0_Scenes/Actors/key_2.tscn" id="10_7nirs"]
+[ext_resource type="PackedScene" uid="uid://8mxt1n6ec2hf" path="res://0_Scenes/Actors/key_3.tscn" id="11_jraso"]
+[ext_resource type="PackedScene" uid="uid://dddfbt407mtk6" path="res://0_Scenes/Actors/key_4.tscn" id="12_lt1w8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdsnf"]
 texture = ExtResource("1_c1b6f")
@@ -135,9 +135,6 @@ position = Vector2(622, 296)
 [node name="Player" parent="." instance=ExtResource("1_w6i4q")]
 position = Vector2(598, 462)
 
-[node name="TypeA2" parent="." instance=ExtResource("6_5a51t")]
-position = Vector2(742, 492)
-
 [node name="GhostPaths" type="Node2D" parent="."]
 
 [node name="Path2" type="Path2D" parent="GhostPaths"]
@@ -146,9 +143,11 @@ curve = SubResource("Curve2D_a7up2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="GhostPaths/Path2"]
 position = Vector2(279, 184)
+rotation = -0.659207
 rotates = false
 
 [node name="Ghost" parent="GhostPaths/Path2/PathFollow2D" instance=ExtResource("3_m4a7e")]
+rotation = 0.631192
 
 [node name="Path1" type="Path2D" parent="GhostPaths"]
 position = Vector2(0, 25)
@@ -156,9 +155,11 @@ curve = SubResource("Curve2D_a7up2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="GhostPaths/Path1"]
 position = Vector2(279, 184)
+rotation = -0.659207
 rotates = false
 
 [node name="Ghost" parent="GhostPaths/Path1/PathFollow2D" instance=ExtResource("3_m4a7e")]
+rotation = 0.631192
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
@@ -170,13 +171,16 @@ position = Vector2(932, 169)
 texture = ExtResource("7_pnno7")
 
 [node name="Key" parent="." instance=ExtResource("8_b5ru7")]
-position = Vector2(376, 520)
+position = Vector2(64, 208)
 
 [node name="Note" parent="." instance=ExtResource("9_lqvn0")]
 position = Vector2(512, 648)
 
-[node name="TypeA" parent="." instance=ExtResource("9_g1ast")]
-position = Vector2(744, 581)
+[node name="Key2" parent="." instance=ExtResource("10_7nirs")]
+position = Vector2(64, 328)
 
-[node name="TypeA3" parent="." instance=ExtResource("12_jm00y")]
-position = Vector2(598, 559)
+[node name="Key3" parent="." instance=ExtResource("11_jraso")]
+position = Vector2(64, 480)
+
+[node name="Key4" parent="." instance=ExtResource("12_lt1w8")]
+position = Vector2(88, 656)
