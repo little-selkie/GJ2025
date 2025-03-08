@@ -139,8 +139,12 @@ stream = ExtResource("4_02lnx")
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Lock2"]
-modulate = Color(1, 0, 0, 0.564706)
+modulate = Color(0.131056, 0.633322, 0.245983, 0.564706)
 z_index = 30
+anchors_preset = -1
+anchor_left = 0.00735294
+anchor_top = 0.0208333
+anchor_right = -0.0147059
 offset_left = 632.0
 offset_top = 368.0
 offset_right = 720.0
