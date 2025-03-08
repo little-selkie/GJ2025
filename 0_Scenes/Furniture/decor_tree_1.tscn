@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnjtkd37lfhdf"]
+
+[ext_resource type="Texture2D" uid="uid://mwc74wpo6r0j" path="res://2_Images/Props/decor.png" id="1_ot734"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxcwv"]
+size = Vector2(46, 30)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2b5g2"]
+polygon = PackedVector2Array(-23.5045, -0.928169, -23.5046, 15.7789, -15.6697, 25.0606, 0, 27.8451, 17.6284, 25.0606, 25.4632, 16.707, 25.4632, 0, 17.6284, 0, 16.649, -3.71268, 17.6284, -7.42535, 25.4632, -8.35352, 26.4426, -12.9944, 23.5045, -14.8507, 26.4426, -20.4197, 16.649, -25.0606, 11.7523, -19.4915, 5.87613, -27.8451, 0, -26.9169, -6.85549, -17.6352, -18.6077, -21.3479, -25.4632, -16.707, -16.649, -10.2099, -22.5252, -10.2099, -21.5458, -4.64085, -12.7316, -4.64085, -10.7729, -0.928169)
+
+[node name="DecorTree1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ot734")
+region_enabled = true
+region_rect = Rect2(256, 64, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_cxcwv")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(1.02108, 1.07739)
+occluder = SubResource("OccluderPolygon2D_2b5g2")

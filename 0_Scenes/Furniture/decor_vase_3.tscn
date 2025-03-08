@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck846sth5av0r"]
+
+[ext_resource type="Texture2D" uid="uid://mwc74wpo6r0j" path="res://2_Images/Props/decor.png" id="1_hjl8m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gl4bk"]
+radius = 22.0
+height = 62.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2b5g2"]
+polygon = PackedVector2Array(-26.4903, -7.88656, -23, 15, -18.5432, 28.5888, 19.8677, 28.5888, 23.8413, 12.8157, 27.8148, -7.88656, 18.5432, -13.8015, 18.5432, -18.7306, 30.4639, -25.6313, 18.5432, -29.5746, 0, -30.5604, -17.2187, -29.5746, -30.4639, -25.6313, -19.8677, -18.7306, -18.5432, -14.7873)
+
+[node name="DecorVase3" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hjl8m")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gl4bk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(0.754993, 1.01438)
+occluder = SubResource("OccluderPolygon2D_2b5g2")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmfm6b420cgi6"]
+
+[ext_resource type="Texture2D" uid="uid://mwc74wpo6r0j" path="res://2_Images/Props/decor.png" id="1_l1gmw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh0gg"]
+radius = 29.1548
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2b5g2"]
+polygon = PackedVector2Array(-28.4014, 2.78451, -23.5046, 15.7789, -13.711, 24.1325, 0, 27.8451, 15.6697, 24.1325, 26.4427, 12.9944, 29.3807, 1.85634, 27.422, -11.1381, 19.5872, -20.4198, 11.7523, -25.0606, 0, -27.8451, -11.7523, -25.0606, -19.8677, -18.7306, -27.422, -10.2099)
+
+[node name="DecorSphere1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1gmw")
+region_enabled = true
+region_rect = Rect2(192, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hh0gg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(1.02108, 1.07739)
+occluder = SubResource("OccluderPolygon2D_2b5g2")
