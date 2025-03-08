@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://5obyp7tmx8d5"]
+[gd_scene load_steps=10 format=3 uid="uid://5obyp7tmx8d5"]
 
 [ext_resource type="Script" path="res://1_Scripts/ghost.gd" id="1_buk2y"]
 [ext_resource type="Texture2D" uid="uid://i37lj6y78u34" path="res://2_Images/Actors/ghost.png" id="2_8vvv0"]
 [ext_resource type="AudioStream" uid="uid://c1rj7bw7pcjs7" path="res://3_Audio/SFX/ghost_hunting_sound.mp3" id="3_uk3cu"]
 [ext_resource type="AudioStream" uid="uid://c8ualmfe017sx" path="res://3_Audio/SFX/ghost_despawn.wav" id="4_xw6tp"]
+[ext_resource type="AudioStream" uid="uid://56mk5752amsf" path="res://3_Audio/SFX/short-choir-6116.mp3" id="5_xskb2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r51hn"]
 
@@ -27,14 +28,12 @@ position = Vector2(-2, -3)
 texture = ExtResource("2_8vvv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(8.15094e-06, -2)
 shape = SubResource("CapsuleShape2D_r51hn")
 disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="PlayerCollider" type="Area2D" parent="."]
-visible = false
 collision_layer = 128
 collision_mask = 2
 
@@ -43,7 +42,6 @@ shape = SubResource("CapsuleShape2D_h6k13")
 debug_color = Color(0.972549, 0, 0.164706, 0.266667)
 
 [node name="Vision" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -72,6 +70,14 @@ parameters/looping = true
 
 [node name="GhostDespawning" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xw6tp")
+
+[node name="SoulFreed" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="SoulFreedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xskb2")
+volume_db = -10.0
 
 [connection signal="area_entered" from="Vision" to="." method="_on_vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_vision_area_exited"]
