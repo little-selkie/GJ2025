@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvvpp3k552ip0" path="res://2_Images/UI/progress_red_small.png" id="2_40qxp"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="3_ib7e0"]
 [ext_resource type="Script" path="res://1_Scripts/key_3_int.gd" id="4_rdbwv"]
-[ext_resource type="Texture2D" uid="uid://dhncsxhbskunv" path="res://2_Images/UI/IEG_key_lightblue.png" id="5_v2n0d"]
+[ext_resource type="Texture2D" uid="uid://dc0mi5k3esk2v" path="res://2_Images/UI/NewUI/Keys/key_red.png" id="5_4iw25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(17, 29)
@@ -112,16 +112,17 @@ anchor_left = 0.02
 anchor_top = 0.947
 anchor_right = 0.02
 anchor_bottom = 0.947
-offset_left = -9.76
-offset_top = -21.296
-offset_right = 76.24
-offset_bottom = 112.704
+offset_left = 3.24
+offset_top = -152.296
+offset_right = 83.24
+offset_bottom = 39.704
 grow_vertical = 0
+rotation = -1.5708
 
 [node name="Key3Img" type="TextureRect" parent="Key/VBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_v2n0d")
+texture = ExtResource("5_4iw25")
 expand_mode = 5
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
