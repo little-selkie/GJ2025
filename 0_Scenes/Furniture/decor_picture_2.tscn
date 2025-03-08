@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0weiljrnbjmu"]
+
+[ext_resource type="Texture2D" uid="uid://mwc74wpo6r0j" path="res://2_Images/Props/decor.png" id="1_1b2v2"]
+
+[node name="DecorPicture2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1b2v2")
+region_enabled = true
+region_rect = Rect2(192, 64, 64, 64)
