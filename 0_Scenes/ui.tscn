@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ccmpli3vv7745" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector1.png" id="10_pvdfa"]
 [ext_resource type="Texture2D" uid="uid://chd6qjbl03ks5" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector2.png" id="11_bo03c"]
 [ext_resource type="Texture2D" uid="uid://c3nkck8vnwrlt" path="res://2_Images/UI/HUD/omamori-japanese-amulets-vector3.png" id="12_7ox30"]
-
-[sub_resource type="GDScript" id="GDScript_o3x5r"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="14_ws728"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fmdan"]
 font_size = 20
@@ -39,7 +38,6 @@ fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("1_jgpxd")
 texture_progress = ExtResource("2_np1br")
-script = SubResource("GDScript_o3x5r")
 
 [node name="CandleBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(75, 150)
@@ -151,7 +149,7 @@ layout_mode = 2
 texture = ExtResource("12_7ox30")
 expand_mode = 2
 
-[node name="Control" type="Control" parent="."]
+[node name="Key" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -163,9 +161,49 @@ offset_bottom = -24.0
 grow_vertical = 0
 size_flags_horizontal = 0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="KeyImg" type="TextureRect" parent="Key"]
 layout_mode = 0
 offset_right = 224.0
 offset_bottom = 120.0
 texture = ExtResource("9_onlmy")
 expand_mode = 2
+
+[node name="Interact" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.559
+anchor_top = 0.5
+anchor_right = 0.559
+anchor_bottom = 0.5
+offset_left = -16.192
+offset_top = -16.0
+offset_right = 55.808
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="Interact"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 224.0
+offset_bottom = 16.0
+texture = ExtResource("5_g1kow")
+expand_mode = 1
+
+[node name="InteractText" type="Label" parent="Interact"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -40.0
+offset_right = 168.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("14_ws728")
+theme_override_font_sizes/font_size = 33
+text = "[E] TO INTERACT"
