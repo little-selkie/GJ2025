@@ -71,7 +71,12 @@ collision_mask = 128
 shape = SubResource("CircleShape2D_52kga")
 debug_color = Color(1, 1, 1, 0)
 
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="HealthCollision" to="." method="_on_health_collision_area_entered"]
 [connection signal="area_exited" from="HealthCollision" to="." method="_on_health_collision_area_exited"]
 [connection signal="area_entered" from="GhostFindingArea" to="." method="_on_ghost_finding_area_area_entered"]
 [connection signal="area_exited" from="GhostFindingArea" to="." method="_on_ghost_finding_area_area_exited"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

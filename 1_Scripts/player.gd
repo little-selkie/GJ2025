@@ -13,6 +13,7 @@ var was_hit: bool = false
 var current_ghosts: Array
 var min_distance_to_ghost: float = 0
 var ghost_locations: Array
+var ghost_touching: bool = false
 
 func _ready() -> void:
 	get_node("GhostFinder").volume_db = -80
@@ -32,6 +33,20 @@ func _physics_process(delta):
 		if min_distance_to_ghost > 10:
 			get_node("GhostFinder").volume_db = -20 + (10/min_distance_to_ghost * sound_booster)
 			get_node("GhostFinder").pitch_scale = 0.9 + (1/min_distance_to_ghost * sound_pitcher)
+	
+	if ghost_touching:
+		if !was_hit:
+			was_hit = true
+			self.modulate.g = 0
+			self.modulate.b = 0
+			$HitTimer.start()
+			if GlobalVars.player_health == 0:
+				print("u ded")
+			else:
+				GlobalVars.player_health -= 1
+				print(GlobalVars.player_health)
+				if GlobalVars.player_health == 0:
+					print("u ded")
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
@@ -57,8 +72,12 @@ func apply_movement(accel):
 	velocity = velocity.limit_length(player_speed)
 
 func _on_health_collision_area_entered(area: Area2D) -> void:
+	ghost_touching = true
 	if !was_hit:
 		was_hit = true
+		self.modulate.g = 0
+		self.modulate.b = 0
+		$HitTimer.start()
 		if GlobalVars.player_health == 0:
 			print("u ded")
 		else:
@@ -71,7 +90,7 @@ func _on_health_collision_area_entered(area: Area2D) -> void:
 
 
 func _on_health_collision_area_exited(area: Area2D) -> void:
-	was_hit = false
+	ghost_touching = false
 
 
 func _on_ghost_finding_area_area_entered(area: Area2D) -> void:
@@ -90,3 +109,9 @@ func _on_ghost_finding_area_area_exited(area: Area2D) -> void:
 	if len(current_ghosts) == 0:
 		get_node("GhostFinder").volume_db = -80
 		get_node("GhostFinder").pitch_scale = 0.9
+
+
+func _on_hit_timer_timeout() -> void:
+	was_hit = false
+	self.modulate.g = 1
+	self.modulate.b = 1
