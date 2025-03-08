@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-@onready var key_number: Label = $VBoxContainer/Label
+@onready var key_img: TextureRect = $VBoxContainer/KeyImg
 
 func update_key():
-	key_number.text = str(GlobalVars.key)
+	key_img.visible = GlobalVars.key >= 1
