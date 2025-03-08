@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwil4i34acj3q"]
+[gd_scene load_steps=11 format=3 uid="uid://bwil4i34acj3q"]
 
 [ext_resource type="Script" path="res://1_Scripts/player.gd" id="1_xdi00"]
 [ext_resource type="Texture2D" uid="uid://c7e4nweqgy74p" path="res://2_Images/Actors/MainChar.png" id="2_mni6y"]
 [ext_resource type="Texture2D" uid="uid://dgyhprwqo3ysf" path="res://2_Images/Actors/HandLantern.png" id="3_ghcyr"]
 [ext_resource type="AudioStream" uid="uid://w5wv4vbbhrrf" path="res://98_Placeholders/Audio/bell-sound-193696.mp3" id="3_pp5ny"]
+[ext_resource type="AudioStream" uid="uid://bn1txepuxlxwm" path="res://3_Audio/SFX/steps.mp3" id="5_lpthk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afc57"]
 radius = 29.0
@@ -72,7 +73,16 @@ collision_mask = 128
 shape = SubResource("CircleShape2D_52kga")
 debug_color = Color(1, 1, 1, 0)
 
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="PlayerSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lpthk")
+parameters/looping = true
+
 [connection signal="area_entered" from="HealthCollision" to="." method="_on_health_collision_area_entered"]
 [connection signal="area_exited" from="HealthCollision" to="." method="_on_health_collision_area_exited"]
 [connection signal="area_entered" from="GhostFindingArea" to="." method="_on_ghost_finding_area_area_entered"]
 [connection signal="area_exited" from="GhostFindingArea" to="." method="_on_ghost_finding_area_area_exited"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

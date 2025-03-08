@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://hv6fnp78mu8h"]
+[gd_scene load_steps=11 format=3 uid="uid://hv6fnp78mu8h"]
 
 [ext_resource type="Script" path="res://1_Scripts/door_logic.gd" id="1_ov1nv"]
 [ext_resource type="Texture2D" uid="uid://do5quwb17yfrg" path="res://2_Images/Tiles/door.png" id="2_vuvu3"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_1cel7"]
+[ext_resource type="AudioStream" uid="uid://dnvvdxjyj1vj4" path="res://3_Audio/SFX/door-opening.mp3" id="4_1dwh4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(128, 64)
@@ -129,6 +130,9 @@ theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
 theme_override_fonts/font = ExtResource("4_1cel7")
 theme_override_font_sizes/font_size = 33
 text = "[E] TO INTERACT"
+
+[node name="DoorOpening" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1dwh4")
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
 [connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
