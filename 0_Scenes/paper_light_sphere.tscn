@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch120yl3f6opa"]
+
+[ext_resource type="Texture2D" uid="uid://425qbce300oe" path="res://2_Images/Props/decor_lights.png" id="1_pnrqt"]
+[ext_resource type="Texture2D" uid="uid://cvbjilhl5wkm2" path="res://2_Images/Lights/circle.png" id="2_3tde0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ld7tu"]
+radius = 25.9422
+
+[node name="PaperLightSphere" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ld7tu")
+
+[node name="Candle" type="Sprite2D" parent="."]
+texture = ExtResource("1_pnrqt")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.805739, 0.761903, 0.134481, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_color = Color(0.156145, 0.151612, 0.0152728, 0.054902)
+shadow_filter = 1
+shadow_filter_smooth = 2.5
+shadow_item_cull_mask = 7
+texture = ExtResource("2_3tde0")
+texture_scale = 3.0
