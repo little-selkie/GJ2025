@@ -23,3 +23,4 @@ func open_door() -> void:
 	get_node("AreaOfInteraction").monitoring = false
 	get_node("LightOccluder2D").visible = false
 	$AnimationPlayer.play("door_open")
+	$DoorOpening.play()

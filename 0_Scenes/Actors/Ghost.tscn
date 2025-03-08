@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://5obyp7tmx8d5"]
+[gd_scene load_steps=9 format=3 uid="uid://5obyp7tmx8d5"]
 
 [ext_resource type="Script" path="res://1_Scripts/ghost.gd" id="1_buk2y"]
 [ext_resource type="Texture2D" uid="uid://i37lj6y78u34" path="res://2_Images/Actors/ghost.png" id="2_8vvv0"]
+[ext_resource type="AudioStream" uid="uid://c1rj7bw7pcjs7" path="res://3_Audio/SFX/ghost_hunting_sound.mp3" id="3_uk3cu"]
+[ext_resource type="AudioStream" uid="uid://c8ualmfe017sx" path="res://3_Audio/SFX/ghost_despawn.wav" id="4_xw6tp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r51hn"]
 
@@ -63,6 +65,13 @@ one_shot = true
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_u20mc")
 occluder_light_mask = 4
+
+[node name="GhostHunting" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_uk3cu")
+parameters/looping = true
+
+[node name="GhostDespawning" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xw6tp")
 
 [connection signal="area_entered" from="Vision" to="." method="_on_vision_area_entered"]
 [connection signal="area_exited" from="Vision" to="." method="_on_vision_area_exited"]

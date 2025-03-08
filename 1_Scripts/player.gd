@@ -15,11 +15,18 @@ var min_distance_to_ghost: float = 0
 var ghost_locations: Array
 var ghost_touching: bool = false
 
+var is_moving: bool = false
+
 func _ready() -> void:
 	get_node("GhostFinder").volume_db = -80
 	get_node("GhostFinder").pitch_scale = 0.9
 
 func _physics_process(delta):
+	if Input.is_action_pressed("move_down") or Input.is_action_pressed("move_up") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		steps_sound()
+	else:
+		$PlayerSteps.stop()
+		is_moving = false
 	move(delta)
 	if len(current_ghosts) == 0:
 		get_node("GhostFinder").volume_db = -80
@@ -47,6 +54,11 @@ func _physics_process(delta):
 				print(GlobalVars.player_health)
 				if GlobalVars.player_health == 0:
 					print("u ded")
+
+func steps_sound() -> void:
+	if !is_moving:
+		is_moving = true
+		$PlayerSteps.play()
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))

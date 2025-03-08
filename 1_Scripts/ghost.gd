@@ -50,6 +50,7 @@ func _on_vision_area_entered(area: Area2D) -> void:
 	$Timer.stop()
 	$fading.stop()
 	is_hunting = true
+	$GhostHunting.play()
 	player_in_sight = true
 	is_patrolling = false
 	in_position = false
@@ -65,6 +66,8 @@ func _on_timer_timeout() -> void:
 	is_fading = true
 	player_in_sight = false
 	is_hunting = false
+	$GhostHunting.stop()
+	$GhostDespawning.play()
 	is_patrolling = true
 
 
