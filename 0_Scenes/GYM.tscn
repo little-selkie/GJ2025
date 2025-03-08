@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://sbxcebg2mnjy"]
+[gd_scene load_steps=15 format=4 uid="uid://sbxcebg2mnjy"]
 
 [ext_resource type="Texture2D" uid="uid://bgufya74b24no" path="res://98_Placeholders/Images/Tileset/Dark_lvl2.png" id="1_c1b6f"]
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_w6i4q"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="3_b8nse"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="3_m4a7e"]
 [ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="7_pnno7"]
+[ext_resource type="PackedScene" uid="uid://cwnft0nv68qet" path="res://0_Scenes/Actors/key.tscn" id="8_b5ru7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdsnf"]
 texture = ExtResource("1_c1b6f")
@@ -164,3 +165,6 @@ navigation_layers = 16
 [node name="SakuraTree" type="Sprite2D" parent="."]
 position = Vector2(932, 169)
 texture = ExtResource("7_pnno7")
+
+[node name="Key" parent="." instance=ExtResource("8_b5ru7")]
+position = Vector2(376, 520)
