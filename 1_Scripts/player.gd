@@ -22,6 +22,8 @@ func _ready() -> void:
 	get_node("GhostFinder").pitch_scale = 1
 
 func _physics_process(delta):
+	if GlobalVars.ghosts_freed == 10:
+		get_node("Banish10th").visible = true
 	if GlobalVars.candle_level >= 1:
 		GlobalVars.candle_level -= 0.1
 		get_node("MainChar/HandLantern/PointLight2DPlayer").color.a = GlobalVars.candle_level/100
