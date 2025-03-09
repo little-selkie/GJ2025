@@ -940,7 +940,7 @@ rotation = 0.0547525
 position = Vector2(762, 732)
 
 [node name="Bench7" parent="furniture" instance=ExtResource("20_rehry")]
-position = Vector2(398, 411)
+position = Vector2(403, 405)
 rotation = -1.5708
 
 [node name="Bench8" parent="furniture" instance=ExtResource("20_rehry")]

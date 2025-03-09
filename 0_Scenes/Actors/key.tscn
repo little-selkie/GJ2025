@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d26h1mihed51j" path="res://2_Images/UI/NewUI/Keys/key_blue.png" id="5_8wt24"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
-size = Vector2(17, 29)
+size = Vector2(88, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkpky"]
 size = Vector2(16.5, 30)
@@ -63,7 +63,7 @@ polygon = PackedVector2Array(0, 33, 31, 33, 64, 33, 63.982, 0.0110836, -0.004843
 uv = PackedVector2Array(0.031497, 64.0319, 63.9543, 64.0104, 63.982, 0.0110836, -0.00484371, 0.00997257)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 5.5)
+position = Vector2(26, 6)
 shape = SubResource("RectangleShape2D_0in1j")
 
 [node name="AreaOfInteraction" type="Area2D" parent="."]
