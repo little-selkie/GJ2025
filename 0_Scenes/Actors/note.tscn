@@ -76,18 +76,21 @@ text = "[E] READ NOTE"
 
 [node name="Note" type="CanvasLayer" parent="."]
 visible = false
+scale = Vector2(1, 1.08)
+transform = Transform2D(1, 0, 0, 1.08, 0, 0)
 script = ExtResource("4_21wu0")
 
 [node name="Note" type="TextureRect" parent="Note"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -139.0
-offset_top = 3.0
-offset_right = -4.0
-offset_bottom = 137.0
+offset_left = -120.0
+offset_top = 22.2222
+offset_right = -31.0
+offset_bottom = 105.222
 grow_horizontal = 0
 texture = ExtResource("5_mgbo6")
+expand_mode = 1
 
 [node name="InteractText" type="Label" parent="Note/Note"]
 layout_mode = 1
@@ -103,6 +106,7 @@ offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_vao1b")
 theme_override_font_sizes/font_size = 33
 text = "[R] READ"

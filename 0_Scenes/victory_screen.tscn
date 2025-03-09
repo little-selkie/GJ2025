@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_x55m1"]
 [ext_resource type="AudioStream" uid="uid://b0fwk8ngxp21p" path="res://3_Audio/SFX/impactGlass_heavy_003.ogg" id="5_ufoag"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="6_oh708"]
-[ext_resource type="AudioStream" uid="uid://bswlf3hwxndud" path="res://3_Audio/162068__mrauralization__railroad-crossing-japan.wav" id="7_yvu85"]
+[ext_resource type="AudioStream" uid="uid://2wj5evx7sk13" path="res://3_Audio/victory.mp3" id="7_r3khg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
 texture = ExtResource("2_hkshm")
@@ -112,8 +112,11 @@ The haunted house is silent, the spirits are at peace. Your bravery and wit have
 autowrap_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_yvu85")
+stream = ExtResource("7_r3khg")
+volume_db = -19.497
 autoplay = true
+mix_target = 1
+parameters/looping = true
 
 [connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

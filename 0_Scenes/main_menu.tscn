@@ -66,7 +66,7 @@ theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("2_15548")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "Start exorcism"
+text = "Start the game"
 
 [node name="Click" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
 stream = ExtResource("4_uihib")
@@ -82,8 +82,7 @@ theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("2_15548")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "End the Nightmare
-"
+text = "exit to desktop"
 
 [node name="Click2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
 stream = ExtResource("4_uihib")
@@ -112,8 +111,10 @@ text = "Insert_game_name
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_x3216")
+volume_db = -15.315
 autoplay = true
 mix_target = 1
+parameters/looping = true
 
 [connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

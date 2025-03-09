@@ -18,6 +18,7 @@ var ghost_touching: bool = false
 var is_moving: bool = false
 
 func _ready() -> void:
+	$BellAnimation.stop()
 	get_node("GhostFinder").volume_db = -80
 	get_node("GhostFinder").pitch_scale = 1
 
@@ -38,6 +39,7 @@ func _physics_process(delta):
 		is_moving = false
 	move(delta)
 	if len(current_ghosts) == 0:
+		$BellAnimation.stop()
 		get_node("GhostFinder").volume_db = -80
 		get_node("GhostFinder").pitch_scale = 1
 	if len(current_ghosts) != 0:
@@ -53,17 +55,21 @@ func _physics_process(delta):
 		if min_distance_to_ghost < 400 and min_distance_to_ghost > 200:
 			#get_node("GhostFinder").volume_db = 10 + (10/min_distance_to_ghost * sound_booster * 2)
 			#get_node("GhostFinder").pitch_scale = 1.5 + (1/min_distance_to_ghost * sound_pitcher * 1)
+			$BellAnimation.speed_scale = 1
 			get_node("GhostFinder").volume_db = 10
 			get_node("GhostFinder").pitch_scale = 1.5
 		if min_distance_to_ghost < 200 and min_distance_to_ghost > 100:
+			$BellAnimation.speed_scale = 2
 			get_node("GhostFinder").volume_db = 13
 			get_node("GhostFinder").pitch_scale = 2.3
 		if min_distance_to_ghost < 100 and min_distance_to_ghost > 10:
 			#get_node("GhostFinder").volume_db = 15 + (10/min_distance_to_ghost * sound_booster * 1)
 			#get_node("GhostFinder").pitch_scale = 3 + (1/min_distance_to_ghost * sound_pitcher * 1)
+			$BellAnimation.speed_scale = 3
 			get_node("GhostFinder").volume_db = 15
 			get_node("GhostFinder").pitch_scale = 3
 		if GlobalVars.is_exorcism_available:
+			$BellAnimation.stop()
 			get_node("GhostFinder").volume_db = -80
 			get_node("GhostFinder").pitch_scale = 1
 	
@@ -134,7 +140,8 @@ func _on_health_collision_area_exited(area: Area2D) -> void:
 
 func _on_ghost_finding_area_area_entered(area: Area2D) -> void:
 	if len(current_ghosts) == 0:
-		get_node("GhostFinder").volume_db = -80
+		$BellAnimation.play("bell_belling")
+		get_node("GhostFinder").volume_db = 0
 		get_node("GhostFinder").pitch_scale = 1
 		min_distance_to_ghost = global_position.distance_to(area.global_position)
 	current_ghosts.append(area)
@@ -147,6 +154,7 @@ func _on_ghost_finding_area_area_exited(area: Area2D) -> void:
 		current_ghosts.erase(area)
 		ghost_locations.slice(-1)
 	if len(current_ghosts) == 0:
+		$BellAnimation.stop()
 		get_node("GhostFinder").volume_db = -80
 		get_node("GhostFinder").pitch_scale = 1
 

@@ -6,16 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://dprokia0ox2q7" path="res://98_Placeholders/Images/Tileset/RTS_medieval@2.png" id="5_8grh1"]
 [ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_2_locked.tscn" id="8_bt88f"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_3_locked.tscn" id="9_j3f1d"]
+[ext_resource type="PackedScene" uid="uid://c2gkaxc0bpp6w" path="res://0_Scenes/Actors/door_2_locked.tscn" id="8_bt88f"]
+[ext_resource type="PackedScene" uid="uid://cspc25b6ub6g4" path="res://0_Scenes/Actors/door_3_locked.tscn" id="9_j3f1d"]
 [ext_resource type="Texture2D" uid="uid://bl6vvuw7mxydm" path="res://98_Placeholders/Images/Tileset/furniture/toilet.png" id="9_nx5wl"]
 [ext_resource type="PackedScene" uid="uid://dpqcide5dqkh1" path="res://0_Scenes/sakura.tscn" id="10_1gart"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/locked_door.tscn" id="10_2tdto"]
-[ext_resource type="PackedScene" uid="uid://c5s4l486lb06y" path="res://0_Scenes/Furniture/main_shrine.tscn" id="10_7toa2"]
-[ext_resource type="PackedScene" uid="uid://bbrct0qa80h3i" path="res://0_Scenes/Furniture/blueshrine.tscn" id="11_odrsl"]
-[ext_resource type="PackedScene" uid="uid://ybtqpin3l6mh" path="res://0_Scenes/paper_light_cube.tscn" id="12_e3wha"]
-[ext_resource type="PackedScene" uid="uid://bpm6bsgw4livf" path="res://0_Scenes/Furniture/greenshrine.tscn" id="12_kpqo3"]
-[ext_resource type="PackedScene" uid="uid://dnm1kke4peo8" path="res://0_Scenes/Furniture/yellowshrine.tscn" id="13_4npkv"]
+[ext_resource type="PackedScene" uid="uid://drln1fpsncymm" path="res://0_Scenes/Actors/locked_door.tscn" id="10_2tdto"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/main_shrine.tscn" id="10_7toa2"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/blueshrine.tscn" id="11_odrsl"]
+[ext_resource type="PackedScene" path="res://0_Scenes/paper_light_cube.tscn" id="12_e3wha"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/greenshrine.tscn" id="12_kpqo3"]
+[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/yellowshrine.tscn" id="13_4npkv"]
 [ext_resource type="PackedScene" uid="uid://ch120yl3f6opa" path="res://0_Scenes/paper_light_sphere.tscn" id="13_m3aac"]
 [ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_picture_2.tscn" id="14_1vt7k"]
 [ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_scroll_1.tscn" id="15_kdqe8"]
@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://8mxt1n6ec2hf" path="res://0_Scenes/Actors/key_3.tscn" id="20_q7dt0"]
 [ext_resource type="PackedScene" uid="uid://b061f07v2fnh0" path="res://0_Scenes/Furniture/bench.tscn" id="20_rehry"]
 [ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_scroll_2.tscn" id="21_8y5a6"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/note.tscn" id="21_kxfon"]
+[ext_resource type="PackedScene" uid="uid://cj6o4kudqhr8e" path="res://0_Scenes/Actors/note.tscn" id="21_kxfon"]
 [ext_resource type="PackedScene" uid="uid://dgnw8oujwkuaf" path="res://0_Scenes/Containers/TypeA.tscn" id="22_jhexa"]
 [ext_resource type="PackedScene" uid="uid://innsvprkd5v" path="res://0_Scenes/Actors/amulet.tscn" id="22_lprmy"]
 [ext_resource type="PackedScene" uid="uid://c720xldr0t338" path="res://0_Scenes/Containers/TypeB.tscn" id="23_8vsrc"]
@@ -1075,9 +1075,9 @@ rotation = 1.5708
 position = Vector2(-658, 107)
 
 [node name="Note" parent="Keys+amulet" instance=ExtResource("21_kxfon")]
-position = Vector2(622, 428)
-rotation = -0.451148
-scale = Vector2(2, 2)
+position = Vector2(639.825, 422.9)
+rotation = -0.406662
+scale = Vector2(0.68, 0.68)
 
 [node name="Amulets" parent="Keys+amulet" instance=ExtResource("22_lprmy")]
 z_index = -1
