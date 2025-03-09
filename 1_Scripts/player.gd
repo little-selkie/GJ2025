@@ -85,6 +85,7 @@ func _physics_process(delta):
 				GlobalVars.player_health -= 1
 				print(GlobalVars.player_health)
 				if GlobalVars.player_health == 0:
+					get_tree().change_scene_to_file("res://0_Scenes/dead_screen.tscn")
 					print("u ded")
 
 func steps_sound() -> void:
