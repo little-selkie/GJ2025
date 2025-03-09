@@ -112,6 +112,7 @@ theme_override_font_sizes/font_size = 33
 text = "[R] READ"
 
 [node name="OnScreenNote" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Note" type="TextureRect" parent="OnScreenNote"]
 anchors_preset = 1
