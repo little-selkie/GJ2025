@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://n1wqmicsckcv"]
+[gd_scene load_steps=6 format=3 uid="uid://bbeje4qqm0x6i"]
 
 [ext_resource type="Script" path="res://1_Scripts/candle_pickup.gd" id="1_ffb3y"]
 [ext_resource type="Texture2D" uid="uid://clfu7l245mtx8" path="res://2_Images/Props/candle.png" id="1_w5dg2"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="3_wejok"]
-[ext_resource type="AudioStream" uid="uid://dfirxhov68ow5" path="res://3_Audio/SFX/candle.mp3" id="4_bdgyl"]
+[ext_resource type="AudioStream" uid="uid://bladlphs87vfr" path="res://3_Audio/SFX/light-fire.mp3" id="4_e8y4o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2n4eg"]
 radius = 42.107
@@ -49,7 +49,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="CandleSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_bdgyl")
+stream = ExtResource("4_e8y4o")
 
 [connection signal="area_entered" from="Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Interaction" to="." method="_on_interaction_area_exited"]
