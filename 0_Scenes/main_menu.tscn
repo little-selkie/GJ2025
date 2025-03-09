@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://1_Scripts/main_menu.gd" id="1_j16tt"]
 [ext_resource type="Texture2D" uid="uid://dl1ofwcuk012b" path="res://2_Images/UI/15535131861_3c5fb01c15_k.jpg" id="1_wainh"]
-[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_0fllq"]
 [ext_resource type="FontFile" uid="uid://cyn3tsi0jwlyw" path="res://69_Fonts/go3v2.ttf" id="2_15548"]
 [ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_uihib"]
 [ext_resource type="AudioStream" uid="uid://b0fwk8ngxp21p" path="res://3_Audio/SFX/impactGlass_heavy_003.ogg" id="5_r76p7"]
+[ext_resource type="FontFile" uid="uid://dvi7wieyysevf" path="res://69_Fonts/drakon.ttf" id="6_6wefo"]
 [ext_resource type="AudioStream" uid="uid://c8uqfdqgoyt7o" path="res://3_Audio/creepypeaks.ogg" id="7_x3216"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
@@ -51,9 +51,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -257.0
-offset_top = -91.0
+offset_top = -2.0
 offset_right = 257.0
-offset_bottom = 146.0
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -97,17 +97,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -231.0
-offset_right = 117.5
-offset_bottom = -157.0
+offset_left = -328.0
+offset_top = -335.0
+offset_right = 319.0
+offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.572519, 0.000723104, 0.000396212, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("2_0fllq")
-theme_override_font_sizes/font_size = 69
-text = "Insert_game_name
-"
+theme_override_fonts/font = ExtResource("6_6wefo")
+theme_override_font_sizes/font_size = 134
+text = "HAUNTED GO-TEI"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_x3216")

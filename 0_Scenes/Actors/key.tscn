@@ -100,6 +100,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_0nl7j")
 theme_override_font_sizes/font_size = 33
 text = "[E] TO INTERACT"
