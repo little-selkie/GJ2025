@@ -20,9 +20,8 @@ script = ExtResource("1_8mv6n")
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_jbodt")
 layout_mode = 0
-offset_top = -8.0
 offset_right = 1088.0
-offset_bottom = 760.0
+offset_bottom = 768.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -49,6 +48,8 @@ theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_aken2")
 theme_override_font_sizes/font_size = 31
 text = "Controls:
@@ -67,6 +68,24 @@ text = "Resume"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_aken2")
 text = "quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -64.0
+offset_right = 160.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.634888, 0.579015, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_aken2")
+text = "The candle still burns while you`re here"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
