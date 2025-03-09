@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dufy7ohvyx85c"]
+[gd_scene load_steps=11 format=4 uid="uid://dufy7ohvyx85c"]
 
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_6c8ys"]
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="1_014s6"]
 [ext_resource type="PackedScene" uid="uid://n1wqmicsckcv" path="res://0_Scenes/Actors/CandlePickup.tscn" id="2_jbe6q"]
 [ext_resource type="PackedScene" uid="uid://c5s4l486lb06y" path="res://0_Scenes/Furniture/main_shrine.tscn" id="4_glpre"]
 [ext_resource type="PackedScene" uid="uid://cj6o4kudqhr8e" path="res://0_Scenes/Actors/note.tscn" id="5_yca12"]
+[ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="6_qnb4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4nxa"]
 texture = ExtResource("1_014s6")
@@ -47,6 +48,17 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_k4nxa")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dp362"]
+vertices = PackedVector2Array(895.961, 121.93, 1830.97, 116.063, 1825.02, 2455.98, 891.961, 1206.03, -1146.98, 2453.01, -149.953, 1202.97, -1143.01, 113.977, -155.938, 112.008)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1153, 104, -146, 102, -140, 1193, 882, 1196, 886, 112, 1841, 106, 1835, 2466, -1157, 2463)])
+
+[sub_resource type="Curve2D" id="Curve2D_qkjl7"]
+_data = {
+"points": PackedVector2Array(6.3496, 84.1322, -6.3496, -84.1322, 469, 1722, 30.4809, 11.5202, -30.4809, -11.5202, 296, 1521, 46.4475, 46.4475, -46.4475, -46.4475, 114, 1409, -28.7112, 29.4804, 28.7112, -29.4804, 163, 1282, -16.2668, -74.1987, 16.2668, 74.1987, 461, 1232, 17.9793, -27.2587, -17.9793, 27.2587, 125, 1522, -26.9695, -67.4238, 26.9695, 67.4238, 75, 1725, -39.4995, 55.412, 39.4995, -55.412, 267, 1664, -74.1662, 41.2035, 74.1662, -41.2035, 439, 1427, -17.8583, -21.4299, 17.8583, 21.4299, 370, 1746, -7.937, 55.559, 7.937, -55.559, 465, 1722)
+}
+point_count = 11
+
 [node name="Gym2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -64,3 +76,20 @@ position = Vector2(456, 262)
 
 [node name="Note" parent="." instance=ExtResource("5_yca12")]
 position = Vector2(700, 248)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(271, -1501)
+navigation_polygon = SubResource("NavigationPolygon_dp362")
+navigation_layers = 16
+
+[node name="Ghost1 - Path2D" type="Path2D" parent="NavigationRegion2D"]
+position = Vector2(234, 432)
+curve = SubResource("Curve2D_qkjl7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="NavigationRegion2D/Ghost1 - Path2D"]
+position = Vector2(469, 1722)
+rotation = -1.64613
+
+[node name="Ghost1" parent="NavigationRegion2D/Ghost1 - Path2D/PathFollow2D" instance=ExtResource("6_qnb4v")]
+position = Vector2(3.91338, 1.2982)
+rotation = 1.45528
