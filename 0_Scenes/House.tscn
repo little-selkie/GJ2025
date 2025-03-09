@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bd065y7n0i7b1"]
+[gd_scene load_steps=63 format=4 uid="uid://bd065y7n0i7b1"]
 
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="2_s5qhx"]
 [ext_resource type="PackedScene" uid="uid://dnyvf7q5p5bqx" path="res://0_Scenes/TestLight.tscn" id="4_pmlgf"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://ogscv3n35spo" path="res://0_Scenes/Furniture/seat_1.tscn" id="24_7khx1"]
 [ext_resource type="PackedScene" uid="uid://b2ifay3a8po2f" path="res://0_Scenes/Furniture/table_long.tscn" id="25_jfkwc"]
 [ext_resource type="PackedScene" uid="uid://bjdsr1t3ewcew" path="res://0_Scenes/Furniture/seat_3.tscn" id="26_6jk3l"]
+[ext_resource type="Texture2D" uid="uid://daylgetex6cq6" path="res://2_Images/Props/furniture.png" id="28_g356w"]
 [ext_resource type="PackedScene" uid="uid://de6t87wautxll" path="res://0_Scenes/Furniture/seat_2.tscn" id="28_koao6"]
 [ext_resource type="PackedScene" uid="uid://bmw7x31awf5lp" path="res://0_Scenes/Containers/TypeC.tscn" id="35_lk251"]
 [ext_resource type="PackedScene" path="res://0_Scenes/Actors/CandlePickup.tscn" id="46_jtxe4"]
@@ -677,6 +678,9 @@ sources/1 = SubResource("TileSetAtlasSource_p55n8")
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ou4jc"]
 polygon = PackedVector2Array(-1125, 95, -1125, 122, -1118, 122, -1118, 125, -1125, 131, -1125, 140, -1113, 151, -1113, 155, -1125, 167, -1083, 167, -1083, 165, -1093, 155, -1093, 151, -1081, 140, -1082, 131, -1089, 124, -1089, 122, -1081, 122, -1081, 95)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wrn7i"]
+polygon = PackedVector2Array(-19, -15, -26, 12, -8, 17, 16, 15, 24, 10, 21, -8, 20, -18, 8, -19, 0, -16)
+
 [node name="House" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -892,10 +896,21 @@ rotation = -0.494261
 position = Vector2(1266, 2100)
 rotation = 0.230485
 
-[node name="Seat22" parent="furniture" instance=ExtResource("19_v1hsv")]
+[node name="Seat22" type="Node2D" parent="furniture"]
 z_index = 1
 position = Vector2(813, 409)
 rotation = 0.230485
+
+[node name="StaticBody2D" type="StaticBody2D" parent="furniture/Seat22"]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="furniture/Seat22/StaticBody2D"]
+texture = ExtResource("28_g356w")
+region_enabled = true
+region_rect = Rect2(192, 208.723, 62.0551, 47.2772)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/Seat22/StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_wrn7i")
 
 [node name="Seat5" parent="furniture" instance=ExtResource("19_v1hsv")]
 position = Vector2(1452, 2116)
@@ -951,11 +966,11 @@ position = Vector2(-605, 1616)
 rotation = -0.0979975
 
 [node name="Stool4" parent="furniture" instance=ExtResource("23_yyw1m")]
-position = Vector2(-190, 672)
+position = Vector2(-207, 672)
 rotation = 0.171403
 
 [node name="Seat1" parent="furniture" instance=ExtResource("24_7khx1")]
-position = Vector2(1301, 984)
+position = Vector2(1321, 984)
 
 [node name="Seat26" parent="furniture" instance=ExtResource("24_7khx1")]
 position = Vector2(-465, 312)
@@ -972,12 +987,12 @@ rotation = -1.57151
 
 [node name="TableLong3" parent="furniture" instance=ExtResource("25_jfkwc")]
 z_index = 1
-position = Vector2(-1031, 1055)
+position = Vector2(-1012, 1054)
 rotation = -1.17616
 
 [node name="TableLong4" parent="furniture" instance=ExtResource("25_jfkwc")]
 z_index = 1
-position = Vector2(-1062, 942)
+position = Vector2(-1043, 950)
 rotation = 0.412326
 
 [node name="Seat8" parent="furniture" instance=ExtResource("19_v1hsv")]
@@ -1012,7 +1027,7 @@ position = Vector2(1146, 1264)
 rotation = 1.34561
 
 [node name="Bench4" parent="furniture" instance=ExtResource("20_rehry")]
-position = Vector2(433, 1363)
+position = Vector2(396, 1372)
 rotation = -0.112928
 
 [node name="Seat11" parent="furniture" instance=ExtResource("19_v1hsv")]
