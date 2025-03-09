@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://dufy7ohvyx85c"]
+[gd_scene load_steps=14 format=4 uid="uid://dufy7ohvyx85c"]
 
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="1_6c8ys"]
 [ext_resource type="Texture2D" uid="uid://570ap0f3bp23" path="res://2_Images/Tiles/tiles_64x64.png" id="1_014s6"]
-[ext_resource type="PackedScene" uid="uid://n1wqmicsckcv" path="res://0_Scenes/Actors/CandlePickup.tscn" id="2_jbe6q"]
+[ext_resource type="PackedScene" uid="uid://bbeje4qqm0x6i" path="res://0_Scenes/Actors/CandlePickup.tscn" id="2_jbe6q"]
 [ext_resource type="PackedScene" uid="uid://c5s4l486lb06y" path="res://0_Scenes/Furniture/main_shrine.tscn" id="4_glpre"]
 [ext_resource type="PackedScene" uid="uid://cj6o4kudqhr8e" path="res://0_Scenes/Actors/note.tscn" id="5_yca12"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="6_qnb4v"]
 [ext_resource type="PackedScene" uid="uid://dpqcide5dqkh1" path="res://0_Scenes/sakura.tscn" id="7_41fji"]
+[ext_resource type="PackedScene" uid="uid://brnrx4qwy420n" path="res://0_Scenes/Containers/Toilet.tscn" id="8_u7ean"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4nxa"]
 texture = ExtResource("1_014s6")
@@ -60,6 +61,9 @@ _data = {
 }
 point_count = 11
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kw1xy"]
+polygon = PackedVector2Array(-11, 17, -17, 13, -20, 2, -16, -6, -6, -10, -6, -14, -17, -14, -16, -32, 16, -33, 18, -22, 16, -15, 7, -13, 8, -9, 19, -4, 22, 0, 19, 10, 12, 16, 3, 17)
+
 [node name="Gym2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -98,3 +102,10 @@ rotation = 1.45528
 
 [node name="Sakura" parent="." instance=ExtResource("7_41fji")]
 position = Vector2(809, 156)
+
+[node name="Toilet" parent="." instance=ExtResource("8_u7ean")]
+position = Vector2(534, 146)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Toilet"]
+position = Vector2(-1, 1)
+occluder = SubResource("OccluderPolygon2D_kw1xy")

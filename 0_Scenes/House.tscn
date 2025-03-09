@@ -7,31 +7,31 @@
 [ext_resource type="Texture2D" uid="uid://fmmsoluc30xa" path="res://98_Placeholders/Images/Tileset/Parede_64x6402.png" id="5_rxd28"]
 [ext_resource type="PackedScene" uid="uid://hv6fnp78mu8h" path="res://0_Scenes/Actors/Door.tscn" id="8_3ja1r"]
 [ext_resource type="PackedScene" uid="uid://c2gkaxc0bpp6w" path="res://0_Scenes/Actors/door_2_locked.tscn" id="8_bt88f"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/door_3_locked.tscn" id="9_j3f1d"]
-[ext_resource type="Texture2D" uid="uid://bl6vvuw7mxydm" path="res://98_Placeholders/Images/Tileset/furniture/toilet.png" id="9_nx5wl"]
+[ext_resource type="PackedScene" uid="uid://cspc25b6ub6g4" path="res://0_Scenes/Actors/door_3_locked.tscn" id="9_j3f1d"]
 [ext_resource type="PackedScene" uid="uid://dpqcide5dqkh1" path="res://0_Scenes/sakura.tscn" id="10_1gart"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Actors/locked_door.tscn" id="10_2tdto"]
+[ext_resource type="PackedScene" uid="uid://drln1fpsncymm" path="res://0_Scenes/Actors/locked_door.tscn" id="10_2tdto"]
 [ext_resource type="PackedScene" uid="uid://c5s4l486lb06y" path="res://0_Scenes/Furniture/main_shrine.tscn" id="10_7toa2"]
 [ext_resource type="PackedScene" uid="uid://bbrct0qa80h3i" path="res://0_Scenes/Furniture/blueshrine.tscn" id="11_odrsl"]
 [ext_resource type="PackedScene" uid="uid://ybtqpin3l6mh" path="res://0_Scenes/paper_light_cube.tscn" id="12_e3wha"]
 [ext_resource type="PackedScene" uid="uid://bpm6bsgw4livf" path="res://0_Scenes/Furniture/greenshrine.tscn" id="12_kpqo3"]
 [ext_resource type="PackedScene" uid="uid://dnm1kke4peo8" path="res://0_Scenes/Furniture/yellowshrine.tscn" id="13_4npkv"]
 [ext_resource type="PackedScene" uid="uid://ch120yl3f6opa" path="res://0_Scenes/paper_light_sphere.tscn" id="13_m3aac"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_picture_2.tscn" id="14_1vt7k"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_scroll_1.tscn" id="15_kdqe8"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_picture_1.tscn" id="16_ytmub"]
+[ext_resource type="PackedScene" uid="uid://b0weiljrnbjmu" path="res://0_Scenes/Furniture/decor_picture_2.tscn" id="14_1vt7k"]
+[ext_resource type="PackedScene" uid="uid://tr4tolgaoplj" path="res://0_Scenes/Furniture/decor_scroll_1.tscn" id="15_kdqe8"]
+[ext_resource type="PackedScene" uid="uid://cv6oc2mavo4mk" path="res://0_Scenes/Furniture/decor_picture_1.tscn" id="16_ytmub"]
 [ext_resource type="PackedScene" uid="uid://b5dubwubk52bk" path="res://0_Scenes/Furniture/table_big.tscn" id="17_7n2c7"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_vase_1.tscn" id="17_7q7vc"]
+[ext_resource type="PackedScene" uid="uid://dcqvepi2n0css" path="res://0_Scenes/Furniture/decor_vase_1.tscn" id="17_7q7vc"]
 [ext_resource type="PackedScene" uid="uid://cwnft0nv68qet" path="res://0_Scenes/Actors/key.tscn" id="18_nf0uj"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_vase_2.tscn" id="18_vhu0m"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_vase_3.tscn" id="19_uu24l"]
+[ext_resource type="PackedScene" uid="uid://bleogxso5ww2l" path="res://0_Scenes/Furniture/decor_vase_2.tscn" id="18_vhu0m"]
+[ext_resource type="PackedScene" uid="uid://ck846sth5av0r" path="res://0_Scenes/Furniture/decor_vase_3.tscn" id="19_uu24l"]
 [ext_resource type="PackedScene" uid="uid://cq4wo3uv4sw10" path="res://0_Scenes/Furniture/seat_4.tscn" id="19_v1hsv"]
 [ext_resource type="PackedScene" uid="uid://bj7pab6hdbvg5" path="res://0_Scenes/Actors/key_2.tscn" id="19_xi3lx"]
 [ext_resource type="PackedScene" uid="uid://bk38821kblbjn" path="res://0_Scenes/Furniture/tableblack.tscn" id="20_de53y"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_tree_1.tscn" id="20_fxinr"]
+[ext_resource type="PackedScene" uid="uid://cnjtkd37lfhdf" path="res://0_Scenes/Furniture/decor_tree_1.tscn" id="20_fxinr"]
 [ext_resource type="PackedScene" uid="uid://8mxt1n6ec2hf" path="res://0_Scenes/Actors/key_3.tscn" id="20_q7dt0"]
 [ext_resource type="PackedScene" uid="uid://b061f07v2fnh0" path="res://0_Scenes/Furniture/bench.tscn" id="20_rehry"]
-[ext_resource type="PackedScene" path="res://0_Scenes/Furniture/decor_scroll_2.tscn" id="21_8y5a6"]
+[ext_resource type="PackedScene" uid="uid://d0456ag25v7f" path="res://0_Scenes/Furniture/decor_scroll_2.tscn" id="21_8y5a6"]
+[ext_resource type="PackedScene" uid="uid://brnrx4qwy420n" path="res://0_Scenes/Containers/Toilet.tscn" id="21_gsk85"]
 [ext_resource type="PackedScene" uid="uid://cj6o4kudqhr8e" path="res://0_Scenes/Actors/note.tscn" id="21_kxfon"]
 [ext_resource type="PackedScene" uid="uid://dgnw8oujwkuaf" path="res://0_Scenes/Containers/TypeA.tscn" id="22_jhexa"]
 [ext_resource type="PackedScene" uid="uid://innsvprkd5v" path="res://0_Scenes/Actors/amulet.tscn" id="22_lprmy"]
@@ -675,11 +675,11 @@ sources/5 = SubResource("TileSetAtlasSource_ie5t1")
 sources/6 = SubResource("TileSetAtlasSource_nfvhu")
 sources/1 = SubResource("TileSetAtlasSource_p55n8")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ou4jc"]
-polygon = PackedVector2Array(-1125, 95, -1125, 122, -1118, 122, -1118, 125, -1125, 131, -1125, 140, -1113, 151, -1113, 155, -1125, 167, -1083, 167, -1083, 165, -1093, 155, -1093, 151, -1081, 140, -1082, 131, -1089, 124, -1089, 122, -1081, 122, -1081, 95)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_htbkn"]
+polygon = PackedVector2Array(-11, 17, -17, 13, -20, 2, -16, -6, -6, -10, -6, -14, -17, -14, -16, -32, 16, -33, 18, -22, 16, -15, 7, -13, 8, -9, 19, -4, 22, 0, 19, 10, 12, 16, 3, 17)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wrn7i"]
-polygon = PackedVector2Array(-19, -15, -26, 12, -8, 17, 16, 15, 24, 10, 21, -8, 20, -18, 8, -19, 0, -16)
+polygon = PackedVector2Array(-17, -7, -18, 12, -8, 17, 17, 15, 21, 6, 19, -5, 17, -8, 8, -11, -3, -11)
 
 [node name="House" type="Node2D"]
 
@@ -853,19 +853,12 @@ position = Vector2(-865, 567)
 [node name="TableBlack" parent="furniture/decor" instance=ExtResource("20_de53y")]
 position = Vector2(-941, 490)
 
-[node name="toilet" type="StaticBody2D" parent="furniture"]
-collision_layer = 16
+[node name="Toilet" parent="furniture" instance=ExtResource("21_gsk85")]
+position = Vector2(-1095, 133)
 
-[node name="Sprite2D" type="Sprite2D" parent="furniture/toilet"]
-position = Vector2(-1103, 131)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_nx5wl")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="furniture/toilet"]
-polygon = PackedVector2Array(-1124, 94, -1124, 122, -1117, 122, -1118, 124, -1125, 131, -1125, 140, -1113, 151, -1113, 154, -1125, 166, -1083, 167, -1083, 165, -1094, 154, -1094, 151, -1081, 140, -1081, 131, -1089, 124, -1090, 121, -1082, 122, -1082, 95)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/toilet"]
-occluder = SubResource("OccluderPolygon2D_ou4jc")
+[node name="LightOccluder2D" type="LightOccluder2D" parent="furniture/Toilet"]
+position = Vector2(-1, 1)
+occluder = SubResource("OccluderPolygon2D_htbkn")
 
 [node name="Main shrine" parent="furniture" instance=ExtResource("10_7toa2")]
 z_index = 1
