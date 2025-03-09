@@ -133,9 +133,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -348.0
-offset_top = -221.0
+offset_top = -262.0
 offset_right = 466.0
-offset_bottom = 28.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -144,7 +144,10 @@ theme_override_font_sizes/font_size = 50
 text = "10 lost souls haunt this old house
 Find 3 amulets in 3 shrines 
 put these souls to rest
-return when your job is done"
+return when your job is done
+
+You may rest under the tree 
+to restore your spirit"
 uppercase = true
 
 [node name="InteractText" type="Label" parent="OnScreenNote"]
