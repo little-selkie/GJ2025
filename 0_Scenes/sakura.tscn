@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpqcide5dqkh1"]
+[gd_scene load_steps=11 format=3 uid="uid://dpqcide5dqkh1"]
 
 [ext_resource type="Texture2D" uid="uid://csbw8tfqg5v4g" path="res://2_Images/Props/sakura_tree.png" id="1_hma3y"]
 [ext_resource type="Script" path="res://1_Scripts/sakura.gd" id="1_y7wm6"]
 [ext_resource type="Texture2D" uid="uid://b8ykcqim2prb" path="res://2_Images/Props/sakura-petals-png-34554.png" id="2_b6sxg"]
 [ext_resource type="Texture2D" uid="uid://cvbjilhl5wkm2" path="res://2_Images/Lights/circle.png" id="3_pa6kp"]
+[ext_resource type="AudioStream" uid="uid://d3sbciv6wnrxm" path="res://3_Audio/Ambient/peaceful-24736.mp3" id="5_1rvlr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yvv72"]
 polygon = PackedVector2Array(-1, 125, -7, 117, 5, 114, -6, 111, -25, 103, -24, 94, -9, 87, 1, 75, 12, 68, 23, 68, 33, 58, 48, 52, 49, 33, 46, 16, 44, 5, 58, -5, 77, -3, 81, 21, 90, 40, 83, 56, 83, 75, 98, 84, 103, 95, 112, 104, 110, 110, 90, 119, 65, 116, 43, 105, 27, 98, 17, 102, 24, 112, 21, 120, 11, 125)
@@ -81,6 +82,11 @@ shape = SubResource("RectangleShape2D_4t3gs")
 one_shot = true
 
 [node name="Angelic" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(40, 105)
+stream = ExtResource("5_1rvlr")
+volume_db = -10.0
+pitch_scale = 1.3
+parameters/looping = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

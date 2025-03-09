@@ -84,6 +84,7 @@ navigation_polygon = SubResource("NavigationPolygon_dp362")
 navigation_layers = 16
 
 [node name="Ghost1 - Path2D" type="Path2D" parent="NavigationRegion2D"]
+visible = false
 position = Vector2(234, 432)
 curve = SubResource("Curve2D_qkjl7")
 

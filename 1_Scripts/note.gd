@@ -39,3 +39,4 @@ func open_door() -> void:
 		else: 
 			print("u full")
 	self.modulate.a = 0
+	$PointLight2D.color.a = 0
