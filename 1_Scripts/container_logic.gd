@@ -9,6 +9,8 @@ func _process(delta: float) -> void:
 
 func _on_area_interaction_area_entered(area: Area2D) -> void:
 	is_player_neraby = true
+	get_node("Interact").visible = true
 
 func _on_area_interaction_area_exited(area: Area2D) -> void:
 	is_player_neraby = false
+	get_node("Interact").visible = false

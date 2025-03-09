@@ -1,29 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgnw8oujwkuaf"]
+[gd_scene load_steps=10 format=3 uid="uid://dgnw8oujwkuaf"]
 
 [ext_resource type="Script" path="res://1_Scripts/container_logic.gd" id="1_nxck4"]
 [ext_resource type="Texture2D" uid="uid://daylgetex6cq6" path="res://2_Images/Props/furniture.png" id="2_gw281"]
 [ext_resource type="AudioStream" uid="uid://pkhdp6enxyt0" path="res://3_Audio/SFX/interact.mp3" id="3_nhwdl"]
+[ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="4_qaugp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d3mj"]
 size = Vector2(122, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7la3"]
 size = Vector2(130, 64.5)
-
-[sub_resource type="Animation" id="Animation_uhcmy"]
-resource_name = "searching"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Image:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -1), Vector2(-3, -1), Vector2(2, -1), Vector2(0, -1)]
-}
 
 [sub_resource type="Animation" id="Animation_nd1cr"]
 length = 0.001
@@ -38,6 +24,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_uhcmy"]
+resource_name = "searching"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-3, -1), Vector2(2, -1), Vector2(0, -1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skxl8"]
@@ -77,6 +78,27 @@ volume_db = 10.0
 libraries = {
 "": SubResource("AnimationLibrary_skxl8")
 }
+
+[node name="Interact" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="InteractText" type="Label" parent="Interact"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -40.0
+offset_right = 204.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qaugp")
+theme_override_font_sizes/font_size = 33
+text = "[E] SEARCH"
 
 [connection signal="area_entered" from="AreaInteraction" to="." method="_on_area_interaction_area_entered"]
 [connection signal="area_exited" from="AreaInteraction" to="." method="_on_area_interaction_area_exited"]
