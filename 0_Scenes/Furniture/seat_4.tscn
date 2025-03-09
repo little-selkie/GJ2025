@@ -1,9 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq4wo3uv4sw10"]
+[gd_scene load_steps=3 format=3 uid="uid://cq4wo3uv4sw10"]
 
 [ext_resource type="Texture2D" uid="uid://daylgetex6cq6" path="res://2_Images/Props/furniture.png" id="1_r5vs0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75g66"]
-size = Vector2(54, 35)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wrn7i"]
 polygon = PackedVector2Array(-19, -15, -26, 12, -8, 17, 16, 15, 24, 10, 21, -8, 20, -18, 8, -19, 0, -16)
@@ -18,9 +15,8 @@ texture = ExtResource("1_r5vs0")
 region_enabled = true
 region_rect = Rect2(192, 208.723, 62.0551, 47.2772)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, -0.5)
-shape = SubResource("RectangleShape2D_75g66")
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
 occluder = SubResource("OccluderPolygon2D_wrn7i")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-10, -15, -18, -15, -26, 11, -10, 17, 15, 15, 24, 10, 20, -18, 6, -19)
