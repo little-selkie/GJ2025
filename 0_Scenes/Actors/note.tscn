@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj6o4kudqhr8e"]
+[gd_scene load_steps=12 format=3 uid="uid://cj6o4kudqhr8e"]
 
 [ext_resource type="Script" path="res://1_Scripts/note.gd" id="1_q4khy"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="2_vao1b"]
 [ext_resource type="Script" path="res://1_Scripts/note_int.gd" id="4_21wu0"]
 [ext_resource type="Texture2D" uid="uid://b0ysu5emh76da" path="res://2_Images/UI/NewUI/Old-Paper.png" id="4_iru0d"]
 [ext_resource type="Texture2D" uid="uid://d1nt5k8nuv8t2" path="res://2_Images/UI/NewUI/note.png" id="5_mgbo6"]
+[ext_resource type="Texture2D" uid="uid://cvbjilhl5wkm2" path="res://2_Images/Lights/circle.png" id="6_cgohv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0in1j"]
 size = Vector2(11, 15.5)
@@ -70,6 +71,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.638884, 2.02149e-06, 4.81307e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_vao1b")
 theme_override_font_sizes/font_size = 33
 text = "[E] READ NOTE"
@@ -167,6 +169,13 @@ theme_override_fonts/font = ExtResource("2_vao1b")
 theme_override_font_sizes/font_size = 50
 text = "[E] CONTINUE"
 uppercase = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(5, 8)
+color = Color(0.51192, 0.985845, 0.94115, 0.886275)
+energy = 2.5
+texture = ExtResource("6_cgohv")
+texture_scale = 0.1
 
 [connection signal="area_entered" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_entered"]
 [connection signal="area_exited" from="AreaOfInteraction" to="." method="_on_area_of_interaction_area_exited"]
