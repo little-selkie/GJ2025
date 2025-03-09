@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwil4i34acj3q" path="res://0_Scenes/Actors/Player.tscn" id="2_vea6q"]
 [ext_resource type="PackedScene" uid="uid://bxj166jpfihj3" path="res://0_Scenes/ui.tscn" id="3_hywq2"]
 [ext_resource type="PackedScene" uid="uid://5obyp7tmx8d5" path="res://0_Scenes/Actors/Ghost.tscn" id="4_2jy7w"]
-[ext_resource type="PackedScene" path="res://0_Scenes/pause_menu.tscn" id="4_e4hw3"]
+[ext_resource type="PackedScene" uid="uid://fhr5mgkln2n4" path="res://0_Scenes/pause_menu.tscn" id="4_e4hw3"]
 [ext_resource type="AudioStream" uid="uid://cwjut7pl24dwy" path="res://3_Audio/Ambient/ghost-wails-20457.mp3" id="6_d4wta"]
 [ext_resource type="AudioStream" uid="uid://doo0u0wuq3rym" path="res://3_Audio/Ambient/angelic-harp-sound-effect-type-04-294198.mp3" id="7_7offu"]
 
