@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbrct0qa80h3i"]
+[gd_scene load_steps=4 format=3 uid="uid://bbrct0qa80h3i"]
 
 [ext_resource type="Texture2D" uid="uid://cu4qlylj7xg1t" path="res://2_Images/Props/shrine.png" id="1_on0ol"]
+[ext_resource type="Texture2D" uid="uid://cvbjilhl5wkm2" path="res://2_Images/Lights/circle.png" id="2_igdgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xcqp"]
 size = Vector2(57, 61)
@@ -18,3 +19,9 @@ region_rect = Rect2(192.853, 0.251217, 63.79, 63.6101)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_1xcqp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, 13)
+color = Color(0.5148, 0.58608, 0.99, 0.886275)
+texture = ExtResource("2_igdgy")
+texture_scale = 0.1
