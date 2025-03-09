@@ -6,7 +6,17 @@ var already_started: bool = false
 var paused = false
 
 func _ready() -> void:
+	GlobalVars.player_health = 10
+	GlobalVars.key = 0
+	GlobalVars.key2 = 0
+	GlobalVars.key3 = 0
+	GlobalVars.key4 = 0
 	GlobalVars.candle_level = 100
+	GlobalVars.amulet = 0
+	GlobalVars.note = 0
+	GlobalVars.is_exorcism_available = false
+	GlobalVars.ghosts_freed = 0
+	GlobalVars.is_note_picked = false
 
 func _process(delta: float) -> void:
 	if GlobalVars.is_exorcism_available and !already_started:

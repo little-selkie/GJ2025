@@ -29,9 +29,7 @@ func open_door() -> void:
 	if GlobalVars.amulet != 3: 
 		GlobalVars.amulet += 1
 		print(GlobalVars.amulet)
-		if GlobalVars.amulet == 3 and GlobalVars.note >= 1:
+		if GlobalVars.amulet == 3 and GlobalVars.is_note_picked:
 			GlobalVars.is_exorcism_available = true
-		else: 
-			print("u full")
 			
 	$AnimationPlayer.play("door_open")
