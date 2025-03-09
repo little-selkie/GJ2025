@@ -10,3 +10,4 @@ var amulet: int = 0
 var note: int = 0
 var is_exorcism_available: bool = false
 var ghosts_freed: int = 0
+var is_note_picked: bool = false
