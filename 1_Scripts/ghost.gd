@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var is_patrolling : bool = true
 @export var in_position : bool = true
-@export var ghost_speed: int = 80
+@export var ghost_speed: int = 90
 @export var is_hunting: bool = false
 
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
