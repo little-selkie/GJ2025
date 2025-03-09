@@ -80,6 +80,7 @@ libraries = {
 }
 
 [node name="Interact" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="InteractText" type="Label" parent="Interact"]
 anchors_preset = 8
