@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bfqmu28rdsphd" path="res://3_Audio/SFX/impactBell_heavy_003.ogg" id="4_64vau"]
 [ext_resource type="AudioStream" uid="uid://b0fwk8ngxp21p" path="res://3_Audio/SFX/impactGlass_heavy_003.ogg" id="5_l2agc"]
 [ext_resource type="FontFile" uid="uid://da5k2m2fg3fk4" path="res://69_Fonts/YOZAKURA-Regular.otf" id="6_vuwes"]
-[ext_resource type="AudioStream" uid="uid://bswlf3hwxndud" path="res://3_Audio/162068__mrauralization__railroad-crossing-japan.wav" id="7_qki5w"]
+[ext_resource type="AudioStream" uid="uid://bg722b612tkpx" path="res://3_Audio/lose.mp3" id="7_c5gla"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4by1"]
 texture = ExtResource("2_noxl4")
@@ -66,7 +66,7 @@ theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("6_vuwes")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_kt17g")
-text = "be brawe and try again"
+text = "be brave and try again"
 
 [node name="Click" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
 stream = ExtResource("4_64vau")
@@ -110,8 +110,11 @@ text = "You coward! How dare you?
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_qki5w")
+stream = ExtResource("7_c5gla")
+volume_db = -21.688
 autoplay = true
+mix_target = 1
+parameters/looping = true
 
 [connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

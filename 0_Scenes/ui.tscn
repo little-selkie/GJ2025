@@ -61,10 +61,10 @@ offset_bottom = 40.0
 self_modulate = Color(1, 1, 1, 0.686275)
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 1
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 145.0
-offset_bottom = 152.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 91.0
+offset_bottom = 94.0
 texture = ExtResource("6_ps70g")
 expand_mode = 1
 
